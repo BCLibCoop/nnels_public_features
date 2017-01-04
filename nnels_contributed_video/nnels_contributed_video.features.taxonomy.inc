@@ -13,7 +13,7 @@ function nnels_contributed_video_taxonomy_default_vocabularies() {
       'name' => 'Relations',
       'machine_name' => 'relations',
       'description' => 'DC Relations taxonomy',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',

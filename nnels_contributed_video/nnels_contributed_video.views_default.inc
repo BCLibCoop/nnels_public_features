@@ -22,14 +22,18 @@ function nnels_contributed_video_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Videos';
+  $handler->display->display_options['title'] = 'Registered Disability Savings Plan - Videos';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -53,15 +57,6 @@ function nnels_contributed_video_views_default_views() {
     'image_style' => 'medium',
     'image_link' => 'content',
   );
-  /* Field: Content: Video Collection (editable) */
-  $handler->display->display_options['fields']['field_video_collection_editable']['id'] = 'field_video_collection_editable';
-  $handler->display->display_options['fields']['field_video_collection_editable']['table'] = 'field_data_field_video_collection';
-  $handler->display->display_options['fields']['field_video_collection_editable']['field'] = 'field_video_collection_editable';
-  $handler->display->display_options['fields']['field_video_collection_editable']['label'] = 'Video Collection';
-  $handler->display->display_options['fields']['field_video_collection_editable']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_video_collection_editable']['widget_type'] = '0';
-  $handler->display->display_options['fields']['field_video_collection_editable']['suppress_label'] = 0;
-  $handler->display->display_options['fields']['field_video_collection_editable']['suppress_description'] = 0;
   /* Field: Video: Duration */
   $handler->display->display_options['fields']['duration']['id'] = 'duration';
   $handler->display->display_options['fields']['duration']['table'] = 'video_queue';
@@ -73,19 +68,26 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '160';
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read more';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '250',
+    'trim_length' => '160',
   );
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Field: Content: Video Collection */
+  $handler->display->display_options['fields']['field_video_collection']['id'] = 'field_video_collection';
+  $handler->display->display_options['fields']['field_video_collection']['table'] = 'field_data_field_video_collection';
+  $handler->display->display_options['fields']['field_video_collection']['field'] = 'field_video_collection';
+  $handler->display->display_options['fields']['field_video_collection']['label'] = '';
+  $handler->display->display_options['fields']['field_video_collection']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_video_collection']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Collection Order (field_video_collection_order) */
+  $handler->display->display_options['sorts']['field_video_collection_order_value']['id'] = 'field_video_collection_order_value';
+  $handler->display->display_options['sorts']['field_video_collection_order_value']['table'] = 'field_data_field_video_collection_order';
+  $handler->display->display_options['sorts']['field_video_collection_order_value']['field'] = 'field_video_collection_order_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -105,13 +107,33 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['filters']['field_video_collection_tid']['table'] = 'field_data_field_video_collection';
   $handler->display->display_options['filters']['field_video_collection_tid']['field'] = 'field_video_collection_tid';
   $handler->display->display_options['filters']['field_video_collection_tid']['value'] = array(
-    0 => '29056',
+    0 => '33171',
   );
   $handler->display->display_options['filters']['field_video_collection_tid']['vocabulary'] = 'relations';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'rdsp';
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Registered Disability Savings Plan - ASL Videos';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['path'] = 'videos/rdsp';
+
+  /* Display: Feed */
+  $handler = $view->new_display('feed', 'Feed', 'feed_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Registered Disability Savings Plan - Videos feed';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['style_options']['description'] = 'Feed for the RDSP contributed videos. Useful for getting the canonical links for each item.';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['row_options']['links'] = TRUE;
+  $handler->display->display_options['path'] = 'videos/rdsp/rss';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
   $export['contributed_videos'] = $view;
 
   return $export;

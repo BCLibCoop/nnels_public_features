@@ -10,7 +10,7 @@
 function nnels_contributed_video_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-contributed_video-body'.
+  // Exported field_instance: 'node-contributed_video-body'
   $field_instances['node-contributed_video-body'] = array(
     'bundle' => 'contributed_video',
     'default_value' => NULL,
@@ -63,7 +63,7 @@ function nnels_contributed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contributed_video-field_video_collection'.
+  // Exported field_instance: 'node-contributed_video-field_video_collection'
   $field_instances['node-contributed_video-field_video_collection'] = array(
     'bundle' => 'contributed_video',
     'default_value' => array(),
@@ -109,7 +109,48 @@ function nnels_contributed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contributed_video-field_video_upload'.
+  // Exported field_instance: 'node-contributed_video-field_video_collection_order'
+  $field_instances['node-contributed_video-field_video_collection_order'] = array(
+    'bundle' => 'contributed_video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Which number in the video series is this?',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video_collection_order',
+    'label' => 'Collection Order',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance: 'node-contributed_video-field_video_upload'
   $field_instances['node-contributed_video-field_video_upload'] = array(
     'bundle' => 'contributed_video',
     'deleted' => 0,
@@ -161,7 +202,7 @@ function nnels_contributed_video_field_default_field_instances() {
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
-            'clipboard' => 'clipboard',
+            'clipboard' => 0,
             'reference' => 0,
             'remote' => 'remote',
             'upload' => 'upload',
@@ -176,7 +217,6 @@ function nnels_contributed_video_field_default_field_instances() {
           ),
           'source_reference' => array(
             'autocomplete' => 0,
-            'search_all_fields' => 0,
           ),
         ),
         'progress_indicator' => 'throbber',
@@ -188,9 +228,11 @@ function nnels_contributed_video_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Collection Order');
   t('Description');
   t('Video Collection');
   t('Video Upload');
+  t('Which number in the video series is this?');
 
   return $field_instances;
 }

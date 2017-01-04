@@ -10,7 +10,41 @@
 function nnels_contributed_video_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_video_collection'.
+  // Exported field_base: 'body'
+  $field_bases['body'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'node',
+    ),
+    'field_name' => 'body',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_video_collection'
   $field_bases['field_video_collection'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -19,6 +53,14 @@ function nnels_contributed_video_field_default_field_bases() {
     'field_name' => 'field_video_collection',
     'field_permissions' => array(
       'type' => 0,
+    ),
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
     ),
     'indexes' => array(
       'tid' => array(
@@ -41,7 +83,28 @@ function nnels_contributed_video_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_video_upload'.
+  // Exported field_base: 'field_video_collection_order'
+  $field_bases['field_video_collection_order'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_video_collection_order',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_video_upload'
   $field_bases['field_video_upload'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -50,6 +113,14 @@ function nnels_contributed_video_field_default_field_bases() {
     'field_name' => 'field_video_upload',
     'field_permissions' => array(
       'type' => 0,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
     ),
     'indexes' => array(
       'fid' => array(
@@ -69,10 +140,10 @@ function nnels_contributed_video_field_default_field_bases() {
       ),
       'entity_translation_sync' => FALSE,
       'presets' => array(
-        'NNELS  default' => 0,
+        'NNELS  default' => 'NNELS  default',
       ),
-      'preview_video_thumb_style' => 'medium',
-      'thumbnail_format' => 'jpg',
+      'preview_video_thumb_style' => '200px-wide',
+      'thumbnail_format' => 'png',
       'uri_scheme' => 's3',
       'uri_scheme_converted' => 's3',
       'uri_scheme_thumbnails' => 'public',
