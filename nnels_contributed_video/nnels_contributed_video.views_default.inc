@@ -107,7 +107,7 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['filters']['field_video_collection_tid']['table'] = 'field_data_field_video_collection';
   $handler->display->display_options['filters']['field_video_collection_tid']['field'] = 'field_video_collection_tid';
   $handler->display->display_options['filters']['field_video_collection_tid']['value'] = array(
-    0 => '33171',
+    0 => '31198',
   );
   $handler->display->display_options['filters']['field_video_collection_tid']['vocabulary'] = 'relations';
 
@@ -116,7 +116,7 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Registered Disability Savings Plan - ASL Videos';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  $handler->display->display_options['path'] = 'videos/rdsp';
+  $handler->display->display_options['path'] = 'videos/rdsp/page';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
@@ -134,6 +134,11 @@ function nnels_contributed_video_views_default_views() {
     'default' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['block_description'] = 'RDSP Video Grid view';
   $export['contributed_videos'] = $view;
 
   return $export;
