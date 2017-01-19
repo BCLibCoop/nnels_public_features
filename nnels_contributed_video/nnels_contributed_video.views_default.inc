@@ -63,6 +63,13 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['fields']['duration']['field'] = 'duration';
   $handler->display->display_options['fields']['duration']['label'] = '';
   $handler->display->display_options['fields']['duration']['element_label_colon'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -71,6 +78,7 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '160';
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read more';
+  $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[path]';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
@@ -107,7 +115,7 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['filters']['field_video_collection_tid']['table'] = 'field_data_field_video_collection';
   $handler->display->display_options['filters']['field_video_collection_tid']['field'] = 'field_video_collection_tid';
   $handler->display->display_options['filters']['field_video_collection_tid']['value'] = array(
-    0 => '31198',
+    0 => '33171',
   );
   $handler->display->display_options['filters']['field_video_collection_tid']['vocabulary'] = 'relations';
 
