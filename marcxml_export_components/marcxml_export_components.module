@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MARCXML Export Components feature.
+ */
+
+include_once 'marcxml_export_components.features.inc';
