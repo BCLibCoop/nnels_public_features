@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NNELS Docs feature.
+ */
+
+include_once 'nnels_docs.features.inc';
