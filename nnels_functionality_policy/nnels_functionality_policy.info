@@ -1,0 +1,14 @@
+name = Site Functionality Policy
+description = Components for determing functionality by province, organization status
+core = 7.x
+package = NNELS
+version = 7.x-1.0
+dependencies[] = rules_block_visibility
+features[fe_block_settings][] = webform-client-block-320
+features[features_api][] = api:2
+features[rules_config][] = rules_check_non_party_prov_status_by_org
+features_exclude[dependencies][entity] = entity
+features_exclude[dependencies][fe_block] = fe_block
+features_exclude[dependencies][php] = php
+features_exclude[dependencies][rules] = rules
+features_exclude[dependencies][webform] = webform
