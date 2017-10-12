@@ -28,3 +28,38 @@ function marc_tag_entities_eck_bundle_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_eck_entity_type_info().
+ */
+function marc_tag_entities_eck_entity_type_info() {
+  $items = array(
+    'marc_tag' => array(
+      'name' => 'marc_tag',
+      'label' => 'MARC tag',
+      'properties' => array(
+        'title' => array(
+          'label' => 'Title',
+          'type' => 'text',
+          'behavior' => 'title',
+        ),
+        'uid' => array(
+          'label' => 'Author',
+          'type' => 'integer',
+          'behavior' => 'author',
+        ),
+        'created' => array(
+          'label' => 'Created',
+          'type' => 'integer',
+          'behavior' => 'created',
+        ),
+        'changed' => array(
+          'label' => 'Changed',
+          'type' => 'integer',
+          'behavior' => 'changed',
+        ),
+      ),
+    ),
+  );
+  return $items;
+}
