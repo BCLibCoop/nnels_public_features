@@ -11,6 +11,257 @@ function marcxml_export_components_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'cals_marc_xml_file_builder';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'CALS MARC XML File Builder';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'CALS records with 856 Tags';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access content overview';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'counter' => 'counter',
+    'nid' => 'nid',
+    'title' => 'title',
+    'field_nnels_856_tag' => 'field_nnels_856_tag',
+    'field_xml_string' => 'field_xml_string',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'counter' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_nnels_856_tag' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_xml_string' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::_cals_importer_generate_marcxml_files_all_records' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '#';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: XML String */
+  $handler->display->display_options['fields']['field_xml_string']['id'] = 'field_xml_string';
+  $handler->display->display_options['fields']['field_xml_string']['table'] = 'field_data_field_xml_string';
+  $handler->display->display_options['fields']['field_xml_string']['field'] = 'field_xml_string';
+  $handler->display->display_options['fields']['field_xml_string']['alter']['max_length'] = '150';
+  $handler->display->display_options['fields']['field_xml_string']['alter']['trim'] = TRUE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'repository_item' => 'repository_item',
+  );
+  /* Filter criterion: Content: NNELS 856 tag (field_nnels_856_tag) */
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['id'] = 'field_nnels_856_tag_value';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['table'] = 'field_data_field_nnels_856_tag';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['field'] = 'field_nnels_856_tag_value';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Field: XML String (field_xml_string) */
+  $handler->display->display_options['filters']['field_xml_string_value']['id'] = 'field_xml_string_value';
+  $handler->display->display_options['filters']['field_xml_string_value']['table'] = 'field_data_field_xml_string';
+  $handler->display->display_options['filters']['field_xml_string_value']['field'] = 'field_xml_string_value';
+  $handler->display->display_options['filters']['field_xml_string_value']['operator'] = 'not empty';
+
+  /* Display: Page - 856 Tags */
+  $handler = $view->new_display('page', 'Page - 856 Tags', 'page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Please see the reciprocal view here before you generate the final XML file: <a href="/admin/content/cals/repo-items/marc-xml-no-856-tags">MARC Files - no 856 tags<a/>.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['path'] = 'admin/content/cals/repo-items/marc-xml-file-builder';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'MARC XML File Builder';
+  $handler->display->display_options['menu']['name'] = 'menu-nnels-admin';
+
+  /* Display: MARC Files - NO 856 tag */
+  $handler = $view->new_display('page', 'MARC Files - NO 856 tag', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'CALS records - no 856 Tags';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::_cals_importer_generate_marc_xml_856' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Add 856 tag to MARC String',
+    ),
+  );
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '#';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: NNELS 856 tag */
+  $handler->display->display_options['fields']['field_nnels_856_tag']['id'] = 'field_nnels_856_tag';
+  $handler->display->display_options['fields']['field_nnels_856_tag']['table'] = 'field_data_field_nnels_856_tag';
+  $handler->display->display_options['fields']['field_nnels_856_tag']['field'] = 'field_nnels_856_tag';
+  /* Field: Field: XML String */
+  $handler->display->display_options['fields']['field_xml_string']['id'] = 'field_xml_string';
+  $handler->display->display_options['fields']['field_xml_string']['table'] = 'field_data_field_xml_string';
+  $handler->display->display_options['fields']['field_xml_string']['field'] = 'field_xml_string';
+  $handler->display->display_options['fields']['field_xml_string']['alter']['max_length'] = '150';
+  $handler->display->display_options['fields']['field_xml_string']['alter']['trim'] = TRUE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'repository_item' => 'repository_item',
+  );
+  /* Filter criterion: Content: NNELS 856 tag (field_nnels_856_tag) */
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['id'] = 'field_nnels_856_tag_value';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['table'] = 'field_data_field_nnels_856_tag';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['field'] = 'field_nnels_856_tag_value';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_nnels_856_tag_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Field: XML String (field_xml_string) */
+  $handler->display->display_options['filters']['field_xml_string_value']['id'] = 'field_xml_string_value';
+  $handler->display->display_options['filters']['field_xml_string_value']['table'] = 'field_data_field_xml_string';
+  $handler->display->display_options['filters']['field_xml_string_value']['field'] = 'field_xml_string_value';
+  $handler->display->display_options['filters']['field_xml_string_value']['operator'] = 'not empty';
+  $handler->display->display_options['path'] = 'admin/content/cals/repo-items/marc-xml-no-856-tags';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'MARC XML - No 856 tags';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-nnels-admin';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['cals_marc_xml_file_builder'] = $view;
+
+  $view = new view();
   $view->name = 'field_collection_view_marc_subfields';
   $view->description = '';
   $view->tag = 'default';
@@ -591,7 +842,14 @@ function marcxml_export_components_views_default_views() {
   $handler->display->display_options['fields']['field_code']['table'] = 'field_data_field_code';
   $handler->display->display_options['fields']['field_code']['field'] = 'field_code';
   $handler->display->display_options['fields']['field_code']['relationship'] = 'field_marc_subfield_collection_marc_tag';
+  $handler->display->display_options['fields']['field_code']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_code']['element_type'] = 'strong';
+  /* Field: Field: Marc Tag */
+  $handler->display->display_options['fields']['field_marc_tag']['id'] = 'field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['table'] = 'field_data_field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['field'] = 'field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['relationship'] = 'field_marc_subfield_collection_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['element_type'] = 'strong';
   /* Field: Field: Subfield Code (editable) */
   $handler->display->display_options['fields']['field_subfield_code_editable']['id'] = 'field_subfield_code_editable';
   $handler->display->display_options['fields']['field_subfield_code_editable']['table'] = 'field_data_field_subfield_code';
@@ -707,11 +965,11 @@ function marcxml_export_components_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '[field_path]/add/[host_entity_type]/[host_entity_id]?destination=[host_entity_path]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
-  /* Sort criterion: MARC tag: Code (field_code) */
-  $handler->display->display_options['sorts']['field_code_value']['id'] = 'field_code_value';
-  $handler->display->display_options['sorts']['field_code_value']['table'] = 'field_data_field_code';
-  $handler->display->display_options['sorts']['field_code_value']['field'] = 'field_code_value';
-  $handler->display->display_options['sorts']['field_code_value']['relationship'] = 'field_marc_subfield_collection_marc_tag';
+  /* Sort criterion: Field: Marc Tag (field_marc_tag) */
+  $handler->display->display_options['sorts']['field_marc_tag_value']['id'] = 'field_marc_tag_value';
+  $handler->display->display_options['sorts']['field_marc_tag_value']['table'] = 'field_data_field_marc_tag';
+  $handler->display->display_options['sorts']['field_marc_tag_value']['field'] = 'field_marc_tag_value';
+  $handler->display->display_options['sorts']['field_marc_tag_value']['relationship'] = 'field_marc_subfield_collection_marc_tag';
   /* Sort criterion: Field: Subfield Code (field_subfield_code) */
   $handler->display->display_options['sorts']['field_subfield_code_value']['id'] = 'field_subfield_code_value';
   $handler->display->display_options['sorts']['field_subfield_code_value']['table'] = 'field_data_field_subfield_code';
@@ -2718,6 +2976,14 @@ More information:
   $handler->display->display_options['relationships']['field_marc_subfield_collection_value']['table'] = 'field_data_field_marc_subfield_collection';
   $handler->display->display_options['relationships']['field_marc_subfield_collection_value']['field'] = 'field_marc_subfield_collection_value';
   $handler->display->display_options['relationships']['field_marc_subfield_collection_value']['delta'] = '-1';
+  /* Field: MARC tag: Id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'eck_marc_tag';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: Bulk operations: MARC tag */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_marc_tag';
@@ -2765,18 +3031,13 @@ More information:
   $handler->display->display_options['fields']['field_development_status_editable']['widget_type'] = '0';
   $handler->display->display_options['fields']['field_development_status_editable']['suppress_label'] = 0;
   $handler->display->display_options['fields']['field_development_status_editable']['suppress_description'] = 0;
-  /* Field: MARC tag: Id */
-  $handler->display->display_options['fields']['id']['id'] = 'id';
-  $handler->display->display_options['fields']['id']['table'] = 'eck_marc_tag';
-  $handler->display->display_options['fields']['id']['field'] = 'id';
-  /* Field: MARC tag: MARC Tag Type */
-  $handler->display->display_options['fields']['field_marc_tag_type']['id'] = 'field_marc_tag_type';
-  $handler->display->display_options['fields']['field_marc_tag_type']['table'] = 'field_data_field_marc_tag_type';
-  $handler->display->display_options['fields']['field_marc_tag_type']['field'] = 'field_marc_tag_type';
   /* Field: MARC tag: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'eck_marc_tag';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: MARC tag: ind1 */
   $handler->display->display_options['fields']['field_indc1']['id'] = 'field_indc1';
   $handler->display->display_options['fields']['field_indc1']['table'] = 'field_data_field_indc1';
@@ -2799,18 +3060,26 @@ More information:
     'empty_text' => '',
     'fallback_format' => 'text_default',
   );
-  /* Field: MARC tag: Code */
-  $handler->display->display_options['fields']['field_code']['id'] = 'field_code';
-  $handler->display->display_options['fields']['field_code']['table'] = 'field_data_field_code';
-  $handler->display->display_options['fields']['field_code']['field'] = 'field_code';
-  $handler->display->display_options['fields']['field_code']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_code']['alter']['text'] = '[field_code]<br/>ind1: [field_indc1]<br/>ind2: [field_ind2] ';
-  $handler->display->display_options['fields']['field_code']['settings'] = array(
+  /* Field: Field: Marc Tag */
+  $handler->display->display_options['fields']['field_marc_tag']['id'] = 'field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['table'] = 'field_data_field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['field'] = 'field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['label'] = 'Title / Tag';
+  $handler->display->display_options['fields']['field_marc_tag']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_marc_tag']['alter']['text'] = '<strong>[title]</strong><br/>----------<br/>
+<strong>[field_marc_tag]</strong><br/>
+ind1: [field_indc1]<br/>ind2: [field_ind2] ';
+  $handler->display->display_options['fields']['field_marc_tag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_marc_tag']['settings'] = array(
     'click_to_edit' => 1,
     'click_to_edit_style' => 'button',
     'empty_text' => '',
     'fallback_format' => 'text_default',
   );
+  /* Field: MARC tag: MARC Tag Type */
+  $handler->display->display_options['fields']['field_marc_tag_type']['id'] = 'field_marc_tag_type';
+  $handler->display->display_options['fields']['field_marc_tag_type']['table'] = 'field_data_field_marc_tag_type';
+  $handler->display->display_options['fields']['field_marc_tag_type']['field'] = 'field_marc_tag_type';
   /* Field: Field: Export Type (editable) */
   $handler->display->display_options['fields']['field_export_type_editable']['id'] = 'field_export_type_editable';
   $handler->display->display_options['fields']['field_export_type_editable']['table'] = 'field_data_field_export_type';
@@ -2909,6 +3178,14 @@ More information:
   $handler->display->display_options['fields']['delete_link_1']['field'] = 'delete_link';
   $handler->display->display_options['fields']['delete_link_1']['label'] = '';
   $handler->display->display_options['fields']['delete_link_1']['element_label_colon'] = FALSE;
+  /* Sort criterion: MARC tag: marc_tag type */
+  $handler->display->display_options['sorts']['type']['id'] = 'type';
+  $handler->display->display_options['sorts']['type']['table'] = 'eck_marc_tag';
+  $handler->display->display_options['sorts']['type']['field'] = 'type';
+  /* Sort criterion: Field: Marc Tag (field_marc_tag) */
+  $handler->display->display_options['sorts']['field_marc_tag_value']['id'] = 'field_marc_tag_value';
+  $handler->display->display_options['sorts']['field_marc_tag_value']['table'] = 'field_data_field_marc_tag';
+  $handler->display->display_options['sorts']['field_marc_tag_value']['field'] = 'field_marc_tag_value';
   /* Filter criterion: MARC tag: marc_tag type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'eck_marc_tag';
@@ -3095,6 +3372,168 @@ More information:
   $handler->display->display_options['menu']['name'] = 'menu-nnels-admin';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Just Entities */
+  $handler = $view->new_display('page', 'Just Entities', 'page_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: MARC tag: Id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'eck_marc_tag';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: MARC tag: Development Status (editable) */
+  $handler->display->display_options['fields']['field_development_status_editable']['id'] = 'field_development_status_editable';
+  $handler->display->display_options['fields']['field_development_status_editable']['table'] = 'field_data_field_development_status';
+  $handler->display->display_options['fields']['field_development_status_editable']['field'] = 'field_development_status_editable';
+  $handler->display->display_options['fields']['field_development_status_editable']['label'] = 'Status';
+  $handler->display->display_options['fields']['field_development_status_editable']['type'] = 'editable';
+  $handler->display->display_options['fields']['field_development_status_editable']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'list_default',
+  );
+  $handler->display->display_options['fields']['field_development_status_editable']['widget_type'] = '0';
+  $handler->display->display_options['fields']['field_development_status_editable']['suppress_label'] = 0;
+  $handler->display->display_options['fields']['field_development_status_editable']['suppress_description'] = 0;
+  /* Field: MARC tag: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'eck_marc_tag';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: MARC tag: ind1 */
+  $handler->display->display_options['fields']['field_indc1']['id'] = 'field_indc1';
+  $handler->display->display_options['fields']['field_indc1']['table'] = 'field_data_field_indc1';
+  $handler->display->display_options['fields']['field_indc1']['field'] = 'field_indc1';
+  $handler->display->display_options['fields']['field_indc1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_indc1']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'text_default',
+  );
+  /* Field: MARC tag: ind2 */
+  $handler->display->display_options['fields']['field_ind2']['id'] = 'field_ind2';
+  $handler->display->display_options['fields']['field_ind2']['table'] = 'field_data_field_ind2';
+  $handler->display->display_options['fields']['field_ind2']['field'] = 'field_ind2';
+  $handler->display->display_options['fields']['field_ind2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_ind2']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'text_default',
+  );
+  /* Field: Field: Marc Tag */
+  $handler->display->display_options['fields']['field_marc_tag']['id'] = 'field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['table'] = 'field_data_field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['field'] = 'field_marc_tag';
+  $handler->display->display_options['fields']['field_marc_tag']['label'] = 'Title / Tag';
+  $handler->display->display_options['fields']['field_marc_tag']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_marc_tag']['alter']['text'] = '<strong>[title]</strong><br/>----------<br/>
+<strong>[field_marc_tag]</strong><br/>
+ind1: [field_indc1]<br/>ind2: [field_ind2] ';
+  $handler->display->display_options['fields']['field_marc_tag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_marc_tag']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'text_default',
+  );
+  /* Field: MARC tag: MARC Tag Type */
+  $handler->display->display_options['fields']['field_marc_tag_type']['id'] = 'field_marc_tag_type';
+  $handler->display->display_options['fields']['field_marc_tag_type']['table'] = 'field_data_field_marc_tag_type';
+  $handler->display->display_options['fields']['field_marc_tag_type']['field'] = 'field_marc_tag_type';
+  /* Field: Field: Export Type (editable) */
+  $handler->display->display_options['fields']['field_export_type_editable']['id'] = 'field_export_type_editable';
+  $handler->display->display_options['fields']['field_export_type_editable']['table'] = 'field_data_field_export_type';
+  $handler->display->display_options['fields']['field_export_type_editable']['field'] = 'field_export_type_editable';
+  $handler->display->display_options['fields']['field_export_type_editable']['label'] = 'Export Type';
+  $handler->display->display_options['fields']['field_export_type_editable']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'list_default',
+  );
+  $handler->display->display_options['fields']['field_export_type_editable']['widget_type'] = '0';
+  $handler->display->display_options['fields']['field_export_type_editable']['suppress_label'] = 0;
+  $handler->display->display_options['fields']['field_export_type_editable']['suppress_description'] = 0;
+  /* Field: Field: Include in Export */
+  $handler->display->display_options['fields']['field_include_in_export']['id'] = 'field_include_in_export';
+  $handler->display->display_options['fields']['field_include_in_export']['table'] = 'field_data_field_include_in_export';
+  $handler->display->display_options['fields']['field_include_in_export']['field'] = 'field_include_in_export';
+  $handler->display->display_options['fields']['field_include_in_export']['label'] = 'Export?';
+  $handler->display->display_options['fields']['field_include_in_export']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'list_default',
+  );
+  /* Field: Field: Source Value */
+  $handler->display->display_options['fields']['field_source_value']['id'] = 'field_source_value';
+  $handler->display->display_options['fields']['field_source_value']['table'] = 'field_data_field_source_value';
+  $handler->display->display_options['fields']['field_source_value']['field'] = 'field_source_value';
+  $handler->display->display_options['fields']['field_source_value']['settings'] = array(
+    'click_to_edit' => 0,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'list_default',
+  );
+  /* Field: Field: Notes */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['max_length'] = '150';
+  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['settings'] = array(
+    'click_to_edit' => 1,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'text_default',
+  );
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = 'Subfield View';
+  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['view']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['view']['view'] = 'field_collection_view_marc_subfields';
+  $handler->display->display_options['fields']['view']['display'] = 'embed_4';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!id]';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Notes and Subfields';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div>[field_description]</div>
+[view]';
+  /* Field: Field collection item: Field collection item UUID */
+  $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['relationship'] = 'field_marc_subfield_collection_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: MARC tag: marc_tag type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'eck_marc_tag';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'marc_tag' => 'marc_tag',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'admin/content/exportable_marc_tags_entity';
   $export['marc_tags_entity_view'] = $view;
 
   return $export;
