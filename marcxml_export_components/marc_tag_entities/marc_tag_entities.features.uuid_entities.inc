@@ -413,7 +413,6 @@ yyyymmddhhmmss.f',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188764,
           'value' => 497924,
         ),
       ),
@@ -545,7 +544,6 @@ yyyymmddhhmmss.f',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188440,
           'value' => 497633,
         ),
       ),
@@ -832,19 +830,15 @@ For subfields a (original cataloguing agency) and b (language of cataloguing) - 
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188302,
           'value' => 497560,
         ),
         1 => array(
-          'revision_id' => 1188338,
           'value' => 497596,
         ),
         2 => array(
-          'revision_id' => 1188339,
           'value' => 497597,
         ),
         3 => array(
-          'revision_id' => 1188340,
           'value' => 497598,
         ),
       ),
@@ -1002,7 +996,6 @@ For subfields a (original cataloguing agency) and b (language of cataloguing) - 
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188304,
           'value' => 497562,
         ),
       ),
@@ -1175,7 +1168,6 @@ ind2 will be either 0 (no nonfiling characters present) or 1-9 (# of nonfiling c
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188287,
           'value' => 497545,
         ),
       ),
@@ -1333,7 +1325,6 @@ ind2 will be either 0 (no nonfiling characters present) or 1-9 (# of nonfiling c
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188306,
           'value' => 497564,
         ),
       ),
@@ -1477,7 +1468,6 @@ ind2 will be either 0 (no nonfiling characters present) or 1-9 (# of nonfiling c
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188307,
           'value' => 497565,
         ),
       ),
@@ -1762,15 +1752,12 @@ It should be DC Date Created (if it exists) or else DC Date Issued or DC Date Co
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188288,
           'value' => 497546,
         ),
         1 => array(
-          'revision_id' => 1188289,
           'value' => 497547,
         ),
         2 => array(
-          'revision_id' => 1188290,
           'value' => 497548,
         ),
       ),
@@ -1920,7 +1907,6 @@ for example:
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188321,
           'value' => 497579,
         ),
       ),
@@ -2059,7 +2045,6 @@ Format must be: hhmmss',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188309,
           'value' => 497567,
         ),
       ),
@@ -2326,15 +2311,12 @@ $a txt $b t $2 rdacontent',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188310,
           'value' => 497568,
         ),
         1 => array(
-          'revision_id' => 1188329,
           'value' => 497587,
         ),
         2 => array(
-          'revision_id' => 1188333,
           'value' => 497591,
         ),
       ),
@@ -2608,15 +2590,12 @@ $a computer $b c $2 rdamedia',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188311,
           'value' => 497569,
         ),
         1 => array(
-          'revision_id' => 1188334,
           'value' => 497592,
         ),
         2 => array(
-          'revision_id' => 1188335,
           'value' => 497593,
         ),
       ),
@@ -2890,15 +2869,12 @@ $a online resource $b cr $2 rdacarrier',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188312,
           'value' => 497570,
         ),
         1 => array(
-          'revision_id' => 1188336,
           'value' => 497594,
         ),
         2 => array(
-          'revision_id' => 1188337,
           'value' => 497595,
         ),
       ),
@@ -3049,7 +3025,6 @@ $a online resource $b cr $2 rdacarrier',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188313,
           'value' => 497571,
         ),
       ),
@@ -3221,7 +3196,6 @@ If it’s restricted than ind2 = 1',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188314,
           'value' => 497572,
         ),
       ),
@@ -3380,7 +3354,6 @@ If it’s restricted than ind2 = 1',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188315,
           'value' => 497573,
         ),
       ),
@@ -3531,7 +3504,6 @@ If it’s restricted than ind2 = 1',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188316,
           'value' => 497574,
         ),
       ),
@@ -3754,11 +3726,9 @@ Ideally, we would include the date from the DC Date Issued field in Drupal if th
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188318,
           'value' => 497576,
         ),
         1 => array(
-          'revision_id' => 1188763,
           'value' => 497923,
         ),
       ),
@@ -3902,7 +3872,6 @@ Ideally, we would include the date from the DC Date Issued field in Drupal if th
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188319,
           'value' => 497577,
         ),
       ),
@@ -4053,7 +4022,6 @@ Ideally, we would include the date from the DC Date Issued field in Drupal if th
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188320,
           'value' => 497578,
         ),
       ),
@@ -4261,11 +4229,9 @@ When subfield a refers to the Contributor, subfield e=contributor',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188303,
           'value' => 497561,
         ),
         1 => array(
-          'revision_id' => 1188328,
           'value' => 497586,
         ),
       ),
@@ -4425,7 +4391,6 @@ Subfield s: This is the file size, i.e. 200 MB',
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188323,
           'value' => 497581,
         ),
       ),
@@ -4585,7 +4550,6 @@ DAISY, etext, PDF, epub, AZW3, Braille = a
     'field_marc_subfield_collection' => array(
       'und' => array(
         0 => array(
-          'revision_id' => 1188762,
           'value' => 497922,
         ),
       ),
