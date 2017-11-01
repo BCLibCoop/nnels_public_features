@@ -268,6 +268,9 @@ function marc_tag_entities_field_default_field_bases() {
       'type' => 0,
     ),
     'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
       'value' => array(
         0 => 'value',
       ),
