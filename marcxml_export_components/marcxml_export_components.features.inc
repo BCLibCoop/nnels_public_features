@@ -16,6 +16,14 @@ function marcxml_export_components_views_api($module = NULL, $api = NULL) {
  */
 function marcxml_export_components_node_info() {
   $items = array(
+    'marc_export_set' => array(
+      'name' => t('MARC Export Set'),
+      'base' => 'node_content',
+      'description' => t('Used to manage & track MARC Export files.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'marc_tag_mapper' => array(
       'name' => t('Marc Tag Mapper'),
       'base' => 'node_content',
