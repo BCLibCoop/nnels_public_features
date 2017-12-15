@@ -138,6 +138,55 @@ function marcxml_export_components_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
+  // Exported field_base: 'field_nid_entry'.
+  $field_bases['field_nid_entry'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_nid_entry',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'article' => 0,
+        'content_builder' => 0,
+        'faq' => 0,
+        'forum' => 0,
+        'frequently_asked_question' => 0,
+        'group' => 0,
+        'marc_export_set' => 0,
+        'marc_mapper' => 0,
+        'marc_tag_mapper' => 0,
+        'organization' => 0,
+        'page' => 0,
+        'post' => 0,
+        'record_set' => 0,
+        'repository_item' => 'repository_item',
+        's3_record_set' => 0,
+        'tutorial_slideshow' => 0,
+        'tutorial_video' => 0,
+        'webform' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
   // Exported field_base: 'field_parser_callback'.
   $field_bases['field_parser_callback'] = array(
     'active' => 1,
