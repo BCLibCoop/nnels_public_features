@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the NNELS SearchWithinSearch feature.
  */
+
+include_once 'nnels_searchwithinsearch.features.inc';

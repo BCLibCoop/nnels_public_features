@@ -279,6 +279,35 @@ recently-added',
     'visibility' => 1,
   );
 
+  $export['views--exp-repository_search-page'] = array(
+    'cache' => -1,
+    'css_class' => 'search-repository',
+    'custom' => 0,
+    'delta' => '-exp-repository_search-page',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => 'search',
+        'status' => 1,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -30,
+      ),
+      'adminimal' => array(
+        'region' => 'content_after',
+        'status' => 1,
+        'theme' => 'adminimal',
+        'weight' => -30,
+      ),
+    ),
+    'title' => 'Search the Catalogue:',
+    'visibility' => 0,
+  );
+
   $export['views-repository_search-block'] = array(
     'cache' => -1,
     'css_class' => '',
