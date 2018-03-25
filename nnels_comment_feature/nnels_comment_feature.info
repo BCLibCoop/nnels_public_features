@@ -1,0 +1,6 @@
+name = NNELS Comment Feature
+description = Comment functionality for NNELS Repository Items
+core = 7.x
+package = NNELS
+version = 7.x-1.0
+features[features_api][] = api:2
