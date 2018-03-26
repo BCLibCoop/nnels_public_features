@@ -9,6 +9,7 @@ dependencies[] = field_permissions
 dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = field_screen_name
+features[field_instance][] = comment-comment_node_repository_item-field_screen_name
 features[field_instance][] = user-user-field_screen_name
 features[user_permission][] = create field_screen_name
 features[user_permission][] = edit field_screen_name

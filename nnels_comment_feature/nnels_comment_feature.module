@@ -1,5 +1,26 @@
 <?php
+
 /**
- * @file
- * Drupal needs this blank file.
+ * Implements hook_form_FORM_ID_alter().
  */
+function nnels_comment_feature_form_comment_node_repository_item_form_alter(&$form, &$form_state) {
+  global $user;
+
+  // Only proceed if there is a user.
+  if ($user) {
+
+    // Load the user fully to get at user fields.
+    $account     = user_load($user->uid);
+    $screen_name = field_get_items('user', 'field_screen_name', $account);
+    if (!$screen_name) {
+      drupal_set_message('Inject screen name field');
+
+      // Need to add the screen name to the database, add submit hook.
+      $form['#submit'][] = 'nnels_comment_feature_form_comment_node_repository_item_form_alter_submit';
+    }
+  }
+}
+
+function nnels_comment_feature_form_comment_node_repository_item_form_alter_submit() {
+  print_r(func_get_args());exit;
+}
