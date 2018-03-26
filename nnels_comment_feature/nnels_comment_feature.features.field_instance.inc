@@ -20,9 +20,8 @@ function nnels_comment_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'type' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
         'weight' => 1,
       ),
     ),
