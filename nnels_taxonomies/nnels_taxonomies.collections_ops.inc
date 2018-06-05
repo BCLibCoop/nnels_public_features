@@ -5,7 +5,7 @@
  */
 function nnels_taxonomies_action_info() {
   return array(
-    'nnels_taxonomy_features_add_to_collection' => array(
+    'nnels_taxonomies_add_to_collection' => array(
       'type' => 'node',
       'label' => t('Add to Collection'),
       'configurable' => TRUE,
