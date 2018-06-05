@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @param array $form
+ * @param array $form_state
+ *
+ * @return void
+ */
+function nnels_comment_feature_form_comment_node_repository_item_form_alter(&$form, &$form_state) {
+  global $user;
+
+  // Only proceed if there is a user.
+  if ($user) {
+
+    // Load the user fully to get at user fields.
+    $account     = user_load($user->uid);
+    $screen_name = field_get_items('user', $account, 'field_screen_name');
+
+    // Pre-populate the screen name field.
+    if ($screen_name) {
+      $form['field_screen_name']['und'][0]['value']['#default_value'] = $screen_name[0]['value'];
+    }
+
+    // Need to update the screen name value on the user.
+    $form['#submit'][] = 'nnels_comment_feature_form_comment_node_repository_item_form_alter_submit';
+  }
+}
+
+/**
+ * Form Alter Submit Callback
+ *
+ * @param array $form
+ * @param array $form_state
+ *
+ * @return void
+ */
+function nnels_comment_feature_form_comment_node_repository_item_form_alter_submit($form, $form_state) {
+  global $user;
+
+  // Only proceed if there is a user.
+  if ($user) {
+
+    // Save the screen name to the user account.
+    $account = user_load($user->uid);
+    $account->field_screen_name['und'][0]['value'] = $form_state['values']['field_screen_name']['und'][0]['value'];
+    user_save($account);
+  }
+}
+
+/**
+ * Implements hook_comment_view_alter().
+ *
+ * @param array $build
+ *
+ * @return void
+ */
+function nnels_comment_feature_comment_view_alter(&$build) {
+  $comment     = $build['comment_body']['#object'];
+  $screen_name = field_get_items('comment', $comment, 'field_screen_name');
+  if ($screen_name) {
+    $build['comment_body']['#object']->name = $screen_name[0]['value'];
+  }
+}
