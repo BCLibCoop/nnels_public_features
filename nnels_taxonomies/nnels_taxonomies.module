@@ -5,3 +5,4 @@
  */
 
 include_once 'nnels_taxonomies.features.inc';
+include_once 'nnels_taxonomies.collection_ops.inc';
