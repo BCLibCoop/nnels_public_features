@@ -3,7 +3,7 @@
 /**
  * Implements hook_action_info().
  */
-function nnels_taxonomy_features_action_info() {
+function nnels_taxonomies_action_info() {
   return array(
     'nnels_taxonomy_features_add_to_collection' => array(
       'type' => 'node',
@@ -21,7 +21,7 @@ function nnels_taxonomy_features_action_info() {
  * @param $form_state
  * @return mixed
  */
-function nnels_taxonomy_features_add_to_collection_form($settings,
+function nnels_taxonomies_add_to_collection_form($settings,
                                                         &$form_state){
   //Perform EFQ to get all Collection terms in Relations vocabulary
   $vocabulary = taxonomy_vocabulary_machine_name_load('relations');
@@ -61,7 +61,7 @@ function nnels_taxonomy_features_add_to_collection_form($settings,
   return $form;
 }
 
-function nnels_taxonomy_features_add_to_collection_validate($form,
+function nnels_taxonomies_add_to_collection_validate($form,
                                                             $form_state) {
   if (! empty($form_state['values']['add_collections_autocomplete'])
     && $form_state['values']['add_collections_select'] != 0) {
@@ -79,7 +79,7 @@ function nnels_taxonomy_features_add_to_collection_validate($form,
  * @param $form_state
  * @return array
  */
-function nnels_taxonomy_features_add_to_collection_submit($form, $form_state) {
+function nnels_taxonomies_add_to_collection_submit($form, $form_state) {
 
   $returnable['selected_items'] = $form_state['selection'];
   $returnable['collection_target'] = ($form_state['values']['add_collections_autocomplete']
@@ -118,7 +118,7 @@ function nnels_taxonomy_features_add_to_collection_submit($form, $form_state) {
   return $returnable;
 }
 
-function nnels_taxonomy_features_add_to_collection(&$node, $context) {
+function nnels_taxonomies_add_to_collection(&$node, $context) {
 
   //Create new field collection and attach to node
   $fc_instance = entity_create( 'field_collection_item', array('field_name'
