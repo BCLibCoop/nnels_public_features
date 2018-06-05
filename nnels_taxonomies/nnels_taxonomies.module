@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NNELS Taxonomies feature.
+ */
+
+include_once 'nnels_taxonomies.features.inc';
