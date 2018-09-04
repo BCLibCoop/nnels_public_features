@@ -63,7 +63,7 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-delta';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -219,7 +219,7 @@ else {
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-delta';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_field]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_field]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -470,7 +470,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -610,7 +610,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -741,7 +741,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -895,7 +895,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1050,7 +1050,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1227,7 +1227,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/features/nnels_content_cafe_views_companion/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
