@@ -574,6 +574,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['field_file_resource']['table'] = 'field_data_field_file_resource';
   $handler->display->display_options['fields']['field_file_resource']['field'] = 'field_file_resource';
   $handler->display->display_options['fields']['field_file_resource']['label'] = '';
+  $handler->display->display_options['fields']['field_file_resource']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_file_resource']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_file_resource']['empty'] = '<span class="daisy-icon-na">No file available</span>';
   $handler->display->display_options['fields']['field_file_resource']['type'] = 'field_collection_views_view';
@@ -584,6 +585,16 @@ $term = taxonomy_term_load(arg(1));
   );
   $handler->display->display_options['fields']['field_file_resource']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_file_resource']['delta_offset'] = '0';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_class'] = 'views-field-field-file-resource';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'field_collection_view_repo_files';
+  $handler->display->display_options['fields']['view']['display'] = 'embed_6';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Subject (field_subject) */
   $handler->display->display_options['arguments']['field_subject_tid']['id'] = 'field_subject_tid';
@@ -841,6 +852,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['field_file_resource']['table'] = 'field_data_field_file_resource';
   $handler->display->display_options['fields']['field_file_resource']['field'] = 'field_file_resource';
   $handler->display->display_options['fields']['field_file_resource']['label'] = '';
+  $handler->display->display_options['fields']['field_file_resource']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_file_resource']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_file_resource']['empty'] = '<span class="daisy-icon-na">No file available</span>';
   $handler->display->display_options['fields']['field_file_resource']['type'] = 'field_collection_views_view';
@@ -851,6 +863,16 @@ $term = taxonomy_term_load(arg(1));
   );
   $handler->display->display_options['fields']['field_file_resource']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_file_resource']['delta_offset'] = '0';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_class'] = 'views-field-field-file-resource';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'field_collection_view_repo_files';
+  $handler->display->display_options['fields']['view']['display'] = 'embed_6';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -992,6 +1014,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['field_file_resource']['table'] = 'field_data_field_file_resource';
   $handler->display->display_options['fields']['field_file_resource']['field'] = 'field_file_resource';
   $handler->display->display_options['fields']['field_file_resource']['label'] = '';
+  $handler->display->display_options['fields']['field_file_resource']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_file_resource']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_file_resource']['empty'] = '<span class="daisy-icon-na">No file available</span>';
   $handler->display->display_options['fields']['field_file_resource']['type'] = 'field_collection_views_view';
@@ -1001,6 +1024,23 @@ $term = taxonomy_term_load(arg(1));
     'add' => '',
   );
   $handler->display->display_options['fields']['field_file_resource']['delta_offset'] = '0';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_class'] = 'views-field-field-file-resource';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'field_collection_view_repo_files';
+  $handler->display->display_options['fields']['view']['display'] = 'embed_6';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
