@@ -17,6 +17,21 @@ function nnels_content_cafe_views_companion_views_api($module = NULL, $api = NUL
 function nnels_content_cafe_views_companion_image_default_styles() {
   $styles = array();
 
+  // Exported image style: book_cover__200x300_.
+  $styles['book_cover__200x300_'] = array(
+    'label' => 'Book Cover (200x300)',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 200,
+          'height' => 300,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: book_cover__300x450_.
   $styles['book_cover__300x450_'] = array(
     'label' => 'Book Cover (300x450)',

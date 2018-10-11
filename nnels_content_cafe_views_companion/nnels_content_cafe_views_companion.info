@@ -11,6 +11,7 @@ dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-content_cafe_cover-block
 features[features_api][] = api:2
+features[image][] = book_cover__200x300_
 features[image][] = book_cover__300x450_
 features[image][] = book_cover__50x75_
 features[views_view][] = content_cafe_cover

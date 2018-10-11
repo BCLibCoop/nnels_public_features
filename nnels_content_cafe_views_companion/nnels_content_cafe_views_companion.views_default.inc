@@ -46,7 +46,7 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__300x450_';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__200x300_';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -395,7 +395,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -537,7 +537,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -688,7 +688,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -820,7 +820,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -984,7 +984,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -1042,7 +1042,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['view']['display'] = 'embed_6';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Creator (field_dc_creator) */
+  /* Sort criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['sorts']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -1073,7 +1073,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['filters']['type']['value'] = array(
     'repository_item' => 'repository_item',
   );
-  /* Filter criterion: Content: Creator (field_dc_creator) */
+  /* Filter criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -1092,12 +1092,12 @@ $term = taxonomy_term_load(arg(1));
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Creator (field_dc_creator) */
+  /* Filter criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value_1']['id'] = 'field_dc_creator_value_1';
   $handler->display->display_options['filters']['field_dc_creator_value_1']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value_1']['field'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value_1']['operator'] = 'not empty';
-  /* Filter criterion: Content: Creator (field_dc_creator) */
+  /* Filter criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value_2']['id'] = 'field_dc_creator_value_2';
   $handler->display->display_options['filters']['field_dc_creator_value_2']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value_2']['field'] = 'field_dc_creator_value';
@@ -1157,7 +1157,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -1342,7 +1342,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
