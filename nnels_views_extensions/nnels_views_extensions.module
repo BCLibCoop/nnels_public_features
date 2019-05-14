@@ -1,0 +1,58 @@
+<?php
+
+include_once 'nnels_views_extensions.features.inc';
+
+/**
+ * Implements hook_views_api().
+ */
+function nnels_views_extensions_views_api() {
+  return array ('api' => 3.0);
+}
+
+function nnels_views_extensions_views_default_views() {
+  // Check for all view file in views directory
+  $files = file_scan_directory(drupal_get_path('module', 'nnels_views_extensions') . '/views', '/.*\.inc$/');
+
+  // Add view to list of views
+  foreach ($files as $filepath => $file) {
+    require $filepath;
+    if (isset($view)) {
+      $views[$view->name] = $view;
+    }
+  }
+
+  // At the end, return array of default views.
+  return $views;
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function nnels_views_extensions_entity_property_info_alter
+(&$info) {
+  $info['node']['properties']['lsn_001'] = array(
+    'type' => 'token',
+    'label' => t('Local System Number (LSN)'),
+    'description' => t('MARCXML Controlfield 001 - Local System Number'),
+    'sanitized' => FALSE,
+    'getter callback' => 'nnels_views_extensions_property_lsn001_getter',
+  );
+}
+
+function nnels_views_extensions_property_lsn001_getter(
+  $item ){
+
+  $lsn = NULL;
+  try {
+    $stub = unserialize($item->field_xml_stub[LANGUAGE_NONE][0]['value']);
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage());
+  }
+
+  if (isset($stub)) {
+    $lsn = $stub['controlfields']['001']['value'];
+  }
+
+  return $lsn;
+}
