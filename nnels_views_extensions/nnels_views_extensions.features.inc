@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nnels_utility_views.features.inc
+ * nnels_views_extensions.features.inc
  */
 
 /**
  * Implements hook_default_search_api_index().
  */
-function nnels_utility_views_default_search_api_index() {
+function nnels_views_extensions_default_search_api_index() {
   $items = array();
   $items['marcxml_record_content'] = entity_import('search_api_index', '{
     "name" : "MARCXML Record Content",
