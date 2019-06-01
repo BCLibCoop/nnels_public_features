@@ -10,7 +10,7 @@
 function nnels_contributed_video_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-contributed_video-body'
+  // Exported field_instance: 'node-contributed_video-body'.
   $field_instances['node-contributed_video-body'] = array(
     'bundle' => 'contributed_video',
     'default_value' => NULL,
@@ -22,7 +22,7 @@ function nnels_contributed_video_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -59,11 +59,78 @@ function nnels_contributed_video_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-contributed_video-field_video_collection'
+  // Exported field_instance: 'node-contributed_video-field_s3_file_upload'.
+  $field_instances['node-contributed_video-field_s3_file_upload'] = array(
+    'bundle' => 'contributed_video',
+    'deleted' => 0,
+    'description' => 'Subtitle files or transcripts.
+Naming scheme must follow Title_lang.format where lang is a valid language code, e.g. en, fr.
+This informs the Video.js caption tracking.',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_s3_file_upload',
+    'label' => 'Additional Files',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'vtt srt txt pdf',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => 'videos/original',
+        ),
+        'redirect' => 0,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'amazons3_cors',
+      'settings' => array(
+        's3_acl' => 'public-read',
+      ),
+      'type' => 'amazons3_cors',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-contributed_video-field_video_collection'.
   $field_instances['node-contributed_video-field_video_collection'] = array(
     'bundle' => 'contributed_video',
     'default_value' => array(),
@@ -76,7 +143,7 @@ function nnels_contributed_video_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -105,11 +172,12 @@ function nnels_contributed_video_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 42,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-contributed_video-field_video_collection_order'
+  // Exported field_instance:
+  // 'node-contributed_video-field_video_collection_order'.
   $field_instances['node-contributed_video-field_video_collection_order'] = array(
     'bundle' => 'contributed_video',
     'default_value' => NULL,
@@ -120,7 +188,7 @@ function nnels_contributed_video_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -146,11 +214,11 @@ function nnels_contributed_video_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 43,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-contributed_video-field_video_upload'
+  // Exported field_instance: 'node-contributed_video-field_video_upload'.
   $field_instances['node-contributed_video-field_video_upload'] = array(
     'bundle' => 'contributed_video',
     'deleted' => 0,
@@ -192,7 +260,29 @@ function nnels_contributed_video_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => 'videos/original',
       'file_extensions' => 'mp4 ogg avi mov wmv flv ogv webm',
-      'max_filesize' => '',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => 'videos/original',
+        ),
+        'redirect' => 0,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '80 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -217,19 +307,25 @@ function nnels_contributed_video_field_default_field_instances() {
           ),
           'source_reference' => array(
             'autocomplete' => 0,
+            'search_all_fields' => 0,
           ),
         ),
         'progress_indicator' => 'throbber',
+        's3_acl' => 'public-read',
       ),
       'type' => 'video_upload',
-      'weight' => 41,
+      'weight' => 6,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Additional Files');
   t('Collection Order');
   t('Description');
+  t('Subtitle files or transcripts.
+Naming scheme must follow Title_lang.format where lang is a valid language code, e.g. en, fr.
+This informs the Video.js caption tracking.');
   t('Video Collection');
   t('Video Upload');
   t('Which number in the video series is this?');
