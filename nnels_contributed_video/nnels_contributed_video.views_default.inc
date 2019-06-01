@@ -37,14 +37,6 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Video Upload */
   $handler->display->display_options['fields']['field_video_upload']['id'] = 'field_video_upload';
   $handler->display->display_options['fields']['field_video_upload']['table'] = 'field_data_field_video_upload';
@@ -63,6 +55,14 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['fields']['duration']['field'] = 'duration';
   $handler->display->display_options['fields']['duration']['label'] = '';
   $handler->display->display_options['fields']['duration']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -126,6 +126,13 @@ function nnels_contributed_video_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'responsive_grid';
   $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'responsive-grid-wrapper';
+  $handler->display->display_options['style_options']['column_classes'] = 'rgrid-col';
+  $handler->display->display_options['style_options']['first_column_classes'] = 'rgrid-col-first';
+  $handler->display->display_options['style_options']['last_column_classes'] = 'rgrid-col-last';
+  $handler->display->display_options['style_options']['row_classes'] = 'rgrid-row clearfix';
+  $handler->display->display_options['style_options']['first_row_classes'] = 'rgrid-row-first';
+  $handler->display->display_options['style_options']['last_row_classes'] = 'rgrid-row-last';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -150,10 +157,110 @@ function nnels_contributed_video_views_default_views() {
   );
   $handler->display->display_options['sitename_title'] = 0;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: RDSP Block */
+  $handler = $view->new_display('block', 'RDSP Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'responsive-grid-wrapper';
+  $handler->display->display_options['style_options']['column_classes'] = 'rgrid-col';
+  $handler->display->display_options['style_options']['first_column_classes'] = 'rgrid-col-first';
+  $handler->display->display_options['style_options']['last_column_classes'] = 'rgrid-col-last';
+  $handler->display->display_options['style_options']['row_classes'] = 'rgrid-row clearfix';
+  $handler->display->display_options['style_options']['first_row_classes'] = 'rgrid-row-first';
+  $handler->display->display_options['style_options']['last_row_classes'] = 'rgrid-row-last';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['block_description'] = 'RDSP Video Grid view';
+
+  /* Display: 2017 Progress Block */
+  $handler = $view->new_display('block', '2017 Progress Block', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'responsive-grid-wrapper';
+  $handler->display->display_options['style_options']['column_classes'] = 'rgrid-col';
+  $handler->display->display_options['style_options']['first_column_classes'] = 'rgrid-col-first';
+  $handler->display->display_options['style_options']['last_column_classes'] = 'rgrid-col-last';
+  $handler->display->display_options['style_options']['row_classes'] = 'rgrid-row clearfix';
+  $handler->display->display_options['style_options']['first_row_classes'] = 'rgrid-row-first';
+  $handler->display->display_options['style_options']['last_row_classes'] = 'rgrid-row-last';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'contributed_video' => 'contributed_video',
+  );
+  /* Filter criterion: Content: Video Collection (field_video_collection) */
+  $handler->display->display_options['filters']['field_video_collection_tid']['id'] = 'field_video_collection_tid';
+  $handler->display->display_options['filters']['field_video_collection_tid']['table'] = 'field_data_field_video_collection';
+  $handler->display->display_options['filters']['field_video_collection_tid']['field'] = 'field_video_collection_tid';
+  $handler->display->display_options['filters']['field_video_collection_tid']['value'] = array(
+    0 => '33168',
+  );
+  $handler->display->display_options['filters']['field_video_collection_tid']['vocabulary'] = 'relations';
+  $handler->display->display_options['block_description'] = 'BC 2017 Progress Video Grid view';
+
+  /* Display: 2018 RDSP Guide Videos Block */
+  $handler = $view->new_display('block', '2018 RDSP Guide Videos Block', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'responsive-grid-wrapper';
+  $handler->display->display_options['style_options']['column_classes'] = 'rgrid-col';
+  $handler->display->display_options['style_options']['first_column_classes'] = 'rgrid-col-first';
+  $handler->display->display_options['style_options']['last_column_classes'] = 'rgrid-col-last';
+  $handler->display->display_options['style_options']['row_classes'] = 'rgrid-row clearfix';
+  $handler->display->display_options['style_options']['first_row_classes'] = 'rgrid-row-first';
+  $handler->display->display_options['style_options']['last_row_classes'] = 'rgrid-row-last';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'contributed_video' => 'contributed_video',
+  );
+  /* Filter criterion: Content: Video Collection (field_video_collection) */
+  $handler->display->display_options['filters']['field_video_collection_tid']['id'] = 'field_video_collection_tid';
+  $handler->display->display_options['filters']['field_video_collection_tid']['table'] = 'field_data_field_video_collection';
+  $handler->display->display_options['filters']['field_video_collection_tid']['field'] = 'field_video_collection_tid';
+  $handler->display->display_options['filters']['field_video_collection_tid']['value'] = array(
+    0 => '80932',
+  );
+  $handler->display->display_options['filters']['field_video_collection_tid']['vocabulary'] = 'relations';
+  $handler->display->display_options['block_description'] = 'BC 2018 Guide Videos Grid view';
   $export['contributed_videos'] = $view;
 
   return $export;
