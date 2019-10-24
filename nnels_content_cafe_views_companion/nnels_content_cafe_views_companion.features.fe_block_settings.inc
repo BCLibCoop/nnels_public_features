@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * nnels_content_cafe_views_companion.features.fe_block_settings.inc

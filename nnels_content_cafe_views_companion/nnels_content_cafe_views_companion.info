@@ -1,8 +1,8 @@
-name = NNELS Content Cafe Views Companion
+name = NNELS Cover Art
 description = Companion Module to handle content cafe image styles and views that use the content cafe images.
 core = 7.x
 package = NNELS
-version = 7.x-1.1
+version = 7.x-1.2
 dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = image
