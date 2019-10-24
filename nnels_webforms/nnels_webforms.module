@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the NNELS Webforms feature.
+ */
+
+include_once 'nnels_webforms.features.inc';
