@@ -2,13 +2,13 @@
 
 /**
  * @file
- * nnels_searchwithinsearch.facetapi_defaults.inc
+ * nnels_solr_search.facetapi_defaults.inc
  */
 
 /**
  * Implements hook_facetapi_default_facet_settings().
  */
-function nnels_searchwithinsearch_facetapi_default_facet_settings() {
+function nnels_solr_search_facetapi_default_facet_settings() {
   $export = array();
 
   $facet = new stdClass();

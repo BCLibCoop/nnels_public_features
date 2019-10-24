@@ -2,13 +2,13 @@
 
 /**
  * @file
- * nnels_searchwithinsearch.features.inc
+ * nnels_solr_search.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function nnels_searchwithinsearch_ctools_plugin_api($module = NULL, $api = NULL) {
+function nnels_solr_search_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "current_search" && $api == "current_search") {
     return array("version" => "1");
   }
@@ -20,14 +20,14 @@ function nnels_searchwithinsearch_ctools_plugin_api($module = NULL, $api = NULL)
 /**
  * Implements hook_views_api().
  */
-function nnels_searchwithinsearch_views_api($module = NULL, $api = NULL) {
+function nnels_solr_search_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_search_api_index().
  */
-function nnels_searchwithinsearch_default_search_api_index() {
+function nnels_solr_search_default_search_api_index() {
   $items = array();
   $items['solr_repository_search'] = entity_import('search_api_index', '{
     "name" : "Solr Repository Search",
@@ -224,7 +224,7 @@ function nnels_searchwithinsearch_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function nnels_searchwithinsearch_default_search_api_server() {
+function nnels_solr_search_default_search_api_server() {
   $items = array();
   $items['solr'] = entity_import('search_api_server', '{
     "name" : "Solr",

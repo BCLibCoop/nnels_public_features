@@ -2,13 +2,13 @@
 
 /**
  * @file
- * nnels_searchwithinsearch.current_search.inc
+ * nnels_solr_search.current_search.inc
  */
 
 /**
  * Implements hook_current_search_default_items().
  */
-function nnels_searchwithinsearch_current_search_default_items() {
+function nnels_solr_search_current_search_default_items() {
   $export = array();
 
   $item = new stdClass();

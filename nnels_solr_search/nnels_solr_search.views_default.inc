@@ -2,13 +2,13 @@
 
 /**
  * @file
- * nnels_searchwithinsearch.views_default.inc
+ * nnels_solr_search.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function nnels_searchwithinsearch_views_default_views() {
+function nnels_solr_search_views_default_views() {
   $export = array();
 
   $view = new view();
