@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the NNELS SearchWithinSearch feature.
+ * Code for the NNELS Solr Search feature.
  */
 
 include_once 'nnels_searchwithinsearch.features.inc';

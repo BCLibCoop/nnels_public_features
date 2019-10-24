@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * nnels_searchwithinsearch.features.fe_block_settings.inc
@@ -22,13 +23,16 @@ function nnels_searchwithinsearch_default_fe_block_settings() {
     'module' => 'ajax_facets',
     'node_types' => array(),
     'pages' => 'repository-search*',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 1,
+      'authenticated user' => 2,
+    ),
     'themes' => array(
       'NNELS_CALS_v001' => array(
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -73,
+        'weight' => -71,
       ),
       'adminimal' => array(
         'region' => '',
@@ -86,7 +90,7 @@ function nnels_searchwithinsearch_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -75,
+        'weight' => -74,
       ),
       'adminimal' => array(
         'region' => '',
@@ -116,7 +120,7 @@ recently-added*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -68,
+        'weight' => -66,
       ),
       'adminimal' => array(
         'region' => '',
@@ -146,7 +150,7 @@ recently-added*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -69,
+        'weight' => -67,
       ),
       'adminimal' => array(
         'region' => '',
@@ -176,7 +180,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -72,
+        'weight' => -70,
       ),
       'adminimal' => array(
         'region' => '',
@@ -206,7 +210,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -70,
+        'weight' => -68,
       ),
       'adminimal' => array(
         'region' => '',
@@ -236,7 +240,7 @@ recently-added*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -71,
+        'weight' => -69,
       ),
       'adminimal' => array(
         'region' => '',
@@ -266,7 +270,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -67,
+        'weight' => -65,
       ),
       'adminimal' => array(
         'region' => '',
