@@ -13,6 +13,42 @@ function nnels_tutorials_faqs_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-menu_for_help_portal'] = array(
+    'cache' => -1,
+    'css_class' => 'secondary-navigation help-categories-block',
+    'custom' => 0,
+    'i18n_block_language' => array(
+      0 => 'en',
+      1 => 'fr',
+    ),
+    'i18n_mode' => 1,
+    'machine_name' => 'menu_for_help_portal',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'help
+help/*
+aide
+aide/*
+node/42737',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -63,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => -60,
+      ),
+    ),
+    'title' => 'Help',
+    'visibility' => 1,
+  );
+
   $export['faq-faq_categories'] = array(
     'cache' => 1,
     'css_class' => '',
@@ -42,39 +78,6 @@ function nnels_tutorials_faqs_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['menu_block-10'] = array(
-    'cache' => -1,
-    'css_class' => 'secondary-navigation',
-    'custom' => 0,
-    'delta' => 10,
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'menu_block',
-    'node_types' => array(),
-    'pages' => 'help
-help/*
-aide
-aide/*
-node/42737',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -64,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Help',
-    'visibility' => 1,
-  );
-
   $export['views-cals_faq-block_2'] = array(
     'cache' => -1,
     'css_class' => 'help-recent-block landing',
@@ -102,6 +105,37 @@ aide',
       ),
     ),
     'title' => 'Recent Tutorials',
+    'visibility' => 1,
+  );
+
+  $export['views-help_categories-block_1'] = array(
+    'cache' => -1,
+    'css_class' => 'secondary-navigation help-categories-block',
+    'custom' => 0,
+    'delta' => 'help_categories-block_1',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'help
+help/*
+node/41867',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -58,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => -58,
+      ),
+    ),
+    'title' => 'Help',
     'visibility' => 1,
   );
 
