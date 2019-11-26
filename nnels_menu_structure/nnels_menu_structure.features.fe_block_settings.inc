@@ -42,39 +42,6 @@ function nnels_menu_structure_default_fe_block_settings() {
     'visibility' => 1,
   );
 
-  $export['menu_block-10'] = array(
-    'cache' => -1,
-    'css_class' => 'secondary-navigation',
-    'custom' => 0,
-    'delta' => 10,
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'menu_block',
-    'node_types' => array(),
-    'pages' => 'help
-help/*
-aide
-aide/*
-node/42737',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -64,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Help',
-    'visibility' => 1,
-  );
-
   $export['menu_block-2'] = array(
     'cache' => -1,
     'css_class' => 'main-navigation',
@@ -321,6 +288,39 @@ profil-bibliotheque',
       ),
     ),
     'title' => '',
+    'visibility' => 1,
+  );
+
+ $export['menu_block-10'] = array(
+    'cache' => -1,
+    'css_class' => 'secondary-navigation',
+    'custom' => 0,
+    'delta' => 10,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => 'help
+help/*
+aide
+aide/*
+node/42737',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -64,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Help',
     'visibility' => 1,
   );
 
