@@ -116,6 +116,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
     'pathauto' => FALSE,
     'alias' => 'help/help',
   ),
+  'title_language' => 'en',
   'translations' => array(
     'original' => 'en',
     'data' => array(
@@ -333,6 +334,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
     'pathauto' => FALSE,
     'alias' => 'help/formats',
   ),
+  'title_language' => 'en',
   'translations' => array(
     'original' => 'en',
     'data' => array(
@@ -559,6 +561,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
     'pathauto' => FALSE,
     'alias' => 'help/formats-faq',
   ),
+  'title_language' => 'en',
   'translations' => array(
     'original' => 'en',
     'data' => array(
@@ -694,6 +697,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
     'pathauto' => FALSE,
     'alias' => 'tutorials',
   ),
+  'title_language' => 'en',
   'translations' => array(
     'original' => 'en',
     'data' => array(
@@ -876,6 +880,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
   'path' => array(
     'pathauto' => TRUE,
   ),
+  'title_language' => 'en',
   'translations' => array(
     'original' => 'en',
     'data' => array(
@@ -1128,6 +1133,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
     'pathauto' => FALSE,
     'alias' => 'help',
   ),
+  'title_language' => 'en',
   'translations' => array(
     'original' => 'en',
     'data' => array(
