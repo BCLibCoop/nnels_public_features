@@ -13,42 +13,6 @@ function nnels_tutorials_faqs_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-menu_for_help_portal'] = array(
-    'cache' => -1,
-    'css_class' => 'secondary-navigation help-categories-block',
-    'custom' => 0,
-    'i18n_block_language' => array(
-      0 => 'en',
-      1 => 'fr',
-    ),
-    'i18n_mode' => 1,
-    'machine_name' => 'menu_for_help_portal',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => 'help
-help/*
-aide
-aide/*
-node/42737',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -63,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => -60,
-      ),
-    ),
-    'title' => 'Help',
-    'visibility' => 1,
-  );
-
   $export['faq-faq_categories'] = array(
     'cache' => 1,
     'css_class' => '',

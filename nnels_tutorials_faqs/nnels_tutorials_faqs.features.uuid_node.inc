@@ -344,7 +344,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
         'translate' => 0,
         'created' => 1574232977,
         'entity_uuid' => '510890f8-2bdd-44b3-9aac-53384acebb5b',
-        'user_uuid' => 'f2084901-3999-4a98-b4d7-9c92d218921c',
+        'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
       ),
       'fr' => array(
         'entity_type' => 'node',
@@ -360,7 +360,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2019-11-19 22:56:17 -0800',
-  'user_uuid' => 'f2084901-3999-4a98-b4d7-9c92d218921c',
+  'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
 );
   $nodes[] = array(
   'title' => 'Formats',
@@ -481,8 +481,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
   'field_categories' => array(
     'fr' => array(
       0 => array(
-        'tid' => '1ea0be07-2ad0-4e69-8577-17c1df4190fa',
-        'uuid' => '1ea0be07-2ad0-4e69-8577-17c1df4190fa',
+        'tid' => 1,
       ),
     ),
   ),
@@ -555,10 +554,6 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-    'field_categories' => array(
-      'predicates' => array(),
-      'type' => 'rel',
-    ),
   ),
   'path' => array(
     'pathauto' => FALSE,
@@ -575,7 +570,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
         'translate' => 0,
         'created' => 1430185994,
         'entity_uuid' => '5148f1e1-2f19-44e4-80a1-46a5e9637567',
-        'user_uuid' => 'b1287792-d3d8-4e7f-98ec-57c0c6b38d82',
+        'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
       ),
       'fr' => array(
         'entity_type' => 'node',
@@ -591,128 +586,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2015-04-27 18:53:14 -0700',
-  'user_uuid' => 'b1287792-d3d8-4e7f-98ec-57c0c6b38d82',
-);
-  $nodes[] = array(
-  'title' => 'Help',
-  'log' => '',
-  'status' => 0,
-  'comment' => 1,
-  'promote' => 0,
-  'sticky' => 0,
-  'type' => 'page',
-  'language' => 'en',
-  'created' => 1461367415,
-  'tnid' => 0,
-  'translate' => 0,
-  'uuid' => '68bf2c47-28e5-458f-8b3f-fe5d31e1f040',
-  'body' => array(
-    'en' => array(
-      0 => array(
-        'value' => '<p>For technical help, please contact your local library, or contact <a href="/contact/">NNELS Support</a>.</p>
-<h3><a href="/help/introduction/">Introduction to NNELS</a></h3>
-<p>General information for people new to NNELS or looking for a brief introduction to what we&rsquo;re here for.</p>
-<h3><a href="/help/sign-up/">Signing Up</a></h3>
-<p>To use NNELS, you must have a print disability, live in a participating Canadian province or territory, and have a library card. Once you have an account with NNELS, you can download books yourself, have a friend or family member download books on your behalf, or ask the library to download books for you.</p>
-<h3><a href="#">Searching</a></h3>
-<p>You can use the Keyword Search to find authors, titles, narrators, subjects, and more. We are also proud of our collections: literary award winners, summer reading club books for kids, and other books of note. Use filters to limit your searches to specific formats for e-text (RTF, EPUB, PDF) or audio (MP3 or DAISY).</p>
-<h3><a href="#">Download &amp; Read</a></h3>
-<p>Our books will work with just about any player or device you have. We have directions here for the most common scenarios. If you don&rsquo;t find what you&rsquo;re looking for, <send a="" note="" us="">.</send></p>
-<h3><a href="#">Troubleshooting</a></h3>
-<h3><a href="#">Our Formats</a></h3>
-<h3><a href="#">Booklists and Collections</a></h3>
-<p>&nbsp;</p>
-',
-        'summary' => '',
-        'format' => 'filtered_html',
-        'safe_summary' => '',
-      ),
-    ),
-  ),
-  'title_field' => array(
-    'en' => array(
-      0 => array(
-        'value' => 'Help',
-        'format' => NULL,
-      ),
-    ),
-  ),
-  'rdf_mapping' => array(
-    'rdftype' => array(
-      0 => 'foaf:Document',
-    ),
-    'title' => array(
-      'predicates' => array(
-        0 => 'dc:title',
-      ),
-    ),
-    'created' => array(
-      'predicates' => array(
-        0 => 'dc:date',
-        1 => 'dc:created',
-      ),
-      'datatype' => 'xsd:dateTime',
-      'callback' => 'date_iso8601',
-    ),
-    'changed' => array(
-      'predicates' => array(
-        0 => 'dc:modified',
-      ),
-      'datatype' => 'xsd:dateTime',
-      'callback' => 'date_iso8601',
-    ),
-    'body' => array(
-      'predicates' => array(
-        0 => 'content:encoded',
-      ),
-    ),
-    'uid' => array(
-      'predicates' => array(
-        0 => 'sioc:has_creator',
-      ),
-      'type' => 'rel',
-    ),
-    'name' => array(
-      'predicates' => array(
-        0 => 'foaf:name',
-      ),
-    ),
-    'comment_count' => array(
-      'predicates' => array(
-        0 => 'sioc:num_replies',
-      ),
-      'datatype' => 'xsd:integer',
-    ),
-    'last_activity' => array(
-      'predicates' => array(
-        0 => 'sioc:last_activity_date',
-      ),
-      'datatype' => 'xsd:dateTime',
-      'callback' => 'date_iso8601',
-    ),
-  ),
-  'path' => array(
-    'pathauto' => FALSE,
-    'alias' => 'help-main',
-  ),
-  'translations' => array(
-    'original' => 'en',
-    'data' => array(
-      'en' => array(
-        'entity_type' => 'node',
-        'language' => 'en',
-        'source' => '',
-        'status' => 1,
-        'translate' => 0,
-        'created' => 1461367415,
-        'entity_uuid' => '68bf2c47-28e5-458f-8b3f-fe5d31e1f040',
-        'user_uuid' => '8d7f3251-4391-4b50-9d01-b8a3ed741847',
-      ),
-    ),
-  ),
-  'comment_count' => 0,
-  'date' => '2016-04-22 16:23:35 -0700',
-  'user_uuid' => '8d7f3251-4391-4b50-9d01-b8a3ed741847',
+  'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
 );
   $nodes[] = array(
   'title' => 'Tutorials',
@@ -816,6 +690,10 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
+  'path' => array(
+    'pathauto' => FALSE,
+    'alias' => 'tutorials',
+  ),
   'translations' => array(
     'original' => 'en',
     'data' => array(
@@ -842,10 +720,6 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
     ),
   ),
   'comment_count' => 0,
-  'path' => array(
-    'pathauto' => FALSE,
-    'alias' => 'tutorials',
-  ),
   'date' => '2013-07-11 10:17:54 -0700',
   'user_uuid' => 'ebccde49-e27b-4e2e-850b-705dade46d28',
 );
@@ -1013,16 +887,16 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
         'translate' => 0,
         'created' => 1430266728,
         'entity_uuid' => 'cda513d5-fb9b-4974-b3da-ea2a0e2d23e9',
-        'user_uuid' => 'b1287792-d3d8-4e7f-98ec-57c0c6b38d82',
+        'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
       ),
     ),
   ),
   'comment_count' => 0,
   'date' => '2015-04-28 17:18:48 -0700',
-  'user_uuid' => 'b1287792-d3d8-4e7f-98ec-57c0c6b38d82',
+  'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
 );
   $nodes[] = array(
-  'title' => 'Tutoriels',
+  'title' => 'Tutorials',
   'log' => '',
   'status' => 1,
   'comment' => 1,
@@ -1189,6 +1063,12 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
         'format' => NULL,
       ),
     ),
+    'und' => array(
+      0 => array(
+        'value' => 'NNELS Tutorials and Instructions',
+        'format' => NULL,
+      ),
+    ),
   ),
   'rdf_mapping' => array(
     'rdftype' => array(
@@ -1259,7 +1139,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
         'translate' => 0,
         'created' => 1420221253,
         'entity_uuid' => 'd63ee29c-8da5-4048-843f-5ea3c275cb16',
-        'user_uuid' => '8d7f3251-4391-4b50-9d01-b8a3ed741847',
+        'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
       ),
       'fr' => array(
         'entity_type' => 'node',
@@ -1275,7 +1155,7 @@ function nnels_tutorials_faqs_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2015-01-02 09:54:13 -0800',
-  'user_uuid' => '8d7f3251-4391-4b50-9d01-b8a3ed741847',
+  'user_uuid' => '1741a7ea-9f60-4592-9972-05dcb7258c3d',
 );
   return $nodes;
 }
