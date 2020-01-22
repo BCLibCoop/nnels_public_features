@@ -118,7 +118,7 @@ function nnels_views_extensions_build_BISAC_term_list() {
         }
       } //end term loop
       if (! empty($BISAC_found))
-        cache_set('bisac_subject_tids', $BISAC_found);
+        cache_set('bisac_subject_tids', $BISAC_found, 'cache', CACHE_TEMPORARY);
       else return FALSE;
     }
   }
