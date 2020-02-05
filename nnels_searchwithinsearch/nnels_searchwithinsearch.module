@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the NNELS SearchWithinSearch feature.
- */
-
-include_once 'nnels_searchwithinsearch.features.inc';

@@ -1,13 +1,14 @@
 <?php
+
 /**
  * @file
- * nnels_searchwithinsearch.views_default.inc
+ * nnels_solr_search.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function nnels_searchwithinsearch_views_default_views() {
+function nnels_solr_search_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -40,7 +41,8 @@ function nnels_searchwithinsearch_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '15';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['total_pages'] = '10';
+  $handler->display->display_options['pager']['options']['quantity'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Total items found */
@@ -334,15 +336,6 @@ if ($flag) {
   $handler->display->display_options['fields']['field_genre']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_genre']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_genre']['bypass_access'] = 0;
-  /* Field: Genre: Name (indexed) */
-  $handler->display->display_options['fields']['field_genre_name']['id'] = 'field_genre_name';
-  $handler->display->display_options['fields']['field_genre_name']['table'] = 'search_api_index_solr_repository_search';
-  $handler->display->display_options['fields']['field_genre_name']['field'] = 'field_genre_name';
-  $handler->display->display_options['fields']['field_genre_name']['label'] = 'Genre';
-  $handler->display->display_options['fields']['field_genre_name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_genre_name']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_genre_name']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_genre_name']['link_to_entity'] = 0;
   /* Field: Embed Solr API Search - file fields */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
@@ -354,6 +347,15 @@ if ($flag) {
   $handler->display->display_options['fields']['view']['view'] = 'field_collection_view_repo_files';
   $handler->display->display_options['fields']['view']['display'] = 'embed_6';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
+  /* Field: Indexed Node: URLs External */
+  $handler->display->display_options['fields']['field_urls_external']['id'] = 'field_urls_external';
+  $handler->display->display_options['fields']['field_urls_external']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['field_urls_external']['field'] = 'field_urls_external';
+  $handler->display->display_options['fields']['field_urls_external']['label'] = 'Resource URLs';
+  $handler->display->display_options['fields']['field_urls_external']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_urls_external']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_urls_external']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_urls_external']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Search: Fulltext search */

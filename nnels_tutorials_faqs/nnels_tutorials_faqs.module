@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the NNELS Tutorials & FAQs feature.
+ */
+
+include_once 'nnels_tutorials_faqs.features.inc';

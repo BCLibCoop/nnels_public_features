@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * nnels_content_cafe_views_companion.views_default.inc
@@ -148,7 +149,7 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -192,6 +193,7 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<h2 class="view-title">
+<hr style="border: 0.5px solid #336699;">
 <?php 
 global $language;
 /* 
@@ -219,7 +221,7 @@ else {
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -308,7 +310,7 @@ else {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -327,7 +329,7 @@ else {
   $handler->display->display_options['filters']['field_file_resource_value']['table'] = 'field_data_field_file_resource';
   $handler->display->display_options['filters']['field_file_resource_value']['field'] = 'field_file_resource_value';
   $handler->display->display_options['filters']['field_file_resource_value']['operator'] = 'not empty';
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Content: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -411,7 +413,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
-  /* Field: Content: Link */
+  /* Field: Content: Link to content */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -435,7 +437,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -554,7 +556,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '240',
   );
-  /* Field: Content: Link */
+  /* Field: Content: Link to content */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -607,7 +609,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['arguments']['field_subject_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -705,7 +707,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '240';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
-  /* Field: Content: Link */
+  /* Field: Content: Link to content */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -896,7 +898,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['arguments']['field_genre_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1059,7 +1061,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1174,7 +1176,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '240';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
-  /* Field: Content: Link */
+  /* Field: Content: Link to content */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -1215,12 +1217,20 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['view']['view'] = 'field_collection_view_repo_files';
   $handler->display->display_options['fields']['view']['display'] = 'embed_6';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
+  /* Field: Content: URLs External */
+  $handler->display->display_options['fields']['field_urls_external']['id'] = 'field_urls_external';
+  $handler->display->display_options['fields']['field_urls_external']['table'] = 'field_data_field_urls_external';
+  $handler->display->display_options['fields']['field_urls_external']['field'] = 'field_urls_external';
+  $handler->display->display_options['fields']['field_urls_external']['label'] = 'Resource URLs';
+  $handler->display->display_options['fields']['field_urls_external']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_urls_external']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_urls_external']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Nid */
-  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['table'] = 'node';
-  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  /* Sort criterion: Content: Completion Date (field_completion_date) */
+  $handler->display->display_options['sorts']['field_completion_date_value']['id'] = 'field_completion_date_value';
+  $handler->display->display_options['sorts']['field_completion_date_value']['table'] = 'field_data_field_completion_date';
+  $handler->display->display_options['sorts']['field_completion_date_value']['field'] = 'field_completion_date_value';
+  $handler->display->display_options['sorts']['field_completion_date_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -1229,7 +1239,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1250,11 +1260,6 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['filters']['field_access_restrictions_value']['value'] = array(
     0 => '0',
   );
-  /* Filter criterion: Field: S3 Path (field_s3_path) */
-  $handler->display->display_options['filters']['field_s3_path_value']['id'] = 'field_s3_path_value';
-  $handler->display->display_options['filters']['field_s3_path_value']['table'] = 'field_data_field_s3_path';
-  $handler->display->display_options['filters']['field_s3_path_value']['field'] = 'field_s3_path_value';
-  $handler->display->display_options['filters']['field_s3_path_value']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'always-available';
   $handler->display->display_options['menu']['title'] = 'Recently Added';
   $handler->display->display_options['menu']['weight'] = '2';
@@ -1380,10 +1385,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['field_urls_external']['table'] = 'field_data_field_urls_external';
   $handler->display->display_options['fields']['field_urls_external']['field'] = 'field_urls_external';
   $handler->display->display_options['fields']['field_urls_external']['label'] = 'Resource URLs';
-  $handler->display->display_options['fields']['field_urls_external']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_urls_external']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_urls_external']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_urls_external']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_urls_external']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -1403,7 +1408,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['arguments']['field_dc_relation_term_value_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

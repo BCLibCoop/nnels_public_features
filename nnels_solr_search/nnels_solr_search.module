@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NNELS Solr Search feature.
+ */
+
+include_once 'nnels_solr_search.features.inc';

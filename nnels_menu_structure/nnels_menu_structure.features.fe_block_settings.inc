@@ -1,34 +1,155 @@
 <?php
+
 /**
  * @file
- * nnels_searchwithinsearch.features.fe_block_settings.inc
+ * nnels_menu_structure.features.fe_block_settings.inc
  */
 
 /**
  * Implements hook_default_fe_block_settings().
  */
-function nnels_searchwithinsearch_default_fe_block_settings() {
+function nnels_menu_structure_default_fe_block_settings() {
   $export = array();
 
   $export['version'] = '2.0';
 
-  $export['ajax_facets-ajax_facets_block'] = array(
-    'cache' => 1,
-    'css_class' => 'block-ajax-reset',
+  $export['menu_block-1'] = array(
+    'cache' => -1,
+    'css_class' => 'secondary-navigation',
     'custom' => 0,
-    'delta' => 'ajax_facets_block',
+    'delta' => 1,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'module' => 'ajax_facets',
+    'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => 'repository-search*',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'NNELS_CALS_v001' => array(
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -73,
+        'weight' => -64,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => -59,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['menu_block-2'] = array(
+    'cache' => -1,
+    'css_class' => 'main-navigation',
+    'custom' => 0,
+    'delta' => 2,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => 'navigation',
+        'status' => 1,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => 0,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-3'] = array(
+    'cache' => -1,
+    'css_class' => 'footer-navigation',
+    'custom' => 0,
+    'delta' => 3,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -50,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => -50,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-4'] = array(
+    'cache' => -1,
+    'css_class' => 'footer-navigation-copyright',
+    'custom' => 0,
+    'delta' => 4,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -46,
+      ),
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => -46,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-5'] = array(
+    'cache' => -1,
+    'css_class' => 'secondary-navigation',
+    'custom' => 0,
+    'delta' => 5,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => 'node/40
+node/307
+node/18
+node/79686
+node/210544',
+    'roles' => array(),
+    'themes' => array(
+      'NNELS_CALS_v001' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'NNELS_CALS_v001',
+        'weight' => -64,
       ),
       'adminimal' => array(
         'region' => '',
@@ -41,23 +162,26 @@ function nnels_searchwithinsearch_default_fe_block_settings() {
     'visibility' => 1,
   );
 
-  $export['current_search-reset_filters'] = array(
+  $export['menu_block-6'] = array(
     'cache' => -1,
-    'css_class' => 'search-reset-filters',
+    'css_class' => 'secondary-navigation',
     'custom' => 0,
-    'delta' => 'reset_filters',
+    'delta' => 6,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'current_search',
+    'i18n_mode' => 1,
+    'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'library
+library/*
+bibliotheque
+bibliotheque/*',
     'roles' => array(),
     'themes' => array(
       'NNELS_CALS_v001' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -72,
+        'weight' => -64,
       ),
       'adminimal' => array(
         'region' => '',
@@ -66,27 +190,29 @@ function nnels_searchwithinsearch_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
-    'visibility' => 0,
+    'title' => 'Library Staff',
+    'visibility' => 1,
   );
 
-  $export['current_search-standard'] = array(
+  $export['menu_block-7'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'secondary-navigation',
     'custom' => 0,
-    'delta' => 'standard',
+    'delta' => 7,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'current_search',
+    'i18n_mode' => 1,
+    'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'node/20009
+node/193693
+node/79563',
     'roles' => array(),
     'themes' => array(
       'NNELS_CALS_v001' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -75,
+        'weight' => -64,
       ),
       'adminimal' => array(
         'region' => '',
@@ -95,227 +221,117 @@ function nnels_searchwithinsearch_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
-    'visibility' => 0,
+    'title' => 'For Publishers',
+    'visibility' => 1,
   );
 
-  $export['facetapi-2sJCr0OglhJ79V3xreAxpEnBXOY61L3b'] = array(
+  $export['menu_block-8'] = array(
     'cache' => -1,
-    'css_class' => 'facet-search genre',
+    'css_class' => 'secondary-navigation',
     'custom' => 0,
-    'delta' => '2sJCr0OglhJ79V3xreAxpEnBXOY61L3b',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
+    'delta' => 8,
+    'i18n_block_language' => array(
+      0 => 'en',
+    ),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added*',
+    'pages' => 'volunteer
+node/81269
+node/89333',
     'roles' => array(),
     'themes' => array(
       'NNELS_CALS_v001' => array(
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -68,
+        'weight' => -64,
       ),
       'adminimal' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'adminimal',
-        'weight' => -52,
+        'weight' => 0,
       ),
     ),
-    'title' => 'Filter by Genre:',
+    'title' => 'Sign Up to Record!',
     'visibility' => 1,
   );
 
-  $export['facetapi-6k3h37n9W3cCgQFFWvz9QwXSCBaxJKiw'] = array(
+  $export['menu_block-9'] = array(
     'cache' => -1,
-    'css_class' => 'facet-search creator',
+    'css_class' => 'secondary-navigation',
     'custom' => 0,
-    'delta' => '6k3h37n9W3cCgQFFWvz9QwXSCBaxJKiw',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
+    'delta' => 9,
+    'i18n_block_language' => array(
+      0 => 'fr',
+    ),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added*',
+    'pages' => 'benevolat
+profil-lecteur
+profil-bibliotheque',
     'roles' => array(),
     'themes' => array(
       'NNELS_CALS_v001' => array(
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -69,
+        'weight' => -64,
       ),
       'adminimal' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'adminimal',
-        'weight' => -53,
+        'weight' => 0,
       ),
     ),
-    'title' => 'Filter by Language:',
+    'title' => '',
     'visibility' => 1,
   );
 
-  $export['facetapi-Q3VhKdrj85iXnijMA0g4L4dP3Esc9Jxf'] = array(
+ $export['menu_block-10'] = array(
     'cache' => -1,
-    'css_class' => 'facet-search creator',
+    'css_class' => 'secondary-navigation',
     'custom' => 0,
-    'delta' => 'Q3VhKdrj85iXnijMA0g4L4dP3Esc9Jxf',
+    'delta' => 10,
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
-    'module' => 'facetapi',
+    'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added',
+    'pages' => 'help
+help/*
+aide
+aide/*
+node/42737',
     'roles' => array(),
     'themes' => array(
       'NNELS_CALS_v001' => array(
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -72,
+        'weight' => -64,
       ),
       'adminimal' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'adminimal',
-        'weight' => -56,
+        'weight' => 0,
       ),
     ),
-    'title' => 'Filter by Format:',
+    'title' => 'Help',
     'visibility' => 1,
   );
 
-  $export['facetapi-fXq0Xu7N2KcE2Fy9QzYzslBCiSTMiumL'] = array(
-    'cache' => -1,
-    'css_class' => 'facet-search narrator',
-    'custom' => 0,
-    'delta' => 'fXq0Xu7N2KcE2Fy9QzYzslBCiSTMiumL',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -70,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => -54,
-      ),
-    ),
-    'title' => 'Filter by Narrator:',
-    'visibility' => 1,
-  );
-
-  $export['facetapi-gg3BL1HCcoroJVwrv0HDxS3GcNGhGAkm'] = array(
-    'cache' => -1,
-    'css_class' => 'facet-search creator',
-    'custom' => 0,
-    'delta' => 'gg3BL1HCcoroJVwrv0HDxS3GcNGhGAkm',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added*',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -71,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => -55,
-      ),
-    ),
-    'title' => 'Filter by Author:',
-    'visibility' => 1,
-  );
-
-  $export['facetapi-m0XBT2plKszcQ7ydU4whPlCebcEvNZ1I'] = array(
-    'cache' => -1,
-    'css_class' => 'facet-search creator',
-    'custom' => 0,
-    'delta' => 'm0XBT2plKszcQ7ydU4whPlCebcEvNZ1I',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -67,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => -51,
-      ),
-    ),
-    'title' => 'Filter by Availability:',
-    'visibility' => 1,
-  );
-
-  $export['views--exp-repository_search-page'] = array(
-    'cache' => -1,
-    'css_class' => 'search-repository',
-    'custom' => 0,
-    'delta' => '-exp-repository_search-page',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'search',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -30,
-      ),
-      'adminimal' => array(
-        'region' => 'content_after',
-        'status' => 1,
-        'theme' => 'adminimal',
-        'weight' => -30,
-      ),
-    ),
-    'title' => 'Search the Catalogue:',
-    'visibility' => 0,
-  );
-
-  $export['views-repository_search-block'] = array(
+  $export['system-main-menu'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => 0,
-    'delta' => 'repository_search-block',
+    'delta' => 'main-menu',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'module' => 'views',
+    'module' => 'system',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -324,13 +340,13 @@ recently-added',
         'region' => '',
         'status' => 0,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -3,
+        'weight' => -22,
       ),
       'adminimal' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'adminimal',
-        'weight' => -3,
+        'weight' => -22,
       ),
     ),
     'title' => '',
