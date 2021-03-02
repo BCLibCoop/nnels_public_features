@@ -36,6 +36,7 @@ function nnels_solr_search_default_search_api_index() {
     "server" : "solr",
     "item_type" : "node",
     "options" : {
+      "datasource" : { "bundles" : [] },
       "index_directly" : 0,
       "cron_limit" : "500",
       "fields" : {
@@ -70,8 +71,8 @@ function nnels_solr_search_default_search_api_index() {
         "field_file_resource:field_file_upload_details" : { "type" : "list\\u003Ctext\\u003E" },
         "field_file_resource:field_performer" : { "type" : "list\\u003Clist\\u003Cstring\\u003E\\u003E" },
         "field_file_resource:field_running_time" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_genre" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_genre:name" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_genre_harmonized" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_isbn" : { "type" : "list\\u003Ctext\\u003E" },
         "field_iso_language" : { "type" : "list\\u003Cstring\\u003E" },
         "field_marc_mapper" : {
@@ -229,28 +230,28 @@ function nnels_solr_search_default_search_api_server() {
   $items['solr'] = entity_import('search_api_server', '{
     "name" : "Solr",
     "machine_name" : "solr",
-    "description" : "Default Solr Search",
+    "description" : "NNELS Local Search",
     "class" : "search_api_solr_service",
     "options" : {
-      "clean_ids_form" : [],
-      "clean_ids" : false,
+      "clean_ids" : true,
       "site_hash_form" : [],
       "site_hash" : false,
       "scheme" : "http",
-      "host" : "localhost",
+      "host" : "indexer",
       "port" : "8983",
       "path" : "\\/solr\\/nnels-drupal",
-      "http_user" : "drupal-solr",
-      "http_pass" : "QCN2yKsc4ffKLUuNghqhJA",
+      "http_user" : "",
+      "http_pass" : "",
       "excerpt" : 0,
       "retrieve_data" : 0,
       "highlight_data" : 0,
       "skip_schema_check" : 0,
       "solr_version" : "",
-      "http_method" : "POST",
+      "http_method" : "AUTO",
       "log_query" : 0,
       "log_response" : 0,
-      "commits_disabled" : 0
+      "commits_disabled" : 0,
+      "clean_ids_form" : []
     },
     "enabled" : "1",
     "rdf_mapping" : []
