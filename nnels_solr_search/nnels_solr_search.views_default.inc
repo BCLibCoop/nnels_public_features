@@ -51,21 +51,13 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['ui_name'] = 'Total items found';
   $handler->display->display_options['header']['result']['content'] = '<div id="search-view-total-count">Search found @total item</div>';
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php
-  $html = \'<h4>No results</h4>\';
-  //include cals_extended_search module to return bookshare, openlibrary targets
-  if (function_exists("cals_request_new_title_views_link") ) {
-    $html = cals_request_new_title_views_link();
-  }
-  print $html;
-?>
-<br />
-<p>Sorry, it looks like we don\'t have that title in our collection.</p>
+  /* No results behavior: Global: No Results */
+  $handler->display->display_options['empty']['no_results']['id'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['table'] = 'views';
+  $handler->display->display_options['empty']['no_results']['field'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['empty'] = TRUE;
+  $handler->display->display_options['empty']['no_results']['title'] = 'h4';
+  $handler->display->display_options['empty']['no_results']['message'] = '<p>Sorry, it looks like we don\'t have that title in our collection.</p>
 <p>You may request the title by completing the <a href="/request-title">Request a Title form</a> and we will add it to our queue.</p>';
   /* Relationship: Indexed Node: Date */
   $handler->display->display_options['relationships']['field_date']['id'] = 'field_date';
@@ -193,19 +185,12 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php
-  $html = \'<h1 class="title no-results" id="page-title">No Results</h1>\';
-  //include cals_extended_search module to return bookshare, openlibrary targets
-  if (function_exists("cals_request_new_title_views_link") ) {
-    $html = cals_request_new_title_views_link();
-  }
-  print $html;
-?>';
+  /* No results behavior: Global: No Results */
+  $handler->display->display_options['empty']['no_results']['id'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['table'] = 'views';
+  $handler->display->display_options['empty']['no_results']['field'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['empty'] = TRUE;
+  $handler->display->display_options['empty']['no_results']['title'] = 'h1';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Indexed Node: File Resource */
   $handler->display->display_options['relationships']['field_file_resource']['id'] = 'field_file_resource';
@@ -259,26 +244,12 @@ function nnels_solr_search_views_default_views() {
     'trim_length' => '50',
     'title_class' => '',
   );
-  /* Field: Bookshelf button */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Bookshelf button';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-
-$flag = flag_get_flag(\'bookshelf\');
-if ($flag) {
-  print \'<div class="bookshelf-add-wrapper">\' .
-                            \'<i class="fa fa-bookmark-o flag-bookmark-icon" aria-hidden="true"></i>\' .
-                            flag_create_link(\'bookshelf\', $data->_entity_properties[\'nid\']) .
-                            \'</div>\';
-}
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Global: Bookshelf Add Link */
+  $handler->display->display_options['fields']['bookshelf_add']['id'] = 'bookshelf_add';
+  $handler->display->display_options['fields']['bookshelf_add']['table'] = 'views';
+  $handler->display->display_options['fields']['bookshelf_add']['field'] = 'bookshelf_add';
+  $handler->display->display_options['fields']['bookshelf_add']['label'] = '';
+  $handler->display->display_options['fields']['bookshelf_add']['element_label_colon'] = FALSE;
   /* Field: Indexed Node: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'search_api_index_solr_repository_search';

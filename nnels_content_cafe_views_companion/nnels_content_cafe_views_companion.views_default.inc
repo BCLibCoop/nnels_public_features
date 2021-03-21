@@ -187,26 +187,10 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<hr style="border: 0.5px solid #336699;">
-<h2 class="view-title">
-<?php 
-global $language;
-/* 
-NB: we should be able to replace this with a simpler t() function but i can\'t get this to work!
-*/
-if($language->language == \'en\') {
-  print l("Recently Added", "recently-added");
-}
-else {
-  print l("Ajouts récents", "recently-added");
-}
-?>
-</h2>
-';
+  /* Header: Global: Recently Added Title */
+  $handler->display->display_options['header']['recently_added_title']['id'] = 'recently_added_title';
+  $handler->display->display_options['header']['recently_added_title']['table'] = 'views';
+  $handler->display->display_options['header']['recently_added_title']['field'] = 'recently_added_title';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Completion Date (field_completion_date) */
   $handler->display->display_options['sorts']['field_completion_date_value']['id'] = 'field_completion_date_value';
@@ -364,14 +348,10 @@ else {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<?php
-$term = taxonomy_term_load(arg(1));
-?>
-<h2 class="view-title"><?php print  $term->name; ?></h1>';
+  /* Header: Global: Term Title */
+  $handler->display->display_options['header']['term_title']['id'] = 'term_title';
+  $handler->display->display_options['header']['term_title']['table'] = 'views';
+  $handler->display->display_options['header']['term_title']['field'] = 'term_title';
   /* Relationship: Content: File Resource (field_file_resource) */
   $handler->display->display_options['relationships']['field_file_resource_value']['id'] = 'field_file_resource_value';
   $handler->display->display_options['relationships']['field_file_resource_value']['table'] = 'field_data_field_file_resource';
@@ -648,11 +628,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<?php print $feed_icons; ?>';
+  /* Header: Global: Feed Icons */
+  $handler->display->display_options['header']['feed_icons']['id'] = 'feed_icons';
+  $handler->display->display_options['header']['feed_icons']['table'] = 'views';
+  $handler->display->display_options['header']['feed_icons']['field'] = 'feed_icons';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
