@@ -2831,18 +2831,10 @@ function nnels_additional_views_views_default_views() {
   /* Display: VBO - Performers */
   $handler = $view->new_display('page', 'VBO - Performers', 'page_2');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<?php
-$l = l("config page", "admin/config/cals_importer/normalization");
-$terms = variable_get(\'cals_importer_prefix_stopwords_narrators\');
-$terms = str_replace("\\r\\n", ", ", $terms );
-?>
-<p>This report strips out the following terms: <?php print $terms; ?></p>
-<p>To update this list, please go here: <?php print $l; ?> </p>';
-  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  /* Header: Global: Term Warning */
+  $handler->display->display_options['header']['term_warning']['id'] = 'term_warning';
+  $handler->display->display_options['header']['term_warning']['table'] = 'views';
+  $handler->display->display_options['header']['term_warning']['field'] = 'term_warning';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Bulk operations: Field collection item */
   $handler->display->display_options['fields']['views_bulk_operations_1']['id'] = 'views_bulk_operations_1';
