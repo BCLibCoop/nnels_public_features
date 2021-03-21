@@ -1319,6 +1319,20 @@ if ( (int) $row->filesize > 419430400 ) echo \'<div class="file-size-warning" al
   $handler->display->display_options['fields']['field_accrual_method']['table'] = 'field_data_field_accrual_method';
   $handler->display->display_options['fields']['field_accrual_method']['field'] = 'field_accrual_method';
   $handler->display->display_options['fields']['field_accrual_method']['hide_empty'] = TRUE;
+  /* Field: Field collection item: Accessibility Tags */
+  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1554,6 +1568,20 @@ if ( (int) $row->filesize > 419430400 ) echo \'<div class="file-size-warning" al
   $handler->display->display_options['fields']['field_availability_status']['table'] = 'field_data_field_availability_status';
   $handler->display->display_options['fields']['field_availability_status']['field'] = 'field_availability_status';
   $handler->display->display_options['fields']['field_availability_status']['exclude'] = TRUE;
+  /* Field: Field collection item: Accessibility Tags */
+  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Field: Notes */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
