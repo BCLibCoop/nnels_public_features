@@ -1107,23 +1107,13 @@ if ( (int) $row->filesize > 419430400 ) echo \'<div class="file-size-warning" al
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php 
-$nid = arg(1);
-$url = "field-collection/field-file-resource/add/node/" . $nid;
-$options = array(
-  \'query\' => drupal_get_destination(),
-  \'attributes\' => array(
-    \'class\' => array(\'add-new\'),
-    \'id\' => \'add-new-discount-product\',
-  ),
-);
-?>
-<div class="view-footer"><?php print l(t(\'Add Attachment\'), $url, $options); ?></div>';
+  /* No results behavior: Global: Add Button */
+  $handler->display->display_options['empty']['add_button']['id'] = 'add_button';
+  $handler->display->display_options['empty']['add_button']['table'] = 'views';
+  $handler->display->display_options['empty']['add_button']['field'] = 'add_button';
+  $handler->display->display_options['empty']['add_button']['empty'] = TRUE;
+  $handler->display->display_options['empty']['add_button']['path'] = 'field-collection/field-file-resource/add/node/';
+  $handler->display->display_options['empty']['add_button']['text'] = 'Add Attachment';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Field collection item: Entity with the File Resource (field_file_resource) */
   $handler->display->display_options['relationships']['field_file_resource_node']['id'] = 'field_file_resource_node';
