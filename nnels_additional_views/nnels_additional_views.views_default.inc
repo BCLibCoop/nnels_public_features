@@ -4476,15 +4476,6 @@ return $return;';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_dc_subject_value']['id'] = 'field_dc_subject_value';
-  $handler->display->display_options['relationships']['field_dc_subject_value']['table'] = 'field_data_field_dc_subject';
-  $handler->display->display_options['relationships']['field_dc_subject_value']['field'] = 'field_dc_subject_value';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_dc_subject_value_tid']['id'] = 'field_dc_subject_value_tid';
-  $handler->display->display_options['relationships']['field_dc_subject_value_tid']['table'] = 'field_data_field_dc_subject_value';
-  $handler->display->display_options['relationships']['field_dc_subject_value_tid']['field'] = 'field_dc_subject_value_tid';
-  $handler->display->display_options['relationships']['field_dc_subject_value_tid']['relationship'] = 'field_dc_subject_value';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -4527,15 +4518,6 @@ return $return;';
   $handler->display->display_options['fields']['field_genre']['field'] = 'field_genre';
   $handler->display->display_options['fields']['field_genre']['type'] = 'taxonomy_term_reference_link';
   $handler->display->display_options['fields']['field_genre']['delta_offset'] = '0';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_dc_subject']['id'] = 'field_dc_subject';
-  $handler->display->display_options['fields']['field_dc_subject']['table'] = 'field_data_field_dc_subject';
-  $handler->display->display_options['fields']['field_dc_subject']['field'] = 'field_dc_subject';
-  $handler->display->display_options['fields']['field_dc_subject']['label'] = 'Subject(s)';
-  $handler->display->display_options['fields']['field_dc_subject']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_dc_subject']['alter']['text'] = '[field_dc_subject]';
-  $handler->display->display_options['fields']['field_dc_subject']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_dc_subject']['alter']['path'] = 'subject/[field_dc_subject-revision_id]';
   /* Field: Content: Publisher (obsolete) */
   $handler->display->display_options['fields']['field_publisher']['id'] = 'field_publisher';
   $handler->display->display_options['fields']['field_publisher']['table'] = 'field_data_field_publisher';
@@ -4727,44 +4709,6 @@ return $return;';
   $handler->display->display_options['fields']['field_iso_language']['empty'] = 'English';
   $handler->display->display_options['fields']['field_iso_language']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_iso_language']['separator'] = ',&nbsp;';
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = 'Collection(s) / Series';
-  $handler->display->display_options['fields']['php']['element_type'] = 'span';
-  $handler->display->display_options['fields']['php']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['php']['element_label_class'] = 'views-label views-label-field-dc-subject';
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'views-field views-field-field-dc-subject';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$relationData = entity_load(\'node\', array($data->nid) );
-$node_data = $relationData[ $data->nid ];
-
-$wrapper = entity_metadata_wrapper(\'node\', $node_data);
-$relationCollection = field_get_items(\'node\', $node_data, \'field_dc_relation\');
-
-foreach( $relationCollection as $delta => $collection ) {
-
-$qualifier = $wrapper->field_dc_relation[$delta]->field_dc_relation_qualifiers->value();
-
-if ( $wrapper->field_dc_relation[ $delta ]->field_dc_relation_term_value->getIdentifier() ) {
-$value = $wrapper->field_dc_relation[ $delta ]->field_dc_relation_term_value->name->value();
-$slug = preg_replace( \'/\\s/\' , \'-\' , strtolower( $value ) );
-
-if ($qualifier == \'IsPartOf\') {
-$path = \'<br /><a href="/relations/\' . $slug . \'">\' . $value . \'</a>\' . "\\n\\n";
-print $path;
-}
-}
-} //foreach
-
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['block_description'] = 'Block - Bibliographic details';
 
   /* Display: Marc File */
@@ -4794,21 +4738,7 @@ print $path;
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php 
-if (function_exists("_cals_s3_get_download_link")) 
-  print _cals_s3_get_download_link($row->nid);
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['block_description'] = 'Block - Files / Daisy';
 
   /* Display: Block - MARC XML */
@@ -5299,21 +5229,7 @@ if (function_exists("_cals_s3_get_download_link"))
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php 
-if (function_exists("_cals_s3_get_download_link")) 
-  print _cals_s3_get_download_link($row->nid);
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['block_description'] = 'Repo Item: Files / Daisy';
 
   /* Display: Block: Marc File */
