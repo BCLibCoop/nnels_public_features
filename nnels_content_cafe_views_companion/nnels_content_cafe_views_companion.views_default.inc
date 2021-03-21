@@ -364,14 +364,10 @@ else {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<?php
-$term = taxonomy_term_load(arg(1));
-?>
-<h2 class="view-title"><?php print  $term->name; ?></h1>';
+  /* Header: Global: Term Title */
+  $handler->display->display_options['header']['term_title']['id'] = 'term_title';
+  $handler->display->display_options['header']['term_title']['table'] = 'views';
+  $handler->display->display_options['header']['term_title']['field'] = 'term_title';
   /* Relationship: Content: File Resource (field_file_resource) */
   $handler->display->display_options['relationships']['field_file_resource_value']['id'] = 'field_file_resource_value';
   $handler->display->display_options['relationships']['field_file_resource_value']['table'] = 'field_data_field_file_resource';
