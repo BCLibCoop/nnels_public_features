@@ -1669,22 +1669,16 @@ if ( (int) $row->filesize > 419430400 ) echo \'<div class="file-size-warning" al
   $handler->display->display_options['fields']['filesize']['exclude'] = TRUE;
   $handler->display->display_options['fields']['filesize']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['filesize']['file_size_display'] = 'bytes';
-  /* Field: File Size Warning */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'File Size Warning';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'file-size-warning-wrapper';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php 
-if ( (int) $row->filesize > 419430400 ) echo \'<div class="file-size-warning" alt="Filesize Warning" title="This file&apos;s size is larger than average on NNELS. Expect a longer download time than usual, depending on your connection."><i class="fa fa-exclamation-triangle" aria-hidden="true"> Long download time</i></div>\';
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: File Size Warning */
+  $handler->display->display_options['fields']['file_size_warning']['id'] = 'file_size_warning';
+  $handler->display->display_options['fields']['file_size_warning']['table'] = 'node';
+  $handler->display->display_options['fields']['file_size_warning']['field'] = 'file_size_warning';
+  $handler->display->display_options['fields']['file_size_warning']['relationship'] = 'field_file_resource_node';
+  $handler->display->display_options['fields']['file_size_warning']['label'] = '';
+  $handler->display->display_options['fields']['file_size_warning']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['file_size_warning']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['file_size_warning']['element_wrapper_class'] = 'file-size-warning-wrapper';
+  $handler->display->display_options['fields']['file_size_warning']['element_default_classes'] = FALSE;
   /* Field: Field: S3 File Upload */
   $handler->display->display_options['fields']['field_s3_file_upload_1']['id'] = 'field_s3_file_upload_1';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['table'] = 'field_data_field_s3_file_upload';
