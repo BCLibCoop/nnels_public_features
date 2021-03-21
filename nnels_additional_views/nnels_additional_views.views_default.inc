@@ -5827,23 +5827,10 @@ if (function_exists("_cals_s3_get_download_link"))
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
-  $handler->display->display_options['fields']['php_1']['table'] = 'views';
-  $handler->display->display_options['fields']['php_1']['field'] = 'php';
-  $handler->display->display_options['fields']['php_1']['label'] = 'Duplicate S3?';
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-  if (function_exists("_cals_get_node_with_duplicate_s3") ) {
-    $nids = _cals_get_node_with_duplicate_s3($data);
-    print $nids;
-  }
-  else {
-    printPre($data);
-  }
-?>';
-  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Content: Duplicate S3? */
+  $handler->display->display_options['fields']['duplicate_s3']['id'] = 'duplicate_s3';
+  $handler->display->display_options['fields']['duplicate_s3']['table'] = 'node';
+  $handler->display->display_options['fields']['duplicate_s3']['field'] = 'duplicate_s3';
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -5868,19 +5855,11 @@ if (function_exists("_cals_s3_get_download_link"))
   $handler->display->display_options['fields']['field_s3_path']['table'] = 'field_data_field_s3_path';
   $handler->display->display_options['fields']['field_s3_path']['field'] = 'field_s3_path';
   $handler->display->display_options['fields']['field_s3_path']['exclude'] = TRUE;
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = 'S3';
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $tmp = str_replace("s3://download.nnels.ca", "",
-$data->field_data_field_s3_path_field_s3_path_value);
-  print $tmp;
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: S3 Path */
+  $handler->display->display_options['fields']['s3_path']['id'] = 's3_path';
+  $handler->display->display_options['fields']['s3_path']['table'] = 'node';
+  $handler->display->display_options['fields']['s3_path']['field'] = 's3_path';
+  $handler->display->display_options['fields']['s3_path']['label'] = 'S3';
   /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
