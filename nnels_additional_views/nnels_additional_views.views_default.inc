@@ -4158,17 +4158,10 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['empty'] = TRUE;
-  $handler->display->display_options['header']['php']['php_output'] = '<?php
-  if (!isset($_GET[\'search_api_views_fulltext\'])) {
-    print("<p>" . t(\'NNELS is a service primarily for persons with a print disability. For materials limited only to print disabled Canadians NNELs requires logging in with your public library card and PIN. Follow the search step to login via your library.\') . "</p>");
-  }
-?>
-';
+  /* Header: Global: Search Message */
+  $handler->display->display_options['header']['search_message']['id'] = 'search_message';
+  $handler->display->display_options['header']['search_message']['table'] = 'views';
+  $handler->display->display_options['header']['search_message']['field'] = 'search_message';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -4395,40 +4388,12 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_consortial_partner']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_consortial_partner']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_consortial_partner']['bypass_access'] = 0;
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-global $user;
-if($user->uid == 0) {
-
-	$status = $data->_entity_properties[\'entity object\']->field_partner_library_[\'und\'][0][\'value\'];
-	$nid = $data->_entity_properties[\'nid\'];
-	$html = \'\';
-	switch($status) {
-	  case 0:
-	    $html = t(\'This library is not participating in NNELS, yet.\') . \'<br />\';
-            $html .= l(t(\'Please contact us to register your interest.\'), "contact/");
-	    break;
-	  case 1:
-	    $html = l(t(\'If this is your local library, click here to log in with a valid library card from this branch\'), "node/" . $nid);
-	    break;
-	  case 2:
-	    $html = l(t("Apply for an account"), "node/" . $nid);
-	    break;
-	
-	}
-	print $html;
-}
-
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Global: Library Login */
+  $handler->display->display_options['fields']['library_login']['id'] = 'library_login';
+  $handler->display->display_options['fields']['library_login']['table'] = 'views';
+  $handler->display->display_options['fields']['library_login']['field'] = 'library_login';
+  $handler->display->display_options['fields']['library_login']['label'] = '';
+  $handler->display->display_options['fields']['library_login']['element_label_colon'] = FALSE;
   /* Field: Authentication Target: Node ID (indexed) */
   $handler->display->display_options['fields']['field_authentication_target_nid']['id'] = 'field_authentication_target_nid';
   $handler->display->display_options['fields']['field_authentication_target_nid']['table'] = 'search_api_index_organization_search';
