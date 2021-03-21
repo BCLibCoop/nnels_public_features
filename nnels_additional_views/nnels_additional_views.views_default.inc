@@ -11555,19 +11555,12 @@ return $return;';
     8 => 0,
     11 => 0,
   );
-  /* Filter criterion: Global: PHP */
-  $handler->display->display_options['filters']['php']['id'] = 'php';
-  $handler->display->display_options['filters']['php']['table'] = 'views';
-  $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 1;
-  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$pattern = \'/DND|\\/CA\\/QC|publisher|pre-production|(\\/CA)\\/BC\\/(BVAUCC|BBGVL)|\\/CA\\/NNELS\\/(PHP|RBdigital|PD|CBC)/\';
-$n = node_load($row->field_s3_path);
-if (preg_match( $pattern, $n->field_s3_path[\'und\'][0][\'value\'] ) ) {
-//drupal_set_message( $n->field_s3_path[\'und\'][0][\'value\'] );
-return TRUE;
-}
-else { return FALSE; }';
+  /* Filter criterion: Content: S3 Path */
+  $handler->display->display_options['filters']['s3_path']['id'] = 's3_path';
+  $handler->display->display_options['filters']['s3_path']['table'] = 'node';
+  $handler->display->display_options['filters']['s3_path']['field'] = 's3_path';
+  $handler->display->display_options['filters']['s3_path']['group'] = 1;
+  $handler->display->display_options['filters']['s3_path']['pattern'] = 'DND|\\/CA\\/QC|publisher|pre-production|(\\/CA)\\/BC\\/(BVAUCC|BBGVL)|\\/CA\\/NNELS\\/(PHP|RBdigital|PD|CBC)';
   /* Filter criterion: Field: File Format (field_file_format) */
   $handler->display->display_options['filters']['field_file_format_value']['id'] = 'field_file_format_value';
   $handler->display->display_options['filters']['field_file_format_value']['table'] = 'field_data_field_file_format';
