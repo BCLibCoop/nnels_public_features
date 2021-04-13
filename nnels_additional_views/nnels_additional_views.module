@@ -6,3 +6,27 @@
  */
 
 include_once 'nnels_additional_views.features.inc';
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function nnels_additional_views_views_pre_render(&$view) {
+  if ($view->name = 'field_collection_view_repo_files') {
+    if ($view->current_display == 'embed_4' || $view->current_display == 'embed_5') {
+
+      // Some accessibility tags share the same "description" and only unique
+      // tags should show.
+      foreach ($view->result as $result_index => $result) {
+        $unique_tags = array();
+        foreach ($result->field_field_accessibility_tags as $tag_index => $tag) {
+          if (isset($unique_tags[$tag['raw']['entity']->description])) {
+            unset($view->result[$result_index]->field_field_accessibility_tags[$tag_index]);
+          }
+          else {
+            $unique_tags[$tag['raw']['entity']->description] = $tag['raw']['entity']->tid;
+          }
+        }
+      }
+    }
+  }
+}
