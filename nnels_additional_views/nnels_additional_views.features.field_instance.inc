@@ -26,10 +26,9 @@ function nnels_additional_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'taxonomy_term',
