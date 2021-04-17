@@ -1303,6 +1303,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
   $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
   $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
@@ -1311,6 +1312,7 @@ function nnels_additional_views_views_default_views() {
     'use_content_language' => 1,
   );
   $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_accessibility_tags']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
