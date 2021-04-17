@@ -1558,6 +1558,7 @@ function nnels_additional_views_views_default_views() {
     'use_content_language' => 1,
   );
   $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_accessibility_tags']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Field: Notes */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
