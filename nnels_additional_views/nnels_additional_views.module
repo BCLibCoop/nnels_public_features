@@ -20,9 +20,6 @@ function nnels_additional_views_views_pre_render(&$view) {
         $unique_tags = array();
         foreach ($result->field_field_accessibility_tags as $tag_index => $tag) {
 
-          // Set the tabindex field
-          $view->result[$result_index]->field_field_accessibility_tags[$tag_index]['rendered']['taxonomy_term'][$tag['raw']['tid']]['description']['#prefix'] = '<div class="taxonomy-term-description" tabindex="0">';
-
           // Handle unique tags.
           if (isset($unique_tags[$tag['raw']['entity']->description])) {
             unset($view->result[$result_index]->field_field_accessibility_tags[$tag_index]);
