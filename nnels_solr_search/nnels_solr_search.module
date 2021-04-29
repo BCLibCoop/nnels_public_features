@@ -5,3 +5,23 @@
  */
 
 include_once 'nnels_solr_search.features.inc';
+
+/**
+ * Implements hook_facet_items_alter().
+ */
+function nnels_solr_search_facet_items_alter(&$build, &$settings) {
+  if ($settings->facet == 'field_file_resource:field_accessibility_tags' && $settings->realm == 'block') {
+
+    if (count($build)) {
+      $terms = db_select('taxonomy_term_data', 't')
+        ->fields('t', array('tid', 'description'))
+        ->condition('t.tid', array_keys($build), 'IN')
+        ->execute()
+        ->fetchAllKeyed(0, 1);
+
+      foreach ($build as $key => $item) {
+        $build[$key]['#markup'] = str_replace('</p>', '', str_replace('<p>', '', $terms[$item['#indexed_value']]));
+      }
+    }
+   }
+ }
