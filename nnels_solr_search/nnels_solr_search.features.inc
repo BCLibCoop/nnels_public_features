@@ -67,6 +67,10 @@ function nnels_solr_search_default_search_api_index() {
           "type" : "list\\u003Cinteger\\u003E",
           "entity_type" : "field_collection_item"
         },
+        "field_file_resource:field_accessibility_tags" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
         "field_file_resource:field_file_format" : { "type" : "list\\u003Cstring\\u003E" },
         "field_file_resource:field_file_upload_details" : { "type" : "list\\u003Ctext\\u003E" },
         "field_file_resource:field_performer" : { "type" : "list\\u003Clist\\u003Cstring\\u003E\\u003E" },

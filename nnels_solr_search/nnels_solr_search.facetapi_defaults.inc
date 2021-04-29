@@ -82,6 +82,36 @@ function nnels_solr_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@solr_repository_search::field_file_resource:field_accessibility_tags';
+  $facet->searcher = 'search_api@solr_repository_search';
+  $facet->realm = '';
+  $facet->facet = 'field_file_resource:field_accessibility_tags';
+  $facet->enabled = FALSE;
+  $facet->hash = 'aqCSdVG27Dy2pk1EAKuV87Vq18fY9WJQ';
+  $facet->settings = array(
+    'operator' => 'or',
+    'hard_limit' => '20',
+    'dependencies' => array(
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '1',
+    'individual_parent' => '0',
+    'query_type' => 'term',
+    'limit_active_items' => 0,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+  );
+  $export['search_api@solr_repository_search::field_file_resource:field_accessibility_tags'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@solr_repository_search::field_file_resource:field_file_format';
   $facet->searcher = 'search_api@solr_repository_search';
   $facet->realm = '';
@@ -1213,6 +1243,103 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'title' => 'Details',
   );
   $export['search_api@solr_repository_search:block:field_details'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@solr_repository_search:block:field_file_resource:field_accessibility_tags';
+  $facet->searcher = 'search_api@solr_repository_search';
+  $facet->realm = 'block';
+  $facet->facet = 'field_file_resource:field_accessibility_tags';
+  $facet->enabled = TRUE;
+  $facet->hash = 'fWoz6f0dyVah4fjznWgwWbr6M4OU1Nf1';
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_ajax_checkboxes',
+    'filters' => array(
+      'active_items' => array(
+        'status' => 0,
+        'weight' => '-50',
+      ),
+      'current_depth' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
+      'rewrite_items' => array(
+        'status' => 1,
+        'weight' => '-47',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'filter_depth' => array(
+        'status' => 0,
+        'weight' => '-43',
+      ),
+      'hide_if_selected' => array(
+        'status' => 0,
+        'weight' => '-42',
+      ),
+    ),
+    'active_sorts' => array(
+      'active' => 'active',
+      'indexed' => 'indexed',
+      'count' => 'count',
+      'display' => 'display',
+      'natural' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-48',
+      'display' => '-47',
+      'indexed' => '-49',
+      'natural' => '-46',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
+      'natural' => '4',
+    ),
+    'empty_behavior' => 'ajax_facets',
+    'display_count' => 1,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'File Resource » Accessibility Tags',
+    'soft_limit' => '5',
+    'nofollow' => '1',
+    'show_expanded' => 0,
+    'reset_link' => 0,
+    'show_reset_link' => 0,
+    'reset_link_text' => 'Reset filter',
+    'ajax_select_default_option_label' => 'Select',
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'exclude' => '',
+    'regex' => 0,
+    'invert' => 0,
+    'show_minimum_items' => 2,
+    'depth' => 0,
+    'parents' => 0,
+  );
+  $export['search_api@solr_repository_search:block:field_file_resource:field_accessibility_tags'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
