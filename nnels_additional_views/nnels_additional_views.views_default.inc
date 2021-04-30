@@ -1305,7 +1305,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
     'view_mode' => 'default',
     'links' => 1,
@@ -1551,7 +1551,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
     'view_mode' => 'default',
     'links' => 1,
