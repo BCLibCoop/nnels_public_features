@@ -528,12 +528,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '< précédent';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant >';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Footer: Global: Text area */
@@ -665,7 +660,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
   $handler->display->display_options['fields']['field_running_time']['field'] = 'field_running_time';
-  $handler->display->display_options['fields']['field_running_time']['label'] = 'Temps de fonctionnement';
   $handler->display->display_options['fields']['field_running_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['text'] = '[field_running_time]';
   $handler->display->display_options['fields']['field_running_time']['hide_empty'] = TRUE;
@@ -679,7 +673,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_performer']['id'] = 'field_performer';
   $handler->display->display_options['fields']['field_performer']['table'] = 'field_data_field_performer';
   $handler->display->display_options['fields']['field_performer']['field'] = 'field_performer';
-  $handler->display->display_options['fields']['field_performer']['label'] = 'Voix de';
+  $handler->display->display_options['fields']['field_performer']['label'] = 'Performed / Narrated by';
   $handler->display->display_options['fields']['field_performer']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_performer']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_performer']['separator'] = '; ';
@@ -780,7 +774,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_access_restrictions']['table'] = 'field_data_field_access_restrictions';
   $handler->display->display_options['fields']['field_access_restrictions']['field'] = 'field_access_restrictions';
   $handler->display->display_options['fields']['field_access_restrictions']['relationship'] = 'field_file_resource_node';
-  $handler->display->display_options['fields']['field_access_restrictions']['label'] = 'ACCESS';
+  $handler->display->display_options['fields']['field_access_restrictions']['label'] = 'Access';
   $handler->display->display_options['fields']['field_access_restrictions']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_access_restrictions']['type'] = 'list_key';
   /* Field: Field collection item: Availability / Status */
@@ -831,7 +825,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_s3_file_upload_1']['id'] = 'field_s3_file_upload_1';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['table'] = 'field_data_field_s3_file_upload';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['field'] = 'field_s3_file_upload';
-  $handler->display->display_options['fields']['field_s3_file_upload_1']['label'] = 'URL';
+  $handler->display->display_options['fields']['field_s3_file_upload_1']['label'] = 'TMP';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_s3_file_upload_1']['alter']['max_length'] = '150';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['alter']['trim'] = TRUE;
@@ -854,7 +848,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
   $handler->display->display_options['fields']['field_running_time']['field'] = 'field_running_time';
-  $handler->display->display_options['fields']['field_running_time']['label'] = 'Temps de fonctionnement';
   $handler->display->display_options['fields']['field_running_time']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['text'] = '[field_running_time]';
@@ -869,7 +862,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
   $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
-  $handler->display->display_options['fields']['item_id']['label'] = 'TMP';
+  $handler->display->display_options['fields']['item_id']['label'] = 'tmp';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['item_id']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['item_id']['separator'] = '';
@@ -899,7 +892,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add a File Entry';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '[field_path]/add/[host_entity_type]/[host_entity_id]?destination=[host_entity_path]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -936,7 +929,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
   $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
-  $handler->display->display_options['fields']['item_id']['label'] = 'TMP';
+  $handler->display->display_options['fields']['item_id']['label'] = 'tmp';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['item_id']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['item_id']['separator'] = '';
@@ -987,7 +980,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_s3_file_upload_1']['id'] = 'field_s3_file_upload_1';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['table'] = 'field_data_field_s3_file_upload';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['field'] = 'field_s3_file_upload';
-  $handler->display->display_options['fields']['field_s3_file_upload_1']['label'] = 'URL';
+  $handler->display->display_options['fields']['field_s3_file_upload_1']['label'] = 'TMP';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_s3_file_upload_1']['alter']['max_length'] = '150';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['alter']['trim'] = TRUE;
@@ -1010,7 +1003,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
   $handler->display->display_options['fields']['field_running_time']['field'] = 'field_running_time';
-  $handler->display->display_options['fields']['field_running_time']['label'] = 'Temps de fonctionnement';
   $handler->display->display_options['fields']['field_running_time']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['text'] = '[field_running_time]';
@@ -1025,7 +1017,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_performer']['id'] = 'field_performer';
   $handler->display->display_options['fields']['field_performer']['table'] = 'field_data_field_performer';
   $handler->display->display_options['fields']['field_performer']['field'] = 'field_performer';
-  $handler->display->display_options['fields']['field_performer']['label'] = 'Voix de';
+  $handler->display->display_options['fields']['field_performer']['label'] = 'Performed / Narrated by';
   $handler->display->display_options['fields']['field_performer']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_performer']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_performer']['delta_offset'] = '0';
@@ -1061,7 +1053,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add a File Entry';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '[field_path]/add/[host_entity_type]/[host_entity_id]?destination=[host_entity_path]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -1243,7 +1235,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
   $handler->display->display_options['fields']['field_running_time']['field'] = 'field_running_time';
-  $handler->display->display_options['fields']['field_running_time']['label'] = 'Temps de fonctionnement';
   $handler->display->display_options['fields']['field_running_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['text'] = '[field_running_time]';
   $handler->display->display_options['fields']['field_running_time']['element_type'] = 'span';
@@ -1258,7 +1249,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_performer']['id'] = 'field_performer';
   $handler->display->display_options['fields']['field_performer']['table'] = 'field_data_field_performer';
   $handler->display->display_options['fields']['field_performer']['field'] = 'field_performer';
-  $handler->display->display_options['fields']['field_performer']['label'] = 'Voix de';
+  $handler->display->display_options['fields']['field_performer']['label'] = 'Performed / Narrated by';
   $handler->display->display_options['fields']['field_performer']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_performer']['alter']['path'] = '/repository-search?search_api_views_fulltext_2=[field_performer-value]&f[]=field_file_resource:field_performer:[field_performer-value]';
   $handler->display->display_options['fields']['field_performer']['alter']['alt'] = '[field_performer-value]';
@@ -1296,6 +1287,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_availability_status']['id'] = 'field_availability_status';
   $handler->display->display_options['fields']['field_availability_status']['table'] = 'field_data_field_availability_status';
   $handler->display->display_options['fields']['field_availability_status']['field'] = 'field_availability_status';
+  $handler->display->display_options['fields']['field_availability_status']['label'] = 'Status';
   $handler->display->display_options['fields']['field_availability_status']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_availability_status']['element_label_type'] = 'span';
   /* Field: Field: Notes */
@@ -1503,7 +1495,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
   $handler->display->display_options['fields']['field_running_time']['field'] = 'field_running_time';
-  $handler->display->display_options['fields']['field_running_time']['label'] = 'Temps de fonctionnement';
   $handler->display->display_options['fields']['field_running_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['text'] = '[field_running_time]';
   $handler->display->display_options['fields']['field_running_time']['element_type'] = 'span';
@@ -1519,7 +1510,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_performer']['id'] = 'field_performer';
   $handler->display->display_options['fields']['field_performer']['table'] = 'field_data_field_performer';
   $handler->display->display_options['fields']['field_performer']['field'] = 'field_performer';
-  $handler->display->display_options['fields']['field_performer']['label'] = 'Voix de';
   $handler->display->display_options['fields']['field_performer']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_performer']['alter']['path'] = '/repository-search?search_api_views_fulltext_2=[field_performer-value]&f[]=field_file_resource:field_performer:[field_performer-value]';
   $handler->display->display_options['fields']['field_performer']['alter']['alt'] = '[field_performer-value]';
@@ -1664,7 +1654,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_access_restrictions']['table'] = 'field_data_field_access_restrictions';
   $handler->display->display_options['fields']['field_access_restrictions']['field'] = 'field_access_restrictions';
   $handler->display->display_options['fields']['field_access_restrictions']['relationship'] = 'field_file_resource_node';
-  $handler->display->display_options['fields']['field_access_restrictions']['label'] = 'ACCESS';
+  $handler->display->display_options['fields']['field_access_restrictions']['label'] = 'Access';
   $handler->display->display_options['fields']['field_access_restrictions']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_access_restrictions']['type'] = 'list_key';
   /* Field: Field collection item: Availability / Status */
@@ -1727,7 +1717,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_s3_file_upload_1']['id'] = 'field_s3_file_upload_1';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['table'] = 'field_data_field_s3_file_upload';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['field'] = 'field_s3_file_upload';
-  $handler->display->display_options['fields']['field_s3_file_upload_1']['label'] = 'URL';
+  $handler->display->display_options['fields']['field_s3_file_upload_1']['label'] = 'TMP';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_s3_file_upload_1']['alter']['max_length'] = '150';
   $handler->display->display_options['fields']['field_s3_file_upload_1']['alter']['trim'] = TRUE;
@@ -1750,7 +1740,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
   $handler->display->display_options['fields']['field_running_time']['field'] = 'field_running_time';
-  $handler->display->display_options['fields']['field_running_time']['label'] = 'Temps de fonctionnement';
   $handler->display->display_options['fields']['field_running_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_running_time']['alter']['text'] = '[field_running_time]';
   $handler->display->display_options['fields']['field_running_time']['element_type'] = 'span';
@@ -1767,7 +1756,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_performer']['id'] = 'field_performer';
   $handler->display->display_options['fields']['field_performer']['table'] = 'field_data_field_performer';
   $handler->display->display_options['fields']['field_performer']['field'] = 'field_performer';
-  $handler->display->display_options['fields']['field_performer']['label'] = 'Voix de';
   $handler->display->display_options['fields']['field_performer']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_performer']['alter']['path'] = '/repository-search?search_api_views_fulltext_2=[field_performer-value]&f[]=field_file_resource:field_performer:[field_performer-value]';
   $handler->display->display_options['fields']['field_performer']['alter']['alt'] = '[field_performer-value]';
@@ -1786,7 +1774,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
   $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
-  $handler->display->display_options['fields']['item_id']['label'] = 'TMP';
+  $handler->display->display_options['fields']['item_id']['label'] = 'tmp';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['item_id']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['item_id']['separator'] = '';
@@ -1816,7 +1804,7 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add a File Entry';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '[field_path]/add/[host_entity_type]/[host_entity_id]?destination=[host_entity_path]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -4323,12 +4311,12 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Organisation';
-  /* Sort criterion: Recherche: Pertinence */
+  /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_organization_search';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
-  /* Filter criterion: Recherche: Fulltext search */
+  /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_organization_search';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
@@ -4513,7 +4501,7 @@ elseif ( $a == $b ) { //not comparable
 }
 $return =  ($a > $b ? -1 : 1 ); //1 vs 0, bump; 0 vs 1, demote
 return $return;';
-  /* Sort criterion: Recherche: Pertinence */
+  /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_organization_search';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
@@ -5147,7 +5135,7 @@ return $return;';
   $handler->display->display_options['fields']['field_dc_contributor']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dc_contributor']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_dc_contributor']['separator'] = '; ';
-  /* Field: Global: Vue */
+  /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -10663,7 +10651,7 @@ return $return;';
   $handler->display->display_options['fields']['field_xml_string']['table'] = 'field_data_field_xml_string';
   $handler->display->display_options['fields']['field_xml_string']['field'] = 'field_xml_string';
   $handler->display->display_options['fields']['field_xml_string']['exclude'] = TRUE;
-  /* Field: Global: Vue */
+  /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -13360,7 +13348,7 @@ return $return;';
   $handler->display->display_options['fields']['field_isbn_audio']['id'] = 'field_isbn_audio';
   $handler->display->display_options['fields']['field_isbn_audio']['table'] = 'field_data_field_isbn_audio';
   $handler->display->display_options['fields']['field_isbn_audio']['field'] = 'field_isbn_audio';
-  /* Field: Global: Vue */
+  /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -13574,7 +13562,7 @@ return $return;';
   $handler->display->display_options['fields']['field_isbn_audio']['id'] = 'field_isbn_audio';
   $handler->display->display_options['fields']['field_isbn_audio']['table'] = 'field_data_field_isbn_audio';
   $handler->display->display_options['fields']['field_isbn_audio']['field'] = 'field_isbn_audio';
-  /* Field: Global: Vue */
+  /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
