@@ -1231,6 +1231,23 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_s3_file_upload']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_s3_file_upload']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_s3_file_upload']['type'] = 'file_url_plain';
+  /* Field: Field collection item: Accessibility Tags */
+  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_accessibility_tags']['multi_type'] = 'ul';
+  $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Field collection item: Running Time */
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
@@ -1303,23 +1320,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_accrual_method']['table'] = 'field_data_field_accrual_method';
   $handler->display->display_options['fields']['field_accrual_method']['field'] = 'field_accrual_method';
   $handler->display->display_options['fields']['field_accrual_method']['hide_empty'] = TRUE;
-  /* Field: Field collection item: Accessibility Tags */
-  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
-  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
-  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
-  $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
-  $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
-    'view_mode' => 'default',
-    'links' => 1,
-    'use_content_language' => 1,
-  );
-  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_accessibility_tags']['multi_type'] = 'ul';
-  $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1491,6 +1491,23 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_s3_file_upload']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_s3_file_upload']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_s3_file_upload']['type'] = 'file_url_plain';
+  /* Field: Field collection item: Accessibility Tags */
+  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_accessibility_tags']['multi_type'] = 'ul';
+  $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Field collection item: Running Time */
   $handler->display->display_options['fields']['field_running_time']['id'] = 'field_running_time';
   $handler->display->display_options['fields']['field_running_time']['table'] = 'field_data_field_running_time';
@@ -1549,23 +1566,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_availability_status']['table'] = 'field_data_field_availability_status';
   $handler->display->display_options['fields']['field_availability_status']['field'] = 'field_availability_status';
   $handler->display->display_options['fields']['field_availability_status']['exclude'] = TRUE;
-  /* Field: Field collection item: Accessibility Tags */
-  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
-  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
-  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
-  $handler->display->display_options['fields']['field_accessibility_tags']['label'] = 'Accessibility';
-  $handler->display->display_options['fields']['field_accessibility_tags']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_accessibility_tags']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_accessibility_tags']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_accessibility_tags']['settings'] = array(
-    'view_mode' => 'default',
-    'links' => 1,
-    'use_content_language' => 1,
-  );
-  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_accessibility_tags']['multi_type'] = 'ul';
-  $handler->display->display_options['fields']['field_accessibility_tags']['separator'] = '';
   /* Field: Field: Notes */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
@@ -4549,7 +4549,7 @@ return $return;';
   $handler->display->display_options['fields']['field_title_alternate']['table'] = 'field_data_field_title_alternate';
   $handler->display->display_options['fields']['field_title_alternate']['field'] = 'field_title_alternate';
   $handler->display->display_options['fields']['field_title_alternate']['hide_empty'] = TRUE;
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -4682,7 +4682,7 @@ return $return;';
   $handler->display->display_options['fields']['field_rights_holder']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_rights_holder']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_rights_holder']['separator'] = ';';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -4876,7 +4876,7 @@ return $return;';
   $handler->display->display_options['fields']['field_title_alternate']['table'] = 'field_data_field_title_alternate';
   $handler->display->display_options['fields']['field_title_alternate']['field'] = 'field_title_alternate';
   $handler->display->display_options['fields']['field_title_alternate']['hide_empty'] = TRUE;
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -4978,7 +4978,7 @@ return $return;';
   $handler->display->display_options['fields']['field_title_alternate']['table'] = 'field_data_field_title_alternate';
   $handler->display->display_options['fields']['field_title_alternate']['field'] = 'field_title_alternate';
   $handler->display->display_options['fields']['field_title_alternate']['hide_empty'] = TRUE;
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -5112,7 +5112,7 @@ return $return;';
   $handler->display->display_options['fields']['field_urls_external']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_urls_external']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_urls_external']['multi_type'] = 'ul';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -6423,7 +6423,7 @@ return $return;';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Author(s) (field_dc_creator:delta) */
+  /* Sort criterion: Content: Creator (field_dc_creator:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
   $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['delta']['field'] = 'delta';
@@ -6703,7 +6703,7 @@ return $return;';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Author(s) (field_dc_creator:delta) */
+  /* Sort criterion: Content: Creator (field_dc_creator:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
   $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['delta']['field'] = 'delta';
@@ -6981,7 +6981,7 @@ return $return;';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Author(s) (field_dc_creator:delta) */
+  /* Sort criterion: Content: Creator (field_dc_creator:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
   $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['delta']['field'] = 'delta';
@@ -7753,7 +7753,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -7824,7 +7824,7 @@ return $return;';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
-  /* Sort criterion: Content: Author(s) (field_dc_creator) */
+  /* Sort criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['sorts']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -7919,7 +7919,7 @@ return $return;';
     8 => 0,
     11 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -8051,7 +8051,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -8184,7 +8184,7 @@ return $return;';
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -8378,7 +8378,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -8517,7 +8517,7 @@ return $return;';
     8 => 0,
     11 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -8863,7 +8863,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -8915,7 +8915,7 @@ return $return;';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Author(s) (field_dc_creator) */
+  /* Sort criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['sorts']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -9031,7 +9031,7 @@ return $return;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -9133,7 +9133,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -9214,7 +9214,7 @@ return $return;';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Nid';
-  /* Sort criterion: Content: Author(s) (field_dc_creator) */
+  /* Sort criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['sorts']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -9317,7 +9317,7 @@ return $return;';
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -9437,7 +9437,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -9528,7 +9528,7 @@ return $return;';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Nid';
-  /* Sort criterion: Content: Author(s) (field_dc_creator) */
+  /* Sort criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['sorts']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -9625,7 +9625,7 @@ return $return;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -9896,7 +9896,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -10038,7 +10038,7 @@ return $return;';
     8 => 0,
     11 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -10344,7 +10344,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -10507,7 +10507,7 @@ return $return;';
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -10628,7 +10628,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -10763,7 +10763,7 @@ return $return;';
     8 => 0,
     11 => 0,
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -10950,7 +10950,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -11102,7 +11102,7 @@ return $return;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -11394,7 +11394,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -11544,7 +11544,7 @@ return $return;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Author(s) (field_dc_creator) */
+  /* Filter criterion: Content: Creator (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -13334,7 +13334,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -13548,7 +13548,7 @@ return $return;';
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['empty'] = 'No title';
-  /* Field: Content: Author(s) */
+  /* Field: Content: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
