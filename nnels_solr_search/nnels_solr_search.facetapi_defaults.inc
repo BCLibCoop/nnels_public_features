@@ -14,6 +14,36 @@ function nnels_solr_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@solr_repository_search::certified_accessible';
+  $facet->searcher = 'search_api@solr_repository_search';
+  $facet->realm = '';
+  $facet->facet = 'certified_accessible';
+  $facet->enabled = FALSE;
+  $facet->hash = 'qC7WUDMUXG7vdSOi5NAIfGlT1DNAulFV';
+  $facet->settings = array(
+    'operator' => 'or',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => 0,
+    'individual_parent' => 0,
+    'query_type' => 'term',
+    'limit_active_items' => 0,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+  );
+  $export['search_api@solr_repository_search::certified_accessible'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@solr_repository_search::field_access_restrictions';
   $facet->searcher = 'search_api@solr_repository_search';
   $facet->realm = '';
@@ -453,6 +483,99 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'title' => 'The main body text » Text',
   );
   $export['search_api@solr_repository_search:block:body:value'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@solr_repository_search:block:certified_accessible';
+  $facet->searcher = 'search_api@solr_repository_search';
+  $facet->realm = 'block';
+  $facet->facet = 'certified_accessible';
+  $facet->enabled = TRUE;
+  $facet->hash = 'SJafWiCpmFR9xv6hpbIR00MO51aHbA30';
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_ajax_checkboxes',
+    'filters' => array(
+      'active_items' => array(
+        'status' => 0,
+        'weight' => '-50',
+      ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
+      'rewrite_items' => array(
+        'status' => 1,
+        'weight' => '-48',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'filter_depth' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'hide_if_selected' => array(
+        'status' => 0,
+        'weight' => '-43',
+      ),
+    ),
+    'active_sorts' => array(
+      'active' => 'active',
+      'indexed' => 'indexed',
+      'count' => 'count',
+      'display' => 'display',
+      'natural' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-48',
+      'display' => '-47',
+      'indexed' => '-49',
+      'natural' => '-46',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
+      'natural' => '4',
+    ),
+    'empty_behavior' => 'none',
+    'display_count' => 1,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Certified Accessible',
+    'soft_limit' => '20',
+    'nofollow' => '1',
+    'show_expanded' => 0,
+    'reset_link' => 0,
+    'show_reset_link' => 0,
+    'reset_link_text' => 'Reset filter',
+    'ajax_select_default_option_label' => 'Select',
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'exclude' => '',
+    'regex' => 0,
+    'invert' => 0,
+    'show_minimum_items' => 2,
+    'depth' => 0,
+    'parents' => 0,
+  );
+  $export['search_api@solr_repository_search:block:certified_accessible'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -1270,7 +1393,7 @@ function nnels_solr_search_facetapi_default_facet_settings() {
         'weight' => '-48',
       ),
       'rewrite_items' => array(
-        'status' => 1,
+        'status' => 0,
         'weight' => '-47',
       ),
       'narrow_results' => array(
