@@ -7,7 +7,20 @@
 include_once 'nnels_solr_search.features.inc';
 
 /**
- * Implements entity_property_info_alter().
+ * Implements hook_node_load().
+ */
+function nnels_solr_search_node_load($nodes, $types) {
+
+  // Make sure the certified accessible property is attached to the node.
+  foreach ($nodes as $node) {
+    if ($node->type == 'repository_item') {
+      $node->certified_accessible = nnels_solr_search_certified_accessible_getter_callback($node);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
  */
 function nnels_solr_search_entity_property_info_alter(&$info) {
   $properties = &$info['node']['bundles']['repository_item']['properties'];
@@ -20,9 +33,8 @@ function nnels_solr_search_entity_property_info_alter(&$info) {
     'type' => 'integer',
     'description' => t('Certified Accessible Computed Field.'),
     'getter callback' => 'nnels_solr_search_certified_accessible_getter_callback',
+    'computed' => TRUE,
   );
-
-  return $info;
 }
 
 function nnels_solr_search_certified_accessible_getter_callback($item) {
