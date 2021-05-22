@@ -6,6 +6,8 @@
 
 include_once 'nnels_solr_search.features.inc';
 
+// Array ( [0] => 106088 [1] => 106089 [2] => 106120 )
+
 /**
  * Implements hook_node_load().
  */
@@ -64,7 +66,7 @@ function nnels_solr_search_certified_accessible_getter_callback($item) {
 
         // Expecting $diff to be empty if all of the required tags are present
         // in the attached tags.
-        $diff = array_diff($certified_accessibility_tags, $attached_accessibility_tags);
+        $diff = array_diff($certified_accessibility_tags, $accessibility_tags);
         if (empty($diff)) {
           return 1;
         }
