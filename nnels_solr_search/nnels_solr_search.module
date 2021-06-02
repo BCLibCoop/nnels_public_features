@@ -5,3 +5,83 @@
  */
 
 include_once 'nnels_solr_search.features.inc';
+
+// Array ( [0] => 106088 [1] => 106089 [2] => 106120 )
+
+/**
+ * Implements hook_node_load().
+ */
+function nnels_solr_search_node_load($nodes, $types) {
+
+  // Make sure the certified accessible property is attached to the node.
+  foreach ($nodes as $node) {
+    if ($node->type == 'repository_item') {
+      $node->certified_accessible = nnels_solr_search_certified_accessible_getter_callback($node);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function nnels_solr_search_entity_property_info_alter(&$info) {
+  $properties = &$info['node']['bundles']['repository_item']['properties'];
+
+  // Create this custom property of the repository_item node type that
+  // calculates whether one of the file resources attached to the node are
+  // certified accessible.
+  $properties['certified_accessible'] = array(
+    'label' => t('Certified Accessible'),
+    'type' => 'integer',
+    'description' => t('Certified Accessible Computed Field.'),
+    'getter callback' => 'nnels_solr_search_certified_accessible_getter_callback',
+    'computed' => TRUE,
+  );
+}
+
+function nnels_solr_search_certified_accessible_getter_callback($item) {
+  $file_resources = field_get_items('node', $item, 'field_file_resource');
+  if ($file_resources) {
+
+    // Load all terms with the required certified field checked. The
+    // 'Accessibility Tags' Taxonomy has a field called 'Required for
+    // Certification' that tells which terms control the certified accessible
+    // icon.
+    $certified_accessibility_tags = db_select('field_data_field_required_for_certification', 'r')
+      ->fields('r', ['entity_id'])
+      ->condition('r.field_required_for_certification_value', 1)
+      ->groupBy('r.entity_id')
+      ->execute()
+      ->fetchCol('entity_id');
+
+    $file_resource_ids = array();
+    foreach ($file_resources as $file_resource) {
+      $file_resource_ids[$file_resource['value']] = TRUE;
+    }
+    $file_resource_entities = field_collection_item_load_multiple(array_keys($file_resource_ids));
+    foreach ($file_resource_entities as $file_resource_entity) {
+      $accessibility_tags = field_get_items('field_collection_item', $file_resource_entity, 'field_accessibility_tags');
+      if ($accessibility_tags) {
+        $accessibility_tags = array_column($accessibility_tags, 'tid');
+
+        // Expecting $diff to be empty if all of the required tags are present
+        // in the attached tags.
+        $diff = array_diff($certified_accessibility_tags, $accessibility_tags);
+        if (empty($diff)) {
+          return 1;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_facet_items_alter().
+ */
+function nnels_solr_search_facet_items_alter(&$build, &$settings) {
+  if ($settings->facet == 'certified_accessible' && $settings->realm == 'block') {
+    if (!empty($build[1])) {
+      $build[1]['#markup'] = t('NNELS certified accessible');
+    }
+  }
+}
