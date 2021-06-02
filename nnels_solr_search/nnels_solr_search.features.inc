@@ -230,14 +230,14 @@ function nnels_solr_search_default_search_api_server() {
   $items['solr'] = entity_import('search_api_server', '{
     "name" : "Solr",
     "machine_name" : "solr",
-    "description" : "NNELS Local Search",
+    "description" : "NNELS Search",
     "class" : "search_api_solr_service",
     "options" : {
       "clean_ids" : true,
       "site_hash_form" : [],
       "site_hash" : false,
       "scheme" : "http",
-      "host" : "indexer",
+      "host" : "localhost",
       "port" : "8983",
       "path" : "\\/solr\\/nnels-drupal",
       "http_user" : "",
