@@ -118,11 +118,10 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-delta';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -188,26 +187,10 @@ function nnels_content_cafe_views_companion_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<h2 class="view-title">
-<hr style="border: 0.5px solid #336699;">
-<?php 
-global $language;
-/* 
-NB: we should be able to replace this with a simpler t() function but i can\'t get this to work!
-*/
-if($language->language == \'en\') {
-  print l("Recently Added", "recently-added");
-}
-else {
-  print l("Ajouts récents", "recently-added");
-}
-?>
-</h2>
-';
+  /* Header: Global: Recently Added Title */
+  $handler->display->display_options['header']['recently_added_title']['id'] = 'recently_added_title';
+  $handler->display->display_options['header']['recently_added_title']['table'] = 'views';
+  $handler->display->display_options['header']['recently_added_title']['field'] = 'recently_added_title';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Completion Date (field_completion_date) */
   $handler->display->display_options['sorts']['field_completion_date_value']['id'] = 'field_completion_date_value';
@@ -275,11 +258,10 @@ else {
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-delta';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_field]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -366,14 +348,10 @@ else {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<?php
-$term = taxonomy_term_load(arg(1));
-?>
-<h2 class="view-title"><?php print  $term->name; ?></h1>';
+  /* Header: Global: Term Title */
+  $handler->display->display_options['header']['term_title']['id'] = 'term_title';
+  $handler->display->display_options['header']['term_title']['table'] = 'views';
+  $handler->display->display_options['header']['term_title']['field'] = 'term_title';
   /* Relationship: Content: File Resource (field_file_resource) */
   $handler->display->display_options['relationships']['field_file_resource_value']['id'] = 'field_file_resource_value';
   $handler->display->display_options['relationships']['field_file_resource_value']['table'] = 'field_data_field_file_resource';
@@ -397,7 +375,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -526,11 +504,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -539,7 +516,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -651,11 +628,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<?php print $feed_icons; ?>';
+  /* Header: Global: Feed Icons */
+  $handler->display->display_options['header']['feed_icons']['id'] = 'feed_icons';
+  $handler->display->display_options['header']['feed_icons']['table'] = 'views';
+  $handler->display->display_options['header']['feed_icons']['field'] = 'feed_icons';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
@@ -677,11 +653,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -690,7 +665,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -783,10 +758,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Genre (field_genre) */
-  $handler->display->display_options['relationships']['field_genre_tid']['id'] = 'field_genre_tid';
-  $handler->display->display_options['relationships']['field_genre_tid']['table'] = 'field_data_field_genre';
-  $handler->display->display_options['relationships']['field_genre_tid']['field'] = 'field_genre_tid';
+  /* Relationship: Field: Genre Harmonized (field_genre_harmonized) */
+  $handler->display->display_options['relationships']['field_genre_harmonized_tid']['id'] = 'field_genre_harmonized_tid';
+  $handler->display->display_options['relationships']['field_genre_harmonized_tid']['table'] = 'field_data_field_genre_harmonized';
+  $handler->display->display_options['relationships']['field_genre_harmonized_tid']['field'] = 'field_genre_harmonized_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
@@ -808,11 +783,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -822,7 +796,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -842,6 +816,12 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['field_genre']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_genre']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_genre']['delta_offset'] = '0';
+  /* Field: Field: Genre Harmonized */
+  $handler->display->display_options['fields']['field_genre_harmonized']['id'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['table'] = 'field_data_field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['field'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_genre_harmonized']['delta_offset'] = '0';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -887,15 +867,15 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['sorts']['nid']['field'] = 'nid';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Genre (field_genre) */
-  $handler->display->display_options['arguments']['field_genre_tid']['id'] = 'field_genre_tid';
-  $handler->display->display_options['arguments']['field_genre_tid']['table'] = 'field_data_field_genre';
-  $handler->display->display_options['arguments']['field_genre_tid']['field'] = 'field_genre_tid';
-  $handler->display->display_options['arguments']['field_genre_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_genre_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_genre_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_genre_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_genre_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field: Genre Harmonized (field_genre_harmonized) */
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['id'] = 'field_genre_harmonized_tid';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['table'] = 'field_data_field_genre_harmonized';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['field'] = 'field_genre_harmonized_tid';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_genre_harmonized_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -912,13 +892,16 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['filters']['type']['value'] = array(
     'repository_item' => 'repository_item',
   );
-  /* Filter criterion: Content: Genre (field_genre) */
-  $handler->display->display_options['filters']['field_genre_tid']['id'] = 'field_genre_tid';
-  $handler->display->display_options['filters']['field_genre_tid']['table'] = 'field_data_field_genre';
-  $handler->display->display_options['filters']['field_genre_tid']['field'] = 'field_genre_tid';
-  $handler->display->display_options['filters']['field_genre_tid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_genre_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_genre_tid']['vocabulary'] = 'genre';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Genre Harmonized */
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['id'] = 'field_genre_harmonized_tid';
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['table'] = 'field_data_field_genre_harmonized';
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['field'] = 'field_genre_harmonized_tid';
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['ui_name'] = 'Genre Harmonized';
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_genre_harmonized_tid']['vocabulary'] = 'genre_harmonized';
   $handler->display->display_options['path'] = 'browse-repository-items-genre';
   $handler->display->display_options['menu']['title'] = 'Browse by Genre';
   $handler->display->display_options['menu']['weight'] = '2';
@@ -973,11 +956,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -986,7 +968,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -1044,7 +1026,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['view']['display'] = 'embed_6';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Creator (field_dc_creator) */
+  /* Sort criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['sorts']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['sorts']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['sorts']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -1075,7 +1057,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['filters']['type']['value'] = array(
     'repository_item' => 'repository_item',
   );
-  /* Filter criterion: Content: Creator (field_dc_creator) */
+  /* Filter criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value']['id'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value']['field'] = 'field_dc_creator_value';
@@ -1094,12 +1076,12 @@ $term = taxonomy_term_load(arg(1));
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Creator (field_dc_creator) */
+  /* Filter criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value_1']['id'] = 'field_dc_creator_value_1';
   $handler->display->display_options['filters']['field_dc_creator_value_1']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value_1']['field'] = 'field_dc_creator_value';
   $handler->display->display_options['filters']['field_dc_creator_value_1']['operator'] = 'not empty';
-  /* Filter criterion: Content: Creator (field_dc_creator) */
+  /* Filter criterion: Content: Author(s) (field_dc_creator) */
   $handler->display->display_options['filters']['field_dc_creator_value_2']['id'] = 'field_dc_creator_value_2';
   $handler->display->display_options['filters']['field_dc_creator_value_2']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['filters']['field_dc_creator_value_2']['field'] = 'field_dc_creator_value';
@@ -1146,11 +1128,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1159,7 +1140,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
@@ -1326,11 +1307,10 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['table'] = 'node';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['field'] = 'content_cafe_selected_jacket';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['label'] = '';
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_class'] = 'views-field-field-isbn';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<a href=\'[path]\'><img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="[title_1]" /></a>';
+  $handler->display->display_options['fields']['content_cafe_selected_jacket']['empty'] = '<img src="/sites/default/modules/nnels_content_cafe/img/blank.gif" alt="" />';
   $handler->display->display_options['fields']['content_cafe_selected_jacket']['image_style'] = 'book_cover__50x75_';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1347,7 +1327,7 @@ $term = taxonomy_term_load(arg(1));
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Creator */
+  /* Field: Content: Author(s) */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'field_data_field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';

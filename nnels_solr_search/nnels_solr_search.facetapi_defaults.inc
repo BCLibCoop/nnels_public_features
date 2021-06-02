@@ -336,6 +336,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'The main body text » Text format',
   );
   $export['search_api@solr_repository_search:block:body:format'] = $facet;
 
@@ -371,6 +376,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'The main body text » Summary',
   );
   $export['search_api@solr_repository_search:block:body:summary'] = $facet;
 
@@ -406,6 +416,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'The main body text » Text',
   );
   $export['search_api@solr_repository_search:block:body:value'] = $facet;
 
@@ -441,6 +456,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Date changed',
   );
   $export['search_api@solr_repository_search:block:changed'] = $facet;
 
@@ -476,6 +496,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Date created',
   );
   $export['search_api@solr_repository_search:block:created'] = $facet;
 
@@ -528,6 +553,9 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'show_reset_link' => 0,
     'reset_link_text' => 'Reset filter',
     'ajax_select_default_option_label' => 'Select',
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Access Restrictions',
   );
   $export['search_api@solr_repository_search:block:field_access_restrictions'] = $facet;
 
@@ -563,6 +591,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Audience',
   );
   $export['search_api@solr_repository_search:block:field_audience'] = $facet;
 
@@ -633,6 +666,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Daisy File Available',
   );
   $export['search_api@solr_repository_search:block:field_daisy_file_available'] = $facet;
 
@@ -668,6 +706,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Date',
   );
   $export['search_api@solr_repository_search:block:field_date'] = $facet;
 
@@ -703,6 +746,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'DC Contributor',
   );
   $export['search_api@solr_repository_search:block:field_dc_contributor'] = $facet;
 
@@ -755,6 +803,9 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'show_reset_link' => 0,
     'reset_link_text' => 'Reset filter',
     'ajax_select_default_option_label' => 'Select',
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Creator',
   );
   $export['search_api@solr_repository_search:block:field_dc_creator'] = $facet;
 
@@ -790,6 +841,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'DC Description » DC Date',
   );
   $export['search_api@solr_repository_search:block:field_dc_description:field_dc_date'] = $facet;
 
@@ -825,6 +881,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'DC Description » Value',
   );
   $export['search_api@solr_repository_search:block:field_dc_description:field_dc_relation_value'] = $facet;
 
@@ -895,6 +956,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'DC Description » Field name',
   );
   $export['search_api@solr_repository_search:block:field_dc_description:field_name'] = $facet;
 
@@ -1140,6 +1206,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Details',
   );
   $export['search_api@solr_repository_search:block:field_details'] = $facet;
 
@@ -1158,17 +1229,17 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
-      'indexed' => 'indexed',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
       'natural' => 0,
     ),
     'sort_weight' => array(
       'active' => '-50',
-      'indexed' => '-49',
-      'count' => '-48',
-      'display' => '-47',
-      'natural' => '0',
+      'indexed' => '-48',
+      'count' => '-49',
+      'display' => '-48',
+      'natural' => '-46',
     ),
     'sort_order' => array(
       'active' => '3',
@@ -1192,6 +1263,9 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'show_reset_link' => 0,
     'reset_link_text' => 'Reset filter',
     'ajax_select_default_option_label' => 'Select',
+    'display_count' => 1,
+    'title_override' => 0,
+    'title' => 'File Resource » File Format',
   );
   $export['search_api@solr_repository_search:block:field_file_resource:field_file_format'] = $facet;
 
@@ -1227,6 +1301,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'File Resource » File upload details',
   );
   $export['search_api@solr_repository_search:block:field_file_resource:field_file_upload_details'] = $facet;
 
@@ -1279,6 +1358,9 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'show_reset_link' => 0,
     'reset_link_text' => 'Reset filter',
     'ajax_select_default_option_label' => 'Select',
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'File Resource » Narrator',
   );
   $export['search_api@solr_repository_search:block:field_file_resource:field_performer'] = $facet;
 
@@ -1314,6 +1396,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'File Resource » Running Time',
   );
   $export['search_api@solr_repository_search:block:field_file_resource:field_running_time'] = $facet;
 
@@ -1401,6 +1488,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Genre » Name',
   );
   $export['search_api@solr_repository_search:block:field_genre:name'] = $facet;
 
@@ -1411,7 +1503,7 @@ function nnels_solr_search_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@solr_repository_search';
   $facet->realm = 'block';
   $facet->facet = 'field_isbn';
-  $facet->enabled = FALSE;
+  $facet->enabled = TRUE;
   $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
@@ -1436,6 +1528,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'ISBN',
   );
   $export['search_api@solr_repository_search:block:field_isbn'] = $facet;
 
@@ -1488,6 +1585,9 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'show_reset_link' => 0,
     'reset_link_text' => 'Reset filter',
     'ajax_select_default_option_label' => 'Select',
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Language (Item)',
   );
   $export['search_api@solr_repository_search:block:field_iso_language'] = $facet;
 
@@ -1558,6 +1658,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Marc Mapper',
   );
   $export['search_api@solr_repository_search:block:field_marc_mapper'] = $facet;
 
@@ -1593,6 +1698,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'OCLC Number',
   );
   $export['search_api@solr_repository_search:block:field_oclc_number'] = $facet;
 
@@ -1628,6 +1738,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Publisher (obsolete)',
   );
   $export['search_api@solr_repository_search:block:field_publisher'] = $facet;
 
@@ -1663,6 +1778,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'S3 Path',
   );
   $export['search_api@solr_repository_search:block:field_s3_path'] = $facet;
 
@@ -1733,6 +1853,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'System Control Number',
   );
   $export['search_api@solr_repository_search:block:field_system_control_number'] = $facet;
 
@@ -1768,6 +1893,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Alternate Title',
   );
   $export['search_api@solr_repository_search:block:field_title_alternate'] = $facet;
 
@@ -2091,6 +2221,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Node ID',
   );
   $export['search_api@solr_repository_search:block:nid'] = $facet;
 
@@ -2126,6 +2261,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Title FullText',
   );
   $export['search_api@solr_repository_search:block:search_api_aggregation_1'] = $facet;
 
@@ -2231,6 +2371,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'aggregated_title',
   );
   $export['search_api@solr_repository_search:block:search_api_aggregation_4'] = $facet;
 
@@ -2266,6 +2411,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'aggregated_author',
   );
   $export['search_api@solr_repository_search:block:search_api_aggregation_5'] = $facet;
 
@@ -2309,6 +2459,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
       'format' => 'full_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Item language',
   );
   $export['search_api@solr_repository_search:block:search_api_language'] = $facet;
 
@@ -2554,6 +2709,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Title',
   );
   $export['search_api@solr_repository_search:block:title'] = $facet;
 
@@ -2589,6 +2749,11 @@ function nnels_solr_search_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Content type',
   );
   $export['search_api@solr_repository_search:block:type'] = $facet;
 

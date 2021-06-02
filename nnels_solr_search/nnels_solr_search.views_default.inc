@@ -51,30 +51,18 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['ui_name'] = 'Total items found';
   $handler->display->display_options['header']['result']['content'] = '<div id="search-view-total-count">Search found @total item</div>';
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php
-  $html = \'<h4>No results</h4>\';
-  //include cals_extended_search module to return bookshare, openlibrary targets
-  if (function_exists("cals_request_new_title_views_link") ) {
-    $html = cals_request_new_title_views_link();
-  }
-  print $html;
-?>
-<br />
-<p>Sorry, it looks like we don\'t have that title in our collection.</p>
+  /* No results behavior: Global: No Results */
+  $handler->display->display_options['empty']['no_results']['id'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['table'] = 'views';
+  $handler->display->display_options['empty']['no_results']['field'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['empty'] = TRUE;
+  $handler->display->display_options['empty']['no_results']['title'] = 'h4';
+  $handler->display->display_options['empty']['no_results']['message'] = '<p>Sorry, it looks like we don\'t have that title in our collection.</p>
 <p>You may request the title by completing the <a href="/request-title">Request a Title form</a> and we will add it to our queue.</p>';
   /* Relationship: Indexed Node: Date */
   $handler->display->display_options['relationships']['field_date']['id'] = 'field_date';
   $handler->display->display_options['relationships']['field_date']['table'] = 'search_api_index_solr_repository_search';
   $handler->display->display_options['relationships']['field_date']['field'] = 'field_date';
-  /* Relationship: Indexed Node: Date */
-  $handler->display->display_options['relationships']['field_date_1']['id'] = 'field_date_1';
-  $handler->display->display_options['relationships']['field_date_1']['table'] = 'search_api_index_solr_repository_search';
-  $handler->display->display_options['relationships']['field_date_1']['field'] = 'field_date';
   /* Relationship: Indexed Node: File Resource */
   $handler->display->display_options['relationships']['field_file_resource']['id'] = 'field_file_resource';
   $handler->display->display_options['relationships']['field_file_resource']['table'] = 'search_api_index_solr_repository_search';
@@ -126,13 +114,15 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['fields']['field_keyword_index']['field'] = 'field_keyword_index';
   $handler->display->display_options['fields']['field_keyword_index']['label'] = 'Keywords / Topics';
   $handler->display->display_options['fields']['field_keyword_index']['hide_empty'] = TRUE;
-  /* Field: Indexed Node: Genre */
-  $handler->display->display_options['fields']['field_genre']['id'] = 'field_genre';
-  $handler->display->display_options['fields']['field_genre']['table'] = 'search_api_index_solr_repository_search';
-  $handler->display->display_options['fields']['field_genre']['field'] = 'field_genre';
-  $handler->display->display_options['fields']['field_genre']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_genre']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_genre']['view_mode'] = 'full';
+  /* Field: Genre Harmonized */
+  $handler->display->display_options['fields']['field_genre_harmonized']['id'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['field_genre_harmonized']['field'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['ui_name'] = 'Genre Harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['label'] = 'Genre';
+  $handler->display->display_options['fields']['field_genre_harmonized']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_genre_harmonized']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_genre_harmonized']['bypass_access'] = 0;
   /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_solr_repository_search';
@@ -146,35 +136,21 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['operator_id'] = 'search_api_views_fulltext_2_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['label'] = 'Keywords';
+  $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['label'] = 'Search the catalogue';
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['operator'] = 'search_api_views_fulltext_2_op';
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['identifier'] = 'search_api_views_fulltext_2';
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    6 => 0,
-    7 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-    8 => 0,
-    11 => 0,
   );
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['fields'] = array(
     'body:value' => 'body:value',
     'field_dc_description:field_dc_relation_value' => 'field_dc_description:field_dc_relation_value',
-    'field_file_resource:field_performer' => 'field_file_resource:field_performer',
-    'field_genre:name' => 'field_genre:name',
     'field_isbn' => 'field_isbn',
-    'field_keyword_index' => 'field_keyword_index',
     'field_oclc_number' => 'field_oclc_number',
     'field_publisher' => 'field_publisher',
-    'field_source' => 'field_source',
     'field_subject:name' => 'field_subject:name',
     'field_title_alternate' => 'field_title_alternate',
     'search_api_aggregation_1' => 'search_api_aggregation_1',
-    'search_api_aggregation_2' => 'search_api_aggregation_2',
-    'search_api_aggregation_3' => 'search_api_aggregation_3',
     'search_api_aggregation_4' => 'search_api_aggregation_4',
     'search_api_aggregation_5' => 'search_api_aggregation_5',
   );
@@ -196,6 +172,7 @@ function nnels_solr_search_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Search Results';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -208,19 +185,12 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php
-  $html = \'<h1 class="title no-results" id="page-title">No Results</h1>\';
-  //include cals_extended_search module to return bookshare, openlibrary targets
-  if (function_exists("cals_request_new_title_views_link") ) {
-    $html = cals_request_new_title_views_link();
-  }
-  print $html;
-?>';
+  /* No results behavior: Global: No Results */
+  $handler->display->display_options['empty']['no_results']['id'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['table'] = 'views';
+  $handler->display->display_options['empty']['no_results']['field'] = 'no_results';
+  $handler->display->display_options['empty']['no_results']['empty'] = TRUE;
+  $handler->display->display_options['empty']['no_results']['title'] = 'h1';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Indexed Node: File Resource */
   $handler->display->display_options['relationships']['field_file_resource']['id'] = 'field_file_resource';
@@ -257,32 +227,12 @@ function nnels_solr_search_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
-  /* Field: Bookshelf button */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Bookshelf button';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-
-$flag = flag_get_flag(\'bookshelf\');
-if ($flag) {
-  print \'<div class="bookshelf-add-wrapper">\' .
-                            \'<i class="fa fa-bookmark-o flag-bookmark-icon" aria-hidden="true"></i>\' .
-                            flag_create_link(\'bookshelf\', $data->_entity_properties[\'nid\']) .
-                            \'</div>\';
-}
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_solr_repository_search';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title_field']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['hide_alter_empty'] = FALSE;
@@ -290,8 +240,16 @@ if ($flag) {
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'title_style' => '_none',
     'title_link' => 'content',
+    'enable_trim' => 0,
+    'trim_length' => '50',
     'title_class' => '',
   );
+  /* Field: Global: Bookshelf Add Link */
+  $handler->display->display_options['fields']['bookshelf_add']['id'] = 'bookshelf_add';
+  $handler->display->display_options['fields']['bookshelf_add']['table'] = 'views';
+  $handler->display->display_options['fields']['bookshelf_add']['field'] = 'bookshelf_add';
+  $handler->display->display_options['fields']['bookshelf_add']['label'] = '';
+  $handler->display->display_options['fields']['bookshelf_add']['element_label_colon'] = FALSE;
   /* Field: Indexed Node: Creator */
   $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
   $handler->display->display_options['fields']['field_dc_creator']['table'] = 'search_api_index_solr_repository_search';
@@ -325,17 +283,16 @@ if ($flag) {
   $handler->display->display_options['fields']['body_value']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['body_value']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Genre */
-  $handler->display->display_options['fields']['field_genre']['id'] = 'field_genre';
-  $handler->display->display_options['fields']['field_genre']['table'] = 'search_api_index_solr_repository_search';
-  $handler->display->display_options['fields']['field_genre']['field'] = 'field_genre';
-  $handler->display->display_options['fields']['field_genre']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_genre']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_genre']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_genre']['list']['separator'] = '&nbsp;,&nbsp;';
-  $handler->display->display_options['fields']['field_genre']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_genre']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_genre']['bypass_access'] = 0;
+  /* Field: Genre Harmonized */
+  $handler->display->display_options['fields']['field_genre_harmonized']['id'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['field_genre_harmonized']['field'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['ui_name'] = 'Genre Harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['label'] = 'Genre';
+  $handler->display->display_options['fields']['field_genre_harmonized']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_genre_harmonized']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_genre_harmonized']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_genre_harmonized']['bypass_access'] = 0;
   /* Field: Embed Solr API Search - file fields */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
@@ -365,35 +322,21 @@ if ($flag) {
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['operator_id'] = 'search_api_views_fulltext_2_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['label'] = 'Keywords';
+  $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['label'] = 'Search the catalogue';
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['operator'] = 'search_api_views_fulltext_2_op';
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['identifier'] = 'search_api_views_fulltext_2';
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    6 => 0,
-    7 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-    8 => 0,
-    11 => 0,
   );
   $handler->display->display_options['filters']['search_api_views_fulltext_2']['fields'] = array(
     'body:value' => 'body:value',
     'field_dc_description:field_dc_relation_value' => 'field_dc_description:field_dc_relation_value',
-    'field_file_resource:field_performer' => 'field_file_resource:field_performer',
-    'field_genre:name' => 'field_genre:name',
     'field_isbn' => 'field_isbn',
-    'field_keyword_index' => 'field_keyword_index',
     'field_oclc_number' => 'field_oclc_number',
     'field_publisher' => 'field_publisher',
-    'field_source' => 'field_source',
     'field_subject:name' => 'field_subject:name',
     'field_title_alternate' => 'field_title_alternate',
     'search_api_aggregation_1' => 'search_api_aggregation_1',
-    'search_api_aggregation_2' => 'search_api_aggregation_2',
-    'search_api_aggregation_3' => 'search_api_aggregation_3',
     'search_api_aggregation_4' => 'search_api_aggregation_4',
     'search_api_aggregation_5' => 'search_api_aggregation_5',
   );
@@ -428,6 +371,63 @@ if ($flag) {
   $handler->display->display_options['css_class'] = 'search-block';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
+  /* Field: Indexed Node: Creator */
+  $handler->display->display_options['fields']['field_dc_creator']['id'] = 'field_dc_creator';
+  $handler->display->display_options['fields']['field_dc_creator']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['field_dc_creator']['field'] = 'field_dc_creator';
+  $handler->display->display_options['fields']['field_dc_creator']['label'] = 'By';
+  $handler->display->display_options['fields']['field_dc_creator']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_dc_creator']['delta_offset'] = '0';
+  /* Field: The main body text: Text (indexed) */
+  $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['label'] = '';
+  $handler->display->display_options['fields']['body_value']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['body_value']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['body_value']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['body_value']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body_value']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_value']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_keyword_index']['id'] = 'field_keyword_index';
+  $handler->display->display_options['fields']['field_keyword_index']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['field_keyword_index']['field'] = 'field_keyword_index';
+  $handler->display->display_options['fields']['field_keyword_index']['label'] = 'Keywords / Topics';
+  $handler->display->display_options['fields']['field_keyword_index']['hide_empty'] = TRUE;
+  /* Field: Genre Harmonized */
+  $handler->display->display_options['fields']['field_genre_harmonized']['id'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['table'] = 'search_api_index_solr_repository_search';
+  $handler->display->display_options['fields']['field_genre_harmonized']['field'] = 'field_genre_harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['ui_name'] = 'Genre Harmonized';
+  $handler->display->display_options['fields']['field_genre_harmonized']['label'] = 'Genre';
+  $handler->display->display_options['fields']['field_genre_harmonized']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_genre_harmonized']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_genre_harmonized']['bypass_access'] = 0;
   $export['repository_search'] = $view;
 
   return $export;

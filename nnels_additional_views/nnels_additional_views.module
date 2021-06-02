@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the NNELS Additional Views feature.
+ */
+
+include_once 'nnels_additional_views.features.inc';

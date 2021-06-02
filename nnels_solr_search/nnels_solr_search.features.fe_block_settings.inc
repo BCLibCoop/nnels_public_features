@@ -32,7 +32,7 @@ function nnels_solr_search_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -71,
+        'weight' => -81,
       ),
       'adminimal' => array(
         'region' => '',
@@ -41,7 +41,7 @@ function nnels_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Facets',
     'visibility' => 1,
   );
 
@@ -103,36 +103,6 @@ function nnels_solr_search_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-2sJCr0OglhJ79V3xreAxpEnBXOY61L3b'] = array(
-    'cache' => -1,
-    'css_class' => 'facet-search genre',
-    'custom' => 0,
-    'delta' => '2sJCr0OglhJ79V3xreAxpEnBXOY61L3b',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => 'repository-search*
-recently-added*',
-    'roles' => array(),
-    'themes' => array(
-      'NNELS_CALS_v001' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'NNELS_CALS_v001',
-        'weight' => -66,
-      ),
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => -52,
-      ),
-    ),
-    'title' => 'Filter by Genre:',
-    'visibility' => 1,
-  );
-
   $export['facetapi-6k3h37n9W3cCgQFFWvz9QwXSCBaxJKiw'] = array(
     'cache' => -1,
     'css_class' => 'facet-search creator',
@@ -150,7 +120,7 @@ recently-added*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -67,
+        'weight' => -76,
       ),
       'adminimal' => array(
         'region' => '',
@@ -180,7 +150,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -70,
+        'weight' => -80,
       ),
       'adminimal' => array(
         'region' => '',
@@ -210,7 +180,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -68,
+        'weight' => -78,
       ),
       'adminimal' => array(
         'region' => '',
@@ -240,7 +210,7 @@ recently-added*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -69,
+        'weight' => -79,
       ),
       'adminimal' => array(
         'region' => '',
@@ -270,7 +240,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -65,
+        'weight' => -75,
       ),
       'adminimal' => array(
         'region' => '',
