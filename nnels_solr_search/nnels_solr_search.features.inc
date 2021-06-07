@@ -43,6 +43,7 @@ function nnels_solr_search_default_search_api_index() {
         "body:format" : { "type" : "string" },
         "body:summary" : { "type" : "text", "boost" : "0.8" },
         "body:value" : { "type" : "text", "boost" : "0.8" },
+        "certified_accessible" : { "type" : "integer" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
         "field_access_restrictions" : { "type" : "integer" },
@@ -67,10 +68,15 @@ function nnels_solr_search_default_search_api_index() {
           "type" : "list\\u003Cinteger\\u003E",
           "entity_type" : "field_collection_item"
         },
+        "field_file_resource:field_accessibility_tags" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
         "field_file_resource:field_file_format" : { "type" : "list\\u003Cstring\\u003E" },
         "field_file_resource:field_file_upload_details" : { "type" : "list\\u003Ctext\\u003E" },
         "field_file_resource:field_performer" : { "type" : "list\\u003Clist\\u003Cstring\\u003E\\u003E" },
         "field_file_resource:field_running_time" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_genre:field_required_for_certification" : { "type" : "list\\u003Cboolean\\u003E" },
         "field_genre:name" : { "type" : "list\\u003Cstring\\u003E" },
         "field_genre_harmonized" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_isbn" : { "type" : "list\\u003Ctext\\u003E" },
