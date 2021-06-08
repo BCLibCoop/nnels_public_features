@@ -4718,7 +4718,7 @@ return $return;';
   $handler->display->display_options['fields']['field_dc_subject']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_dc_subject']['alter']['path'] = 'subject/[field_dc_subject-revision_id]';
   $handler->display->display_options['fields']['field_dc_subject']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_dc_subject']['element_label_type'] = 'span';  
+  $handler->display->display_options['fields']['field_dc_subject']['element_label_type'] = 'span';
   /* Field: Content: Publisher (obsolete) */
   $handler->display->display_options['fields']['field_publisher']['id'] = 'field_publisher';
   $handler->display->display_options['fields']['field_publisher']['table'] = 'field_data_field_publisher';
@@ -4836,7 +4836,6 @@ return $return;';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'list';
