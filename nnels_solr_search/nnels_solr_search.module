@@ -73,22 +73,24 @@ function nnels_solr_search_certified_accessible_getter_callback($item) {
         ->groupBy('r.entity_id')
         ->execute()
         ->fetchCol('entity_id');
+      if (count($certified_accessibility_tags)) {
 
-      $file_resource_ids = array();
-      foreach ($file_resources as $file_resource) {
-        $file_resource_ids[$file_resource['value']] = TRUE;
-      }
-      $file_resource_entities = field_collection_item_load_multiple(array_keys($file_resource_ids));
-      foreach ($file_resource_entities as $file_resource_entity) {
-        $accessibility_tags = field_get_items('field_collection_item', $file_resource_entity, 'field_accessibility_tags');
-        if ($accessibility_tags) {
-          $accessibility_tags = array_column($accessibility_tags, 'tid');
+        $file_resource_ids = array();
+        foreach ($file_resources as $file_resource) {
+          $file_resource_ids[$file_resource['value']] = TRUE;
+        }
+        $file_resource_entities = field_collection_item_load_multiple(array_keys($file_resource_ids));
+        foreach ($file_resource_entities as $file_resource_entity) {
+          $accessibility_tags = field_get_items('field_collection_item', $file_resource_entity, 'field_accessibility_tags');
+          if ($accessibility_tags) {
+            $accessibility_tags = array_column($accessibility_tags, 'tid');
 
-          // Expecting $diff to be empty if all of the required tags are present
-          // in the attached tags.
-          $diff = array_diff($certified_accessibility_tags, $accessibility_tags);
-          if (empty($diff)) {
-            return 1;
+            // Expecting $diff to be empty if all of the required tags are present
+            // in the attached tags.
+            $diff = array_diff($certified_accessibility_tags, $accessibility_tags);
+            if (empty($diff)) {
+              return 1;
+            }
           }
         }
       }
