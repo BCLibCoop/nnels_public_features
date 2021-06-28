@@ -7,3 +7,19 @@
 
 include_once 'nnels_additional_views.features.inc';
 
+/**
+ * Implements hook_views_pre_render().
+ */
+function nnels_additional_views_views_pre_render(&$view) {
+  if ($view->name == 'field_collection_view_repo_files' &&
+      isset($view->field['field_show_accessibility_summary']) &&
+      isset($view->field['field_accessibility_summary'])) {
+    foreach ($view->result as $index => $result) {
+      if ($result->field_field_show_accessibility_summary[0]['raw']['value'] != 1) {
+        // Field suppression logic is here:
+        //  - views-view-fields--field-collection-view-repo-files--embed.tpl.php
+        $result->field_field_accessibility_summary = NULL;
+      }
+    }
+  }
+}
