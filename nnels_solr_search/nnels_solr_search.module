@@ -124,7 +124,7 @@ function nnels_solr_search_certified_accessible_by_getter_callback($item) {
     }
     $file_resource_entities = field_collection_item_load_multiple(array_keys($file_resource_ids));
     foreach ($file_resource_entities as $file_resource_entity) {
-      if (field_get_items('field_collection_item', $file_resource_entity, 'field_certified_accessible')) {
+      if (field_get_items('field_collection_item', $file_resource_entity, 'field_certified_accessible_by')) {
         return 1;
       }
     }
