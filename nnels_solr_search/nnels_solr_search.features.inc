@@ -44,6 +44,7 @@ function nnels_solr_search_default_search_api_index() {
         "body:summary" : { "type" : "text", "boost" : "0.8" },
         "body:value" : { "type" : "text", "boost" : "0.8" },
         "certified_accessible" : { "type" : "integer" },
+        "certified_accessible_by" : { "type" : "integer" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
         "field_access_restrictions" : { "type" : "integer" },
