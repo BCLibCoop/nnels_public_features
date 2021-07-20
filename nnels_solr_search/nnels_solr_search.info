@@ -33,6 +33,7 @@ features[facetapi][] = search_api@solr_repository_search:block:body:format
 features[facetapi][] = search_api@solr_repository_search:block:body:summary
 features[facetapi][] = search_api@solr_repository_search:block:body:value
 features[facetapi][] = search_api@solr_repository_search:block:certified_accessible
+features[facetapi][] = search_api@solr_repository_search:block:certified_accessible_by
 features[facetapi][] = search_api@solr_repository_search:block:changed
 features[facetapi][] = search_api@solr_repository_search:block:created
 features[facetapi][] = search_api@solr_repository_search:block:field_access_restrictions

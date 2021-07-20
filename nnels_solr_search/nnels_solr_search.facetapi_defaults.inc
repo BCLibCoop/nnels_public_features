@@ -665,6 +665,99 @@ function nnels_solr_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@solr_repository_search:block:certified_accessible_by';
+  $facet->searcher = 'search_api@solr_repository_search';
+  $facet->realm = 'block';
+  $facet->facet = 'certified_accessible_by';
+  $facet->enabled = TRUE;
+  $facet->hash = 'cU0vk1sQsSlmVDjq86P50MWDEU38wnKI';
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_ajax_checkboxes',
+    'filters' => array(
+      'active_items' => array(
+        'status' => 0,
+        'weight' => '-50',
+      ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
+      'rewrite_items' => array(
+        'status' => 1,
+        'weight' => '-48',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'filter_depth' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'hide_if_selected' => array(
+        'status' => 0,
+        'weight' => '-43',
+      ),
+    ),
+    'active_sorts' => array(
+      'active' => 'active',
+      'indexed' => 'indexed',
+      'count' => 'count',
+      'display' => 'display',
+      'natural' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-48',
+      'display' => '-47',
+      'indexed' => '-49',
+      'natural' => '-46',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
+      'natural' => '4',
+    ),
+    'empty_behavior' => 'ajax_facets',
+    'display_count' => 1,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Certified Accessible By',
+    'soft_limit' => '20',
+    'nofollow' => '1',
+    'show_expanded' => 0,
+    'reset_link' => 0,
+    'show_reset_link' => 0,
+    'reset_link_text' => 'Reset filter',
+    'ajax_select_default_option_label' => 'Select',
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'exclude' => '',
+    'regex' => 0,
+    'invert' => 0,
+    'show_minimum_items' => 2,
+    'depth' => 0,
+    'parents' => 0,
+  );
+  $export['search_api@solr_repository_search:block:certified_accessible_by'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@solr_repository_search:block:changed';
   $facet->searcher = 'search_api@solr_repository_search';
   $facet->realm = 'block';
