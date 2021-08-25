@@ -1257,6 +1257,12 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_show_accessibility_summary']['label'] = '';
   $handler->display->display_options['fields']['field_show_accessibility_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_show_accessibility_summary']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Certified Accessible By */
+  $handler->display->display_options['fields']['field_certified_accessible_by']['id'] = 'field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['table'] = 'field_data_field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['field'] = 'field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['hide_empty'] = TRUE;
   /* Field: Field collection item: Accessibility Summary */
   $handler->display->display_options['fields']['field_accessibility_summary']['id'] = 'field_accessibility_summary';
   $handler->display->display_options['fields']['field_accessibility_summary']['table'] = 'field_data_field_accessibility_summary';
@@ -1530,6 +1536,12 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_show_accessibility_summary']['label'] = '';
   $handler->display->display_options['fields']['field_show_accessibility_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_show_accessibility_summary']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Certified Accessible By */
+  $handler->display->display_options['fields']['field_certified_accessible_by']['id'] = 'field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['table'] = 'field_data_field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['field'] = 'field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['hide_empty'] = TRUE;
   /* Field: Field collection item: Accessibility Summary */
   $handler->display->display_options['fields']['field_accessibility_summary']['id'] = 'field_accessibility_summary';
   $handler->display->display_options['fields']['field_accessibility_summary']['table'] = 'field_data_field_accessibility_summary';

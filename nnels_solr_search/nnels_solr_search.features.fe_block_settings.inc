@@ -150,7 +150,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -81,
+        'weight' => -80,
       ),
       'adminimal' => array(
         'region' => '',
@@ -193,11 +193,11 @@ recently-added',
     'visibility' => 1,
   );
 
-  $export['facetapi-SJafWiCpmFR9xv6hpbIR00MO51aHbA30'] = array(
+  $export['facetapi-cU0vk1sQsSlmVDjq86P50MWDEU38wnKI'] = array(
     'cache' => -1,
     'css_class' => 'facet-search creator',
     'custom' => 0,
-    'delta' => 'SJafWiCpmFR9xv6hpbIR00MO51aHbA30',
+    'delta' => 'cU0vk1sQsSlmVDjq86P50MWDEU38wnKI',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'facetapi',
@@ -210,7 +210,7 @@ recently-added',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'NNELS_CALS_v001',
-        'weight' => -80,
+        'weight' => -81,
       ),
       'adminimal' => array(
         'region' => '',
@@ -219,7 +219,7 @@ recently-added',
         'weight' => 0,
       ),
     ),
-    'title' => 'Filter by Certified Accessible:',
+    'title' => 'Certified Accessible:',
     'visibility' => 1,
   );
 

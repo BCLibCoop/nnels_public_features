@@ -31,6 +31,7 @@ function nnels_solr_search_node_load($nodes, $types) {
   foreach ($nodes as $node) {
     if ($node->type == 'repository_item') {
       $node->certified_accessible = nnels_solr_search_certified_accessible_getter_callback($node);
+      $node->certified_accessible_by = nnels_solr_search_certified_accessible_by_getter_callback($node);
     }
   }
 }
@@ -43,12 +44,23 @@ function nnels_solr_search_entity_property_info_alter(&$info) {
 
   // Create this custom property of the repository_item node type that
   // calculates whether one of the file resources attached to the node are
-  // certified accessible.
+  // certified accessible, using the certified_accessible field.
   $properties['certified_accessible'] = array(
     'label' => t('Certified Accessible'),
     'type' => 'integer',
     'description' => t('Certified Accessible Computed Field.'),
     'getter callback' => 'nnels_solr_search_certified_accessible_getter_callback',
+    'computed' => TRUE,
+  );
+
+  // Create this custom property of the repository_item node type that
+  // calculates whether one of the file resources attached to the node are
+  // certified accessible, using the certified_accessible_by field.
+  $properties['certified_accessible_by'] = array(
+    'label' => t('Certified Accessible By'),
+    'type' => 'integer',
+    'description' => t('Certified Accessible By Computed Field.'),
+    'getter callback' => 'nnels_solr_search_certified_accessible_by_getter_callback',
     'computed' => TRUE,
   );
 }
@@ -99,12 +111,40 @@ function nnels_solr_search_certified_accessible_getter_callback($item) {
 }
 
 /**
+ * Certified Accessibility By Getter Callback.
+ * 
+ * Determine whether the repo item is certified accessible by.
+ */
+function nnels_solr_search_certified_accessible_by_getter_callback($item) {
+  $file_resources = field_get_items('node', $item, 'field_file_resource');
+  if ($file_resources) {
+    $file_resource_ids = array();
+    foreach ($file_resources as $file_resource) {
+      $file_resource_ids[$file_resource['value']] = TRUE;
+    }
+    $file_resource_entities = field_collection_item_load_multiple(array_keys($file_resource_ids));
+    foreach ($file_resource_entities as $file_resource_entity) {
+      if (field_get_items('field_collection_item', $file_resource_entity, 'field_certified_accessible_by')) {
+        return 1;
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_facet_items_alter().
  */
 function nnels_solr_search_facet_items_alter(&$build, &$settings) {
-  if ($settings->facet == 'certified_accessible' && $settings->realm == 'block') {
-    if (!empty($build[1])) {
-      $build[1]['#markup'] = t('NNELS certified accessible');
+  if ($settings->realm == 'block') {
+    if ($settings->facet == 'certified_accessible') {
+      if (!empty($build[1])) {
+        $build[1]['#markup'] = t('NNELS certified accessible');
+      }
+    }
+    if ($settings->facet == 'certified_accessible_by') {
+      if (!empty($build[1])) {
+        $build[1]['#markup'] = t('Yes');
+      }
     }
   }
 }
