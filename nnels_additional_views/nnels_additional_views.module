@@ -23,3 +23,18 @@ function nnels_additional_views_views_pre_render(&$view) {
     }
   }
 }
+
+/**
+ * Implements hook_menu().
+ */
+function nnels_additional_views_menu() {
+  $items['admin/content/cals/repo-items/a11y'] = array(
+    'title' => 'Bulk Edit for Accessibility Fields',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('nnels_additional_views_a11y_bulk_edit_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
