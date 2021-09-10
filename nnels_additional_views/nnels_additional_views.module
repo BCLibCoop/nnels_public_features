@@ -33,6 +33,7 @@ function nnels_additional_views_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('nnels_additional_views_a11y_bulk_edit_form'),
     'access arguments' => array('access administration pages'),
+    'file' => 'nnels_additional_views.admin.inc',
     'type' => MENU_CALLBACK,
   );
 
