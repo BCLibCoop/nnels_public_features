@@ -218,9 +218,35 @@ function nnels_additional_views_a11y_bulk_edit_form_submit($form, &$form_state) 
 
     // Save.
     case 'edit-save':
-print_r($form_state);exit;
-      // Use the batch API to process each repo item
+
+      // Set up the batch for processing.
+      $batch =  array(
+        'operations' => array(),
+        'title' => t('Updating Repo Items with accessibility data.'),
+        'init_message' => t('Batch is starting.'),
+        'progress_message' => t('Processed @current out of @total.'),
+        'error_message' => t('Batch has encountered an error.'),
+        'file' => drupal_get_path('module', 'nnels_additional_views') . '/nnels_additional_views.admin.inc',
+      );
+      foreach ($form_state['storage']['repo_items'] as $item_id) {
+        $batch['operations'][] = array(
+          '_nnels_additional_views_a11y_process_item',
+          array(
+            $item_id,
+            array_keys(array_filter($form_state['values']['tags'])),
+            $form_state['values']['summary'],
+          )
+        );
+      }
+      batch_set($batch);
+
       unset($form_state['storage']);
       break;
   }
+}
+
+function _nnels_additional_views_a11y_process_item($item_id, $tags, $summary, &$context) {
+  
+  $context['message'] = t('Updating %item_id', array('%item_id' => $item_id));
+  sleep(1);
 }
