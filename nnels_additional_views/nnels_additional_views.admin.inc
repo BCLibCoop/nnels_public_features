@@ -11,9 +11,6 @@
 function nnels_additional_views_a11y_bulk_edit_form($form, &$form_state) {
   $form = array();
 
-  // Whenever the form is submitted get rid of the page query string.
-  $form['#action'] = '/' . request_path();
-
   // Page 2 of the form.
   if (!empty($form_state['storage']['step']) && $form_state['storage']['step'] == 2) {
     drupal_set_title('Bulk Edit for Accessibility Fields - Step 2');
@@ -196,17 +193,17 @@ function nnels_additional_views_a11y_bulk_edit_form_submit($form, &$form_state) 
 
     // Filter results.
     case 'edit-filter':
-      $form_state['rebuild'] = TRUE;
       if (isset($form_state['values']['format_filter']) || isset($form_state['values']['publisher_filter'])) {
         $_SESSION['a11y_filter']['format'] = $form_state['values']['format_filter'];
         $_SESSION['a11y_filter']['publisher'] = $form_state['values']['publisher_filter'];
       }
+      $form_state['redirect'] = request_path();
       break;
 
     // Reset filter.
     case 'edit-reset':
-      $form_state['rebuild'] = TRUE;
       unset($_SESSION['a11y_filter']);
+      $form_state['redirect'] = request_path();
       break;
 
     // Select.
@@ -245,8 +242,28 @@ function nnels_additional_views_a11y_bulk_edit_form_submit($form, &$form_state) 
   }
 }
 
+/**
+ * Batch Operation - Process Item.
+ * 
+ * @param int $item_id
+ *   The field collection id.
+ * @param array $tags
+ *   The array of tags to add to the file_resource.
+ * @param string $summary
+ *   The accessibility summary to set for the file_resource.
+ * @param array $context
+ *   The batch context.
+ */
 function _nnels_additional_views_a11y_process_item($item_id, $tags, $summary, &$context) {
-  
   $context['message'] = t('Updating %item_id', array('%item_id' => $item_id));
-  sleep(1);
+
+  // Load the file resource.
+  $file_resources = entity_load('field_collection_item', array($item_id), array(), TRUE);
+  $file_resource = reset($file_resources);
+  $wrapper = entity_metadata_wrapper('field_collection_item', $file_resource);
+
+  // Update and save.
+  $wrapper->field_accessibility_summary = $summary;
+  $wrapper->field_accessibility_tags = $tags;
+  $wrapper->save();
 }
