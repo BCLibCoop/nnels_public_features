@@ -137,6 +137,31 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_path]/[item_id]/edit?destination=[host_entity_path]';
+  /* Filter criterion: Field collection item: Name of Publisher (field_publisher_format) */
+  $handler->display->display_options['filters']['field_publisher_format_value']['id'] = 'field_publisher_format_value';
+  $handler->display->display_options['filters']['field_publisher_format_value']['table'] = 'field_data_field_publisher_format';
+  $handler->display->display_options['filters']['field_publisher_format_value']['field'] = 'field_publisher_format_value';
+  $handler->display->display_options['filters']['field_publisher_format_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_publisher_format_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_publisher_format_value']['expose']['operator_id'] = 'field_publisher_format_value_op';
+  $handler->display->display_options['filters']['field_publisher_format_value']['expose']['label'] = 'Publisher';
+  $handler->display->display_options['filters']['field_publisher_format_value']['expose']['operator'] = 'field_publisher_format_value_op';
+  $handler->display->display_options['filters']['field_publisher_format_value']['expose']['identifier'] = 'field_publisher_format_value';
+  $handler->display->display_options['filters']['field_publisher_format_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  /* Filter criterion: Field: File Format (field_file_format) */
+  $handler->display->display_options['filters']['field_file_format_value']['id'] = 'field_file_format_value';
+  $handler->display->display_options['filters']['field_file_format_value']['table'] = 'field_data_field_file_format';
+  $handler->display->display_options['filters']['field_file_format_value']['field'] = 'field_file_format_value';
+  $handler->display->display_options['filters']['field_file_format_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_file_format_value']['expose']['operator_id'] = 'field_file_format_value_op';
+  $handler->display->display_options['filters']['field_file_format_value']['expose']['label'] = 'File Format';
+  $handler->display->display_options['filters']['field_file_format_value']['expose']['operator'] = 'field_file_format_value_op';
+  $handler->display->display_options['filters']['field_file_format_value']['expose']['identifier'] = 'field_file_format_value';
+  $handler->display->display_options['filters']['field_file_format_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
