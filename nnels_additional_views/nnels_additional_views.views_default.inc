@@ -12,6 +12,141 @@ function nnels_additional_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'accessibility_bulk_edit';
+  $view->description = 'Bulk edit the accessibility fields on file resources';
+  $view->tag = 'default';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'Accessibility Bulk Edit';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Accessibility Bulk Edit';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer nodes';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Relationship: Field collection item: Entity with the File Resource (field_file_resource) */
+  $handler->display->display_options['relationships']['field_file_resource_node']['id'] = 'field_file_resource_node';
+  $handler->display->display_options['relationships']['field_file_resource_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_file_resource_node']['field'] = 'field_file_resource_node';
+  $handler->display->display_options['relationships']['field_file_resource_node']['required'] = TRUE;
+  /* Field: Bulk operations: Field collection item */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_field_collection_item';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 1,
+      'label' => 'Bulk Edit',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          'field_file_resource::field_accessibility_tags' => 'field_file_resource::field_accessibility_tags',
+          'field_file_resource::field_accessibility_summary' => 'field_file_resource::field_accessibility_summary',
+          'field_file_resource::field_show_accessibility_summary' => 'field_file_resource::field_show_accessibility_summary',
+          'field_file_resource::field_certified_accessible_by' => 'field_file_resource::field_certified_accessible_by',
+        ),
+      ),
+    ),
+  );
+  /* Field: Field collection item: Field collection item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Field: Field collection item: Field path */
+  $handler->display->display_options['fields']['field_path']['id'] = 'field_path';
+  $handler->display->display_options['fields']['field_path']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['field_path']['field'] = 'field_path';
+  $handler->display->display_options['fields']['field_path']['label'] = '';
+  $handler->display->display_options['fields']['field_path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_path']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Host Entity Path */
+  $handler->display->display_options['fields']['host_entity_path']['id'] = 'host_entity_path';
+  $handler->display->display_options['fields']['host_entity_path']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['host_entity_path']['field'] = 'host_entity_path';
+  $handler->display->display_options['fields']['host_entity_path']['label'] = '';
+  $handler->display->display_options['fields']['host_entity_path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['host_entity_path']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['relationship'] = 'field_file_resource_node';
+  $handler->display->display_options['fields']['title_field']['label'] = 'Repository Item Title';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Field: File Format */
+  $handler->display->display_options['fields']['field_file_format']['id'] = 'field_file_format';
+  $handler->display->display_options['fields']['field_file_format']['table'] = 'field_data_field_file_format';
+  $handler->display->display_options['fields']['field_file_format']['field'] = 'field_file_format';
+  /* Field: Field collection item: Name of Publisher */
+  $handler->display->display_options['fields']['field_publisher_format']['id'] = 'field_publisher_format';
+  $handler->display->display_options['fields']['field_publisher_format']['table'] = 'field_data_field_publisher_format';
+  $handler->display->display_options['fields']['field_publisher_format']['field'] = 'field_publisher_format';
+  $handler->display->display_options['fields']['field_publisher_format']['label'] = 'Publisher';
+  /* Field: Field collection item: Show Accessibility Summary */
+  $handler->display->display_options['fields']['field_show_accessibility_summary']['id'] = 'field_show_accessibility_summary';
+  $handler->display->display_options['fields']['field_show_accessibility_summary']['table'] = 'field_data_field_show_accessibility_summary';
+  $handler->display->display_options['fields']['field_show_accessibility_summary']['field'] = 'field_show_accessibility_summary';
+  $handler->display->display_options['fields']['field_show_accessibility_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_show_accessibility_summary']['alter']['text'] = 'Yes';
+  $handler->display->display_options['fields']['field_show_accessibility_summary']['type'] = 'list_key';
+  /* Field: Field collection item: Accessibility Summary */
+  $handler->display->display_options['fields']['field_accessibility_summary']['id'] = 'field_accessibility_summary';
+  $handler->display->display_options['fields']['field_accessibility_summary']['table'] = 'field_data_field_accessibility_summary';
+  $handler->display->display_options['fields']['field_accessibility_summary']['field'] = 'field_accessibility_summary';
+  $handler->display->display_options['fields']['field_accessibility_summary']['type'] = 'text_plain';
+  /* Field: Field collection item: Accessibility Tags */
+  $handler->display->display_options['fields']['field_accessibility_tags']['id'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['table'] = 'field_data_field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['field'] = 'field_accessibility_tags';
+  $handler->display->display_options['fields']['field_accessibility_tags']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_accessibility_tags']['delta_offset'] = '0';
+  /* Field: Field collection item: Certified Accessible By */
+  $handler->display->display_options['fields']['field_certified_accessible_by']['id'] = 'field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['table'] = 'field_data_field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['field'] = 'field_certified_accessible_by';
+  $handler->display->display_options['fields']['field_certified_accessible_by']['type'] = 'text_plain';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Edit';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_path]/[item_id]/edit?destination=[host_entity_path]';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/content/cals/repo-items/a11y';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['accessibility_bulk_edit'] = $view;
+
+  $view = new view();
   $view->name = 'field_collection_view_commercially_available';
   $view->description = '';
   $view->tag = 'default';
