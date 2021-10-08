@@ -96,7 +96,14 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['relationship'] = 'field_file_resource_node';
   $handler->display->display_options['fields']['title_field']['label'] = 'Repository Item Title';
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content_absolute',
+    'enable_trim' => 0,
+    'trim_length' => '50',
+    'title_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Field: Field: File Format */
   $handler->display->display_options['fields']['field_file_format']['id'] = 'field_file_format';
   $handler->display->display_options['fields']['field_file_format']['table'] = 'field_data_field_file_format';
