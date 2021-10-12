@@ -117,9 +117,6 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['fields']['field_show_accessibility_summary']['id'] = 'field_show_accessibility_summary';
   $handler->display->display_options['fields']['field_show_accessibility_summary']['table'] = 'field_data_field_show_accessibility_summary';
   $handler->display->display_options['fields']['field_show_accessibility_summary']['field'] = 'field_show_accessibility_summary';
-  $handler->display->display_options['fields']['field_show_accessibility_summary']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_show_accessibility_summary']['alter']['text'] = 'Yes';
-  $handler->display->display_options['fields']['field_show_accessibility_summary']['type'] = 'list_key';
   /* Field: Field collection item: Accessibility Summary */
   $handler->display->display_options['fields']['field_accessibility_summary']['id'] = 'field_accessibility_summary';
   $handler->display->display_options['fields']['field_accessibility_summary']['table'] = 'field_data_field_accessibility_summary';
