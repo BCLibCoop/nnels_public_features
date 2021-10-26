@@ -18,6 +18,7 @@ features[field_base][] = field_source
 features[field_instance][] = taxonomy_term-accessibility_tags-field_required_for_certification
 features[field_instance][] = taxonomy_term-accessibility_tags-field_source
 features[taxonomy][] = accessibility_tags
+features[views_view][] = accessibility_bulk_edit
 features[views_view][] = field_collection_view_commercially_available
 features[views_view][] = field_collection_view_repo_files
 features[views_view][] = field_collection_view_s3_format_conversions
