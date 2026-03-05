@@ -88,11 +88,19 @@ function nnels_solr_search_entity_property_info_alter(&$info) {
     'getter callback' => 'nnels_solr_search_file_format_getter_callback',
     'computed' => TRUE,
   );
+
+  $properties['search_filter_produced'] = array(
+    'type' => 'list<field_collection_item>',
+    'label' => t('Produced File Entities (Filtered for Search)'),
+    'description' => t('Returns only related entities where field_availability_status is "Produced".'),
+    'getter callback' => 'nnels_solr_search_get_filtered_search_produced',
+    'computed' => TRUE,
+  );
 }
 
 /**
  * Certified Accessibility Getter Callback.
- * 
+ *
  * Determine whether the repo item is certified accessible.
  */
 function nnels_solr_search_certified_accessible_getter_callback($item) {
@@ -192,4 +200,37 @@ function nnels_solr_search_facet_items_alter(&$build, &$settings) {
       }
     }
   }
+}
+
+/**
+ * Only-Produced File Resources Filter Callback
+ */
+function nnels_solr_search_get_filtered_search_produced($entity, array $options, $name, $entity_type, $info) {
+  $produced_files = array();
+
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);
+
+  // on the parent entity that links to the file_resource entities.
+  if (isset($wrapper->field_file_resource)) {
+    foreach ($wrapper->field_file_resource as $file_wrapper) {
+      try {
+        // Ensure the file_resource exists and has the field_availability_status field
+        if ($file_wrapper->value() && isset($file_wrapper->field_availability_status)) {
+
+          $status = $file_wrapper->field_availability_status->value();
+
+          // If status is 1 (Produced), add the file_resource entity to our valid list
+          if ($status == 1) {
+            // value() returns the actual entity object
+            $produced_files[] = $file_wrapper->value();
+          }
+        }
+      }
+      catch (EntityMetadataWrapperException $e) {
+        // Handle wrapper exceptions (e.g., if a reference is broken/missing).
+      }
+    }
+  }
+
+  return $produced_files;
 }
