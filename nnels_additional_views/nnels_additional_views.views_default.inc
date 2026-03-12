@@ -1859,6 +1859,20 @@ function nnels_additional_views_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Field collection item: Field collection item ID */
+  $handler->display->display_options['filters']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['filters']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['filters']['item_id']['operator'] = 'not empty';
+  /* Filter criterion: Field collection item: Availability / Status (field_availability_status) */
+  $handler->display->display_options['filters']['field_availability_status_value']['id'] = 'field_availability_status_value';
+  $handler->display->display_options['filters']['field_availability_status_value']['table'] = 'field_data_field_availability_status';
+  $handler->display->display_options['filters']['field_availability_status_value']['field'] = 'field_availability_status_value';
+  $handler->display->display_options['filters']['field_availability_status_value']['value'] = array(
+    1 => '1',
+  );
   $export['field_collection_view_repo_files'] = $view;
 
   $view = new view();
